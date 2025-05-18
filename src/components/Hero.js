@@ -3,7 +3,7 @@ import { Box, Typography, Button, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion as m } from 'framer-motion';
 
-const GlassMorphicCard = styled(Box)({
+const GlassMorphicCard = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '90%',
   maxWidth: '1200px',
@@ -19,11 +19,19 @@ const GlassMorphicCard = styled(Box)({
   `,
   zIndex: 2,
   display: 'flex',
+  flexDirection: 'row',
   gap: '3rem',
-  alignItems: 'center'
-});
+  alignItems: 'center',
 
-const ImageSection = styled(Box)({
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column-reverse',
+    padding: '1.5rem',
+    gap: '2rem',
+  }
+}));
+
+
+const ImageSection = styled(Box)(({ theme }) => ({
   flex: '1',
   position: 'relative',
   display: 'flex',
@@ -34,9 +42,13 @@ const ImageSection = styled(Box)({
     height: 'auto',
     maxHeight: '600px',
     objectFit: 'contain',
-    filter: 'drop-shadow(0 0 20px rgba(255, 0, 0, 0.2))'
+    filter: 'drop-shadow(0 0 20px rgba(255, 0, 0, 0.2))',
+    [theme.breakpoints.down('md')]: {
+      maxHeight: '350px',
+    }
   }
-});
+}));
+
 
 const HeroBackground = styled(Box)({
   position: 'relative',
@@ -59,13 +71,18 @@ const HeroBackground = styled(Box)({
   }
 });
 
-const ContentSection = styled(Box)({
+const ContentSection = styled(Box)(({ theme }) => ({
   flex: '1.2',
   zIndex: 2,
-  padding: '0 1rem'
-});
+  padding: '0 1rem',
+  [theme.breakpoints.down('md')]: {
+    textAlign: 'center',
+    padding: '0',
+  }
+}));
 
-const HeroContent = styled(Container)({
+
+const HeroContent = styled(Container)(({ theme }) => ({
   position: 'relative',
   zIndex: 2,
   height: '100%',
@@ -74,8 +91,14 @@ const HeroContent = styled(Container)({
   justifyContent: 'center',
   alignItems: 'flex-start',
   color: '#ffffff',
-  padding: '0 2rem'
-});
+  padding: '0 2rem',
+  [theme.breakpoints.down('md')]: {
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: '0 1rem',
+  }
+}));
+
 
 const StyledButton = styled(Button)({
   marginTop: '2rem',

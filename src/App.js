@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './pages/About';
@@ -23,6 +24,10 @@ function App() {
         <section id="about" style={{ padding: 0, margin: 0 }}>
           <About />
         </section>
+        {/* <section  style={{ padding: 0, margin: 0 }}>
+          <Timer />
+        </section> */}
+
         <section id="team" style={{ padding: 0, margin: 0 }}>
           <Team />
         </section>

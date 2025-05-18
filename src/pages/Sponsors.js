@@ -119,74 +119,92 @@ function Sponsors() {
   }, [sponsors.length, direction]);
 
   return (
-    <SponsorsSection>
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
-        <SectionTitle variant="h2" align="center">
-          Our <BlueText>Sponsors</BlueText>
-        </SectionTitle>
+   <SponsorsSection>
+  <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
+    <SectionTitle variant="h2" align="center">
+      Our <BlueText>Sponsors</BlueText>
+    </SectionTitle>
 
-        <Box sx={{ 
-          position: 'relative', 
-          overflow: 'hidden',
-          height: '500px',
-          display: 'flex',
-          alignItems: 'center'
-        }}>
-          {sponsors.map((sponsor, index) => (
+    <Box
+      sx={{
+        position: 'relative',
+        overflow: 'hidden',
+        height: { xs: 'auto', md: '500px' }, // Auto height on small devices
+        display: { xs: 'flex', md: 'block' }, // Flex on small, block on md+
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 4, // spacing between cards on small screens
+      }}
+    >
+      {sponsors.map((sponsor, index) => (
+        <Box
+          key={index}
+          sx={{
+            position: { xs: 'relative', md: 'absolute' },
+            width: { xs: '90%', sm: '45%', md: '28%' },
+            left: { xs: 'auto', md: '36%' },
+            transition: 'all 0.8s ease',
+            mb: { xs: 4, md: 0 }, // margin bottom on small screens for spacing
+          }}
+        >
+          <SponsorCard
+            index={index}
+            isVisible={visibleSponsors.includes(index)}
+            position={visibleSponsors.indexOf(index) - 1}
+          >
             <Box
-              key={index}
               sx={{
-                position: 'absolute',
-                width: '28%', // Reduced from 30%
-                left: '36%', // Adjusted from 35%
-                transition: 'all 0.8s ease'
+                height: '200px',
+                mb: 3,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: 'rgba(255, 255, 255, 0.05)',
+                borderRadius: '4px',
+                overflow: 'hidden',
               }}
             >
-              <SponsorCard 
-                index={index} 
-                isVisible={visibleSponsors.includes(index)}
-                position={visibleSponsors.indexOf(index) - 1}
+              <Typography
+                variant="h4"
+                sx={{
+                  color: '#ff0000',
+                  fontFamily: '"Tekken", sans-serif',
+                  textAlign: 'center',
+                  textTransform: 'uppercase',
+                }}
               >
-                <Box sx={{ 
-                  height: '200px', 
-                  mb: 3,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  borderRadius: '4px',
-                  overflow: 'hidden'
-                }}>
-                  <Typography variant="h4" sx={{ 
-                    color: '#ff0000',
-                    fontFamily: '"Tekken", sans-serif',
-                    textAlign: 'center',
-                    textTransform: 'uppercase'
-                  }}>
-                    {sponsor.name}
-                  </Typography>
-                </Box>
-                <Typography variant="h6" sx={{ 
-                  color: '#0088ff',
-                  textAlign: 'center',
-                  mb: 2,
-                  fontFamily: '"Tekken", sans-serif'
-                }}>
-                  {sponsor.tier}
-                </Typography>
-                <Typography variant="body1" sx={{ 
-                  color: '#ffffff',
-                  textAlign: 'center',
-                  fontSize: '1.1rem'
-                }}>
-                  {sponsor.description}
-                </Typography>
-              </SponsorCard>
+                {sponsor.name}
+              </Typography>
             </Box>
-          ))}
+            <Typography
+              variant="h6"
+              sx={{
+                color: '#0088ff',
+                textAlign: 'center',
+                mb: 2,
+                fontFamily: '"Tekken", sans-serif',
+              }}
+            >
+              {sponsor.tier}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: '#ffffff',
+                textAlign: 'center',
+                fontSize: '1.1rem',
+              }}
+            >
+              {sponsor.description}
+            </Typography>
+          </SponsorCard>
         </Box>
-      </Container>
-    </SponsorsSection>
+      ))}
+    </Box>
+  </Container>
+</SponsorsSection>
+
   );
 }
 

@@ -19,9 +19,12 @@ const StageSection = styled(Box)({
   }
 });
 
-const StageCard = styled(motion.div)({
+const StageCard = styled(motion.div)(({ theme }) => ({
   position: 'relative',
   height: '300px',
+  [theme.breakpoints.down('sm')]: {
+    height: '200px',
+  },
   borderRadius: '10px',
   overflow: 'hidden',
   cursor: 'pointer',
@@ -33,9 +36,10 @@ const StageCard = styled(motion.div)({
     right: 0,
     bottom: 0,
     background: 'linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)',
-    zIndex: 1
-  }
-});
+    zIndex: 1,
+  },
+}));
+
 
 const StageImage = styled('img')({
   width: '100%',
@@ -44,15 +48,19 @@ const StageImage = styled('img')({
   transition: 'transform 0.3s ease-in-out'
 });
 
-const StageInfo = styled(Box)({
+const StageInfo = styled(Box)(({ theme }) => ({
   position: 'absolute',
   bottom: 0,
   left: 0,
   right: 0,
   padding: '2rem',
   color: '#fff',
-  zIndex: 2
-});
+  zIndex: 2,
+  [theme.breakpoints.down('sm')]: {
+    padding: '1rem',
+  },
+}));
+
 
 function Stages() {
   const stages = [
@@ -105,12 +113,25 @@ function Stages() {
               >
                 <StageImage src={stage.image} alt={stage.name} />
                 <StageInfo>
-                  <Typography variant="h4" sx={{ fontFamily: '"Tekken", sans-serif' }}>
-                    {stage.name}
-                  </Typography>
-                  <Typography variant="body1" sx={{ opacity: 0.8 }}>
-                    {stage.description}
-                  </Typography>
+                 <Typography
+  variant="h4"
+  sx={{
+    fontFamily: '"Tekken", sans-serif',
+    fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' }
+  }}
+>
+  {stage.name}
+</Typography>
+<Typography
+  variant="body1"
+  sx={{
+    opacity: 0.8,
+    fontSize: { xs: '0.875rem', sm: '1rem' }
+  }}
+>
+  {stage.description}
+</Typography>
+
                 </StageInfo>
               </StageCard>
             </Grid>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
-
+// import Timer from '/Timer.jsx';
+import Timer from '../components/Timer.jsx';
 const AboutSection = styled(Box)({
   backgroundImage: 'url("/images/temple.jpg")',
   backgroundSize: 'cover',
@@ -130,7 +131,17 @@ function About() {
           </SectionTitle>
         </Box>
         
-        <Box sx={{ display: 'flex', gap: 4, mb: 6 }}>
+         <Box
+  sx={{
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    gap: 4,
+    mb: 6,
+  }}
+>
+
+          {/* ye overview wala card hai */}
+          
           <InfoCard sx={{ 
             flex: 1, 
             height: '100%',
@@ -159,7 +170,10 @@ function About() {
               </BulletPoint>
             </ul>
           </InfoCard>
-          
+
+{/* ye challenge wala card hai  */}
+
+
           <InfoCard sx={{ 
             flex: 1, 
             height: '100%',
@@ -190,91 +204,122 @@ function About() {
           </InfoCard>
         </Box>
 
-        <InfoCard sx={{ 
-          mb: 6, 
-          background: 'rgba(0, 0, 0, 0.9)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
-        }}>
-          <SubSectionTitle variant="h4" align="center" sx={{ mb: 4 }}>
-            Tournament Timeline
-          </SubSectionTitle>
-          <TimelineContainer>
-            <Grid container justifyContent="space-between">
-              <Grid item xs={6}>
-                <TimelinePoint>
-                  <Typography variant="h6" sx={{ 
-                    color: '#ff0000', 
-                    fontFamily: '"Tekken", sans-serif',
-                    fontSize: '1.5rem',
-                    textShadow: '0 0 10px rgba(255, 0, 0, 0.5)'
-                  }}>
-                    Online Round
-                  </Typography>
-                  <Typography sx={{ 
-                    color: '#ffffff', 
-                    textAlign: 'center',
-                    fontSize: '1.2rem',
-                    fontWeight: 'bold'
-                  }}>
-                    Last Week of July
-                  </Typography>
-                </TimelinePoint>
-              </Grid>
-              <Grid item xs={6}>
-                <TimelinePoint isEnd>
-                  <Typography variant="h6" sx={{ 
-                    color: '#0088ff', 
-                    fontFamily: '"Tekken", sans-serif',
-                    fontSize: '1.5rem',
-                    textShadow: '0 0 10px rgba(0, 136, 255, 0.5)'
-                  }}>
-                    Final Showdown
-                  </Typography>
-                  <Typography sx={{ 
-                    color: '#ffffff', 
-                    textAlign: 'center',
-                    fontSize: '1.2rem',
-                    fontWeight: 'bold'
-                  }}>
-                    First Week of August
-                  </Typography>
-                </TimelinePoint>
-              </Grid>
-            </Grid>
-          </TimelineContainer>
-        </InfoCard>
+       <InfoCard
+  sx={{
+    mb: 6,
+    background: 'rgba(0, 0, 0, 0.9)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    px: { xs: 2, md: 4 },
+    py: { xs: 4, md: 6 },
+  }}
+>
+  <SubSectionTitle variant="h4" align="center" sx={{ mb: 4 }}>
+    Tournament Timeline
+  </SubSectionTitle>
 
-        <Box sx={{ 
-          mt: 6, 
-          width: '100%', 
-          height: '600px',
-          position: 'relative',
+  <TimelineContainer>
+    <Grid
+      container
+      spacing={4}
+      direction={{ xs: 'column', md: 'row' }}
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Grid item xs={12} md={6}>
+        <TimelinePoint>
+          <Typography
+            variant="h6"
+            sx={{
+              color: '#ff0000',
+              fontFamily: '"Tekken", sans-serif',
+              fontSize: { xs: '1.3rem', md: '1.5rem' },
+              textShadow: '0 0 10px rgba(255, 0, 0, 0.5)',
+              textAlign: 'center',
+            }}
+          >
+            Online Round
+          </Typography>
+          <Typography
+            sx={{
+              color: '#ffffff',
+              textAlign: 'center',
+              fontSize: { xs: '1rem', md: '1.2rem' },
+              fontWeight: 'bold',
+              mt: 1,
+            }}
+          >
+            Last Week of July
+          </Typography>
+        </TimelinePoint>
+      </Grid>
+
+      <Grid item xs={12} md={6}>
+        <TimelinePoint isEnd>
+          <Typography
+            variant="h6"
+            sx={{
+              color: '#0088ff',
+              fontFamily: '"Tekken", sans-serif',
+              fontSize: { xs: '1.3rem', md: '1.5rem' },
+              textShadow: '0 0 10px rgba(0, 136, 255, 0.5)',
+              textAlign: 'center',
+            }}
+          >
+            Final Showdown
+          </Typography>
+          <Typography
+            sx={{
+              color: '#ffffff',
+              textAlign: 'center',
+              fontSize: { xs: '1rem', md: '1.2rem' },
+              fontWeight: 'bold',
+              mt: 1,
+            }}
+          >
+            First Week of August
+          </Typography>
+        </TimelinePoint>
+      </Grid>
+    </Grid>
+  </TimelineContainer>
+</InfoCard>
+
+
+       
+    <Box
+      sx={{
+        position: 'relative',
+        width: '100%',
+        paddingBottom: '56.25%', // 16:9 ratio
+        height: 0,
+        overflow: 'hidden',
+        borderRadius: '12px',
+        zIndex: 2,
+      }}
+    >
+      <iframe
+        src="https://www.youtube.com/embed/2hPuRQz6IlM"
+        title="Tekken 8 King vs Jin Kazama"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
           borderRadius: '12px',
-          overflow: 'hidden',
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            boxShadow: '0 0 30px rgba(255, 0, 0, 0.4)',
-            zIndex: 1
-          }
-        }}>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/2hPuRQz6IlM"
-            title="Tekken 8 King vs Jin Kazama"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{ position: 'relative', zIndex: 2, borderRadius: '12px' }}
-          />
-        </Box>
+        }}
+      />
+    </Box>
+  
+
+
+export default ResponsiveYouTube;
+
       </Container>
     </AboutSection>
   );
