@@ -137,7 +137,13 @@ const MotionButton = m(StyledButton);
 function Hero() {
   return (
     <HeroBackground>
-      <HeroContent>
+      <HeroContent
+       style={{
+          width: '100%',
+          height: 'auto',
+        paddingBottom: "50px",
+          paddingTop:"50px"
+        }}>
         <GlassMorphicCard>
           <ContentSection>
             <MotionTypography
@@ -207,32 +213,47 @@ function Hero() {
               opponents, and claim the King of Techken Showdown 2K25 title!
             </MotionTypography>
 
-            <Box>
-              <MotionButton
-                className="learn"
-                component={m.button}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '#about'}
-              >
-                Learn More
-              </MotionButton>
-              <MotionButton
-                className="register"
-                component={m.button}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.0 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = 'https://forms.gle/your-google-form-link'} // Replace with your Google Form link
-              >
-                Register Now
-              </MotionButton>
-            </Box>
+        <Box
+  sx={{
+    display: 'flex',
+    flexDirection: { xs: 'column', sm: 'row' }, // <- column on small screens
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.75rem',
+    marginBottom: '2rem',
+    paddingBottom: '2rem',
+    width: '100%',
+  }}
+>
+  <MotionButton
+    className="learn"
+    component={m.button}
+    initial={{ opacity: 0, x: -20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5, delay: 0.8 }}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    sx={{ width: { xs: '100%', sm: 'auto' } }} // full width on small
+    onClick={() => window.location.href = '#about'}
+  >
+    Learn More
+  </MotionButton>
+
+  <MotionButton
+    className="register"
+    component={m.button}
+    initial={{ opacity: 0, x: -20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5, delay: 1.0 }}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    sx={{ width: { xs: '100%', sm: 'auto' } }} // full width on small
+    onClick={() => window.location.href = 'https://forms.gle/your-google-form-link'}
+  >
+    Register Now
+  </MotionButton>
+</Box>
+
           </ContentSection>
           
           <ImageSection>
@@ -242,6 +263,11 @@ function Hero() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
+               style={{
+          width: '100%',
+          height: 'auto',
+          maxWidth: '400px'
+        }}
             />
           </ImageSection>
         </GlassMorphicCard>
