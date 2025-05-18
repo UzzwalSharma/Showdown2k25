@@ -12,11 +12,16 @@ const FAQSection = styled(Box)({
   width: '100%',
   padding: 0,
   margin: 0,
-  position: 'relative'
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  textAlign: 'center'
 });
 
 const SectionTitle = styled(Typography)({
-  color: '#ffd700',
+  color: '#ff0000', // Change to red
   fontFamily: '"Tekken", sans-serif',
   marginTop: 0,
   marginBottom: 0,
@@ -24,10 +29,13 @@ const SectionTitle = styled(Typography)({
   paddingBottom: 0,
   textTransform: 'uppercase',
   letterSpacing: '2px',
-  fontSize: '2.5rem',
+  fontSize: '3rem', // Increased from 2.5rem
   position: 'relative',
   zIndex: 2,
-  textAlign: 'center'
+  textAlign: 'center',
+  '& span': {
+    color: '#0088ff' // Add blue color for part of the text
+  }
 });
 
 const faqs = [
@@ -68,21 +76,21 @@ const faqs = [
 function FAQs() {
   return (
     <FAQSection id="faqs">
-      <Container maxWidth="md" sx={{ py: 0, my: 0, px: 0, mx: 0 }}>
+      <Container maxWidth="md" sx={{ py: 0, my: 0, px: 0, mx: 0, textAlign: 'center' }}>
         <SectionTitle variant="h2">
-          Frequently Asked Questions
+          Frequently Asked <span>Questions</span>
         </SectionTitle>
         {faqs.map((faq, idx) => (
-          <Accordion key={idx} sx={{ background: 'rgba(0,0,0,0.85)', color: '#fff', mb: 2, borderRadius: 2, border: '1px solid #0088ff' }}>
+          <Accordion key={idx} sx={{ background: 'rgba(0,0,0,0.85)', color: '#fff', mb: 2, borderRadius: 2, border: '1px solid #0088ff', textAlign: 'center' }}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon sx={{ color: '#ffd700' }} />}
               aria-controls={`faq-content-${idx}`}
               id={`faq-header-${idx}`}
-              sx={{ fontWeight: 700, fontFamily: '"Arial", sans-serif', fontSize: '1.1rem' }}
+              sx={{ fontWeight: 700, fontFamily: '"Arial", sans-serif', fontSize: '1.1rem', textAlign: 'center' }}
             >
               {faq.question}
             </AccordionSummary>
-            <AccordionDetails sx={{ color: '#ffd700', fontSize: '1rem', background: 'rgba(0,0,0,0.7)', borderRadius: 1 }}>
+            <AccordionDetails sx={{ color: '#ffd700', fontSize: '1rem', background: 'rgba(0,0,0,0.7)', borderRadius: 1, textAlign: 'center' }}>
               {faq.answer}
             </AccordionDetails>
           </Accordion>

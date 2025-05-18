@@ -53,14 +53,14 @@ const BlueText = styled('span')({
 
 const TimelineContainer = styled(Box)({
   width: '100%',
-  padding: '3rem 2rem',
+  padding: '0rem 0rem',
   position: 'relative',
   '&::before': {
     content: '""',
     position: 'absolute',
-    top: '50%',
-    left: '50px',  // Increased left margin
-    width: 'calc(100% - 100px)',  // Reduced width to account for dots
+    left: '100px',  // Adjusted left margin
+    right: '40px',  // Adjusted right margin
+    width: 'calc(100% - 210px)',  // Adjusted width to align with points
     height: '6px',
     background: 'linear-gradient(to right, #ff0000, #0088ff)',
     transform: 'translateY(-50%)',
@@ -73,6 +73,7 @@ const TimelinePoint = styled(Box)(({ isEnd }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  marginTop: '-12px', // Adjusted to align with the line
   '&::before': {
     content: '""',
     width: '24px',

@@ -10,6 +10,7 @@ import './App.css';
 import Team from './pages/Team';
 import Rules from './pages/Rules';
 import FAQs from './pages/FAQs';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <FAQs />
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -84,10 +84,12 @@ const StyledButton = styled(Button)({
   borderRadius: '5px',
   textTransform: 'none',
   '&.register': {
-    background: '#ff0000',
+    background: 'rgba(255, 0, 0, 0.2)', // Red tint
     color: '#ffffff',
+    marginLeft: '1rem', // Add margin for spacing
+    border: '2px solid #ff0000', // Red border
     '&:hover': {
-      background: '#cc0000',
+      background: 'rgba(255, 0, 0, 0.4)', // Darker red on hover
     }
   },
   '&.learn': {
@@ -191,8 +193,21 @@ function Hero() {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = '#about'}
               >
                 Learn More
+              </MotionButton>
+              <MotionButton
+                className="register"
+                component={m.button}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = 'https://forms.gle/your-google-form-link'} // Replace with your Google Form link
+              >
+                Register Now
               </MotionButton>
             </Box>
           </ContentSection>

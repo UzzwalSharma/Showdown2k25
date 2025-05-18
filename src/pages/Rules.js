@@ -43,7 +43,7 @@ const RuleCard = styled(Paper)({
   border: '2px solid #0088ff',
   borderRadius: '16px',
   padding: '1.2rem 0.8rem',
-  width: '180px',
+  width: '230px',
   minHeight: '210px',
   display: 'flex',
   flexDirection: 'column',
