@@ -22,33 +22,28 @@ const GlassMorphicCard = styled(Box)(({ theme }) => ({
   flexDirection: 'row',
   gap: '3rem',
   alignItems: 'center',
-
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column-reverse',
     padding: '1.5rem',
     gap: '2rem',
-  }
+  },
 }));
 
-
 const ImageSection = styled(Box)(({ theme }) => ({
-  flex: '1',
-  position: 'relative',
+  flex: 1,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   '& img': {
     width: '100%',
+    maxWidth: '400px',
     height: 'auto',
-    maxHeight: '600px',
-    objectFit: 'contain',
     filter: 'drop-shadow(0 0 20px rgba(255, 0, 0, 0.2))',
-    [theme.breakpoints.down('md')]: {
-      maxHeight: '350px',
-    }
-  }
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '300px',
+    },
+  },
 }));
-
 
 const HeroBackground = styled(Box)({
   position: 'relative',
@@ -65,22 +60,21 @@ const HeroBackground = styled(Box)({
     left: 0,
     width: '100%',
     height: '100%',
-    background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))', // Reduced opacity from 0.7/0.8 to 0.5/0.6
-    backdropFilter: 'blur(2px)', // Reduced blur from 3px to 2px
-    zIndex: 1
-  }
+    background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))',
+    backdropFilter: 'blur(2px)',
+    zIndex: 1,
+  },
 });
 
 const ContentSection = styled(Box)(({ theme }) => ({
-  flex: '1.2',
+  flex: 1.2,
   zIndex: 2,
   padding: '0 1rem',
   [theme.breakpoints.down('md')]: {
     textAlign: 'center',
-    padding: '0',
-  }
+    padding: 0,
+  },
 }));
-
 
 const HeroContent = styled(Container)(({ theme }) => ({
   position: 'relative',
@@ -91,59 +85,45 @@ const HeroContent = styled(Container)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'flex-start',
   color: '#ffffff',
-  padding: '0 2rem',
+  padding: '50px 2rem',
   [theme.breakpoints.down('md')]: {
     alignItems: 'center',
     textAlign: 'center',
-    padding: '0 1rem',
-  }
+    padding: '40px 1rem',
+  },
 }));
 
-
 const StyledButton = styled(Button)({
-  marginTop: '2rem',
+  marginTop: '1rem',
   padding: '0.8rem 2rem',
-  fontSize: '1.2rem',
+  fontSize: '1.1rem',
   borderRadius: '5px',
   textTransform: 'none',
   '&.register': {
-    background: 'rgba(255, 0, 0, 0.2)', // Red tint
-    color: '#ffffff',
-    marginLeft: '1rem', // Add margin for spacing
-    border: '2px solid #ff0000', // Red border
+    background: 'rgba(255, 0, 0, 0.2)',
+    color: '#fff',
+    border: '2px solid #ff0000',
     '&:hover': {
-      background: 'rgba(255, 0, 0, 0.4)', // Darker red on hover
-    }
+      background: 'rgba(255, 0, 0, 0.4)',
+    },
   },
   '&.learn': {
     background: 'rgba(0, 123, 255, 0.2)',
-    color: '#ffffff',
-    marginLeft: '1rem',
+    color: '#fff',
     border: '2px solid #0088ff',
     '&:hover': {
       background: 'rgba(0, 123, 255, 0.4)',
-    }
-  }
+    },
+  },
 });
 
-// Replace all instances of motion with m
 const MotionTypography = m(Typography);
 const MotionButton = m(StyledButton);
-
-// Update any motion.div references to m.div
-// For example:
-// component={motion.div} becomes component={m.div}
 
 function Hero() {
   return (
     <HeroBackground>
-      <HeroContent
-       style={{
-          width: '100%',
-          height: 'auto',
-        paddingBottom: "50px",
-          paddingTop:"50px"
-        }}>
+      <HeroContent>
         <GlassMorphicCard>
           <ContentSection>
             <MotionTypography
@@ -157,14 +137,14 @@ function Hero() {
                 fontWeight: 800,
                 color: '#ff0000',
                 marginBottom: '0.5rem',
-                fontFamily: '"Tekken", sans-serif'
+                fontFamily: '"Tekken", sans-serif',
               }}
             >
               Techken
             </MotionTypography>
-        
+
             <MotionTypography
-              variant="h1"
+              variant="h2"
               component={m.div}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -174,24 +154,24 @@ function Hero() {
                 fontWeight: 700,
                 color: '#0088ff',
                 marginBottom: '0.5rem',
-                fontFamily: '"Tekken", sans-serif'
+                fontFamily: '"Tekken", sans-serif',
               }}
             >
               Showdown 2K25
             </MotionTypography>
-            
+
             <MotionTypography
-              variant="h2"
+              variant="h3"
               component={m.div}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               sx={{
-                fontSize: { xs: '1.8rem', md: '2.5rem' },
+                fontSize: { xs: '1.5rem', md: '2.5rem' },
                 fontWeight: 600,
                 color: '#ffd700',
                 marginBottom: '2rem',
-                fontFamily: '"Tekken", sans-serif'
+                fontFamily: '"Tekken", sans-serif',
               }}
             >
               HACKATHON
@@ -206,56 +186,52 @@ function Hero() {
               sx={{
                 fontSize: { xs: '1rem', md: '1.2rem' },
                 maxWidth: '600px',
-                marginBottom: '2rem'
+                marginBottom: '2rem',
               }}
             >
               Battle it out in the ultimate coding tournament. Show your skills, defeat your
               opponents, and claim the King of Techken Showdown 2K25 title!
             </MotionTypography>
 
-        <Box
-  sx={{
-    display: 'flex',
-    flexDirection: { xs: 'column', sm: 'row' }, // <- column on small screens
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '0.75rem',
-    marginBottom: '2rem',
-    paddingBottom: '2rem',
-    width: '100%',
-  }}
->
-  <MotionButton
-    className="learn"
-    component={m.button}
-    initial={{ opacity: 0, x: -20 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.5, delay: 0.8 }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    sx={{ width: { xs: '100%', sm: 'auto' } }} // full width on small
-    onClick={() => window.location.href = '#about'}
-  >
-    Learn More
-  </MotionButton>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'row' },
+                gap: 2,
+                justifyContent: 'center',
+                width: '100%',
+              }}
+            >
+              <MotionButton
+                className="learn"
+                component={m.button}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                sx={{ width: { xs: '100%', sm: 'auto' } }}
+                onClick={() => window.location.href = '#about'}
+              >
+                Learn More
+              </MotionButton>
 
-  <MotionButton
-    className="register"
-    component={m.button}
-    initial={{ opacity: 0, x: -20 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.5, delay: 1.0 }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    sx={{ width: { xs: '100%', sm: 'auto' } }} // full width on small
-    onClick={() => window.location.href = 'https://forms.gle/your-google-form-link'}
-  >
-    Register Now
-  </MotionButton>
-</Box>
-
+              <MotionButton
+                className="register"
+                component={m.button}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                sx={{ width: { xs: '100%', sm: 'auto' } }}
+                onClick={() => window.location.href = 'https://forms.gle/your-google-form-link'}
+              >
+                Register Now
+              </MotionButton>
+            </Box>
           </ContentSection>
-          
+
           <ImageSection>
             <m.img
               src="/images/FrontImage.jpg"
@@ -263,11 +239,6 @@ function Hero() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-               style={{
-          width: '100%',
-          height: 'auto',
-          maxWidth: '400px'
-        }}
             />
           </ImageSection>
         </GlassMorphicCard>

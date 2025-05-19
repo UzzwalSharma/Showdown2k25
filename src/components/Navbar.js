@@ -128,9 +128,12 @@ function Navbar() {
       }}
       sx={{
         backgroundColor: special ? '#ff0000' : 'inherit',
-        color: special ? '#fff' : 'inherit',
+        color: special ? '#fff' : '#00ccff',
+        transition: 'all 0.3s ease',
         '&:hover': {
-          backgroundColor: special ? '#cc0000' : '#f0f0f0',
+          backgroundColor: '#001f33',
+          boxShadow: '0 0 10px #00ccff, 0 0 20px #00ccff',
+          transform: 'scale(1.03)',
         },
       }}
     >
