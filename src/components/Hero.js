@@ -5,10 +5,10 @@ import { motion as m } from 'framer-motion';
 
 const GlassMorphicCard = styled(Box)(({ theme }) => ({
   position: 'relative',
-  width: '90%',
+  width: '95%',
   maxWidth: '1200px',
   margin: '0 auto',
-  padding: '2.5rem',
+  padding: '2rem',
   background: 'rgba(17, 17, 25, 0.85)',
   borderRadius: '25px',
   backdropFilter: 'blur(20px)',
@@ -22,10 +22,22 @@ const GlassMorphicCard = styled(Box)(({ theme }) => ({
   flexDirection: 'row',
   gap: '3rem',
   alignItems: 'center',
+
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column-reverse',
     padding: '1.5rem',
     gap: '2rem',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '1rem',
+    gap: '1.5rem',
+  },
+
+  '@media (max-width:400px) and (max-height:700px)': {
+    flexDirection: 'column',
+    padding: '1rem',
+    gap: '1rem',
+    marginTop: '20px',  // add margin to push down and avoid cutoff
   },
 }));
 
@@ -36,11 +48,18 @@ const ImageSection = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   '& img': {
     width: '100%',
-    maxWidth: '400px',
+    maxWidth: '300px',
     height: 'auto',
     filter: 'drop-shadow(0 0 20px rgba(255, 0, 0, 0.2))',
+
     [theme.breakpoints.down('sm')]: {
-      maxWidth: '300px',
+      maxWidth: '240px',
+    },
+
+    '@media (max-width:400px) and (max-height:700px)': {
+      maxWidth: '100%',
+      maxHeight: '300px',
+      objectFit: 'contain',
     },
   },
 }));
@@ -70,9 +89,15 @@ const ContentSection = styled(Box)(({ theme }) => ({
   flex: 1.2,
   zIndex: 2,
   padding: '0 1rem',
+
   [theme.breakpoints.down('md')]: {
     textAlign: 'center',
     padding: 0,
+  },
+
+  '@media (max-width:400px) and (max-height:700px)': {
+    textAlign: 'center',
+    padding: '0 0.5rem',
   },
 }));
 
@@ -85,20 +110,27 @@ const HeroContent = styled(Container)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'flex-start',
   color: '#ffffff',
-  padding: '50px 2rem',
+  padding: '80px 2rem 20px 2rem', // increased top padding
+
   [theme.breakpoints.down('md')]: {
     alignItems: 'center',
     textAlign: 'center',
-    padding: '40px 1rem',
+    padding: '40px 1rem 20px 1rem',
+  },
+
+  '@media (max-width:400px) and (max-height:700px)': {
+    padding: '60px 1rem 20px 1rem', // add extra top padding on small screens
   },
 }));
 
 const StyledButton = styled(Button)({
   marginTop: '1rem',
   padding: '0.8rem 2rem',
-  fontSize: '1.1rem',
+  fontSize: '1.05rem',
   borderRadius: '5px',
   textTransform: 'none',
+  width: '100%',
+  maxWidth: '200px',
   '&.register': {
     background: 'rgba(255, 0, 0, 0.2)',
     color: '#fff',
@@ -125,6 +157,7 @@ function Hero() {
     <HeroBackground>
       <HeroContent>
         <GlassMorphicCard>
+          {/* Text Content first, so image will be below on column */}
           <ContentSection>
             <MotionTypography
               variant="h1"
@@ -133,10 +166,10 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               sx={{
-                fontSize: { xs: '2.5rem', md: '4rem' },
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '4rem' },
                 fontWeight: 800,
                 color: '#ff0000',
-                marginBottom: '0.5rem',
+                mb: '0.5rem',
                 fontFamily: '"Tekken", sans-serif',
               }}
             >
@@ -150,10 +183,10 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               sx={{
-                fontSize: { xs: '2rem', md: '3.5rem' },
+                fontSize: { xs: '1.8rem', sm: '2.2rem', md: '3.5rem' },
                 fontWeight: 700,
                 color: '#0088ff',
-                marginBottom: '0.5rem',
+                mb: '0.5rem',
                 fontFamily: '"Tekken", sans-serif',
               }}
             >
@@ -167,10 +200,10 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               sx={{
-                fontSize: { xs: '1.5rem', md: '2.5rem' },
+                fontSize: { xs: '1.3rem', sm: '1.6rem', md: '2.5rem' },
                 fontWeight: 600,
                 color: '#ffd700',
-                marginBottom: '2rem',
+                mb: '1.5rem',
                 fontFamily: '"Tekken", sans-serif',
               }}
             >
@@ -184,9 +217,10 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               sx={{
-                fontSize: { xs: '1rem', md: '1.2rem' },
+                fontSize: { xs: '0.95rem', sm: '1rem', md: '1.2rem' },
                 maxWidth: '600px',
-                marginBottom: '2rem',
+                mb: '1.5rem',
+                margin: '0 auto',
               }}
             >
               Battle it out in the ultimate coding tournament. Show your skills, defeat your
@@ -199,6 +233,7 @@ function Hero() {
                 flexDirection: { xs: 'column', sm: 'row' },
                 gap: 2,
                 justifyContent: 'center',
+                alignItems: 'center',
                 width: '100%',
               }}
             >
@@ -210,8 +245,7 @@ function Hero() {
                 transition={{ duration: 0.5, delay: 0.8 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                sx={{ width: { xs: '100%', sm: 'auto' } }}
-                onClick={() => window.location.href = '#about'}
+                onClick={() => (window.location.href = '#about')}
               >
                 Learn More
               </MotionButton>
@@ -224,14 +258,14 @@ function Hero() {
                 transition={{ duration: 0.5, delay: 1.0 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                sx={{ width: { xs: '100%', sm: 'auto' } }}
-                onClick={() => window.location.href = 'https://forms.gle/your-google-form-link'}
+                onClick={() => (window.location.href = '#register')}
               >
                 Register Now
               </MotionButton>
             </Box>
           </ContentSection>
 
+          {/* Image Section */}
           <ImageSection>
             <m.img
               src="/images/FrontImage.jpg"
@@ -239,6 +273,7 @@ function Hero() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
+              style={{ borderRadius: '20px', maxWidth: '100%', height: 'auto' }}
             />
           </ImageSection>
         </GlassMorphicCard>
