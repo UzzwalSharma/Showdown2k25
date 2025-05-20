@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import hackvideo from '../videos/hack main vid - Made with Clipchamp.mp4'; // Adjust the path as necessary
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollZoomVideo() {
@@ -52,7 +52,7 @@ export default function ScrollZoomVideo() {
     >
       <video
         ref={videoRef}
-        src="/videos/hack main vid - Made with Clipchamp.mp4"
+        src={hackvideo} 
         autoPlay
         muted
         loop
