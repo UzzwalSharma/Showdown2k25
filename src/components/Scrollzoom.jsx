@@ -52,7 +52,7 @@ export default function ScrollZoomVideo() {
     >
       <video
         ref={videoRef}
-        src="/supernovaspacebg.mp4"
+        src="/mainvideo - Made with Clipchamp.mp4"
         autoPlay
         muted
         loop
