@@ -327,9 +327,10 @@ function About() {
 
 
 
-  <video
-       
-        src="/mainvideo - Made with Clipchamp.mp4"
+  
+       <video src={`${process.env.PUBLIC_URL}/video.mp4`} 
+
+      
         autoPlay
         muted
         loop
