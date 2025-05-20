@@ -52,7 +52,7 @@ export default function ScrollZoomVideo() {
     >
       <video
         ref={videoRef}
-        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        src="https://res.cloudinary.com/dvmqxb8kd/video/upload/v1747718863/mainvideo_-_Made_with_Clipchamp_xq5xjk.mp4"
         autoPlay
         muted
         loop
