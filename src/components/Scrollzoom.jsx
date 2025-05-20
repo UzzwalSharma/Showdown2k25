@@ -52,7 +52,7 @@ export default function ScrollZoomVideo() {
     >
       <video
         ref={videoRef}
-        src="/mainvideo - Made with Clipchamp.mp4"
+        src="/video.mp4"
         autoPlay
         muted
         loop
