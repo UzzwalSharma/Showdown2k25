@@ -1,8 +1,11 @@
 import React from 'react';
+import Scrollzoom from '../components/Scrollzoom'; // ✅ relative path within src/
+
 import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 // import Timer from '/Timer.jsx';
 import Timer from '../components/Timer.jsx';
+import AnimatedTitle from '../components/Animated_Title.jsx';
 const AboutSection = styled(Box)({
   backgroundImage: 'url("/images/temple.jpg")',
   backgroundSize: 'cover',
@@ -299,7 +302,7 @@ function About() {
         zIndex: 2,
       }}
     >
-      <iframe
+      {/* <iframe
         src="https://www.youtube.com/embed/2hPuRQz6IlM"
         title="Tekken 8 King vs Jin Kazama"
         frameBorder="0"
@@ -313,12 +316,19 @@ function About() {
           height: '100%',
           borderRadius: '12px',
         }}
-      />
+      /> */}
+    
     </Box>
   
+<AnimatedTitle
+  title="<b>GET<br/>READY<br/>FOR<br/><br />The Ultimate Coding Tournament</b>"
+  containerClass="mb-10"
+/>
 
 
-export default ResponsiveYouTube;
+
+
+  <Scrollzoom/>
 
       </Container>
     </AboutSection>
