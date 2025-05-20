@@ -1,6 +1,6 @@
 import React from 'react';
 import Scrollzoom from '../components/Scrollzoom'; // ✅ relative path within src/
-
+import { useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 // import Timer from '/Timer.jsx';
@@ -327,8 +327,20 @@ function About() {
 
 
 
-
-  <Scrollzoom/>
+  <video
+       
+        src="/mainvideo - Made with Clipchamp.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+        }}
+      />
+  {/* <Scrollzoom/> */}
 
       </Container>
     </AboutSection>
