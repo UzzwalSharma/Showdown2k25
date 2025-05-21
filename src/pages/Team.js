@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper, Avatar } from '@mui/material';
+import "../index.css";
 
 const TeamSection = styled(Box)({
   backgroundImage: 'url("/images/colosseum.jpg")',
@@ -33,26 +34,60 @@ const SectionTitle = styled(Typography)({
   zIndex: 2
 });
 
-const MemberCard = styled(Paper)({
-  background: 'linear-gradient(135deg, #0f1923 60%, #ff0000 100%)',
-  border: '2px solid #0088ff',
-  borderRadius: '16px',
-  padding: '1.5rem 1rem',
-  width: '220px',
+const MemberCard = styled(Paper)(({ color = '#00ffe7' }) => ({
+  '--border-radius': '1rem',
+  '--bg-color': '#0f1923',
+  '--color': color,
+  borderRadius: 'var(--border-radius)',
+  background: 'var(--bg-color)',
+  color: '#fff',
+  width: '240px',
   height: '320px',
+  padding: '1.5rem 1rem',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  boxShadow: '0 8px 32px 0 rgba(0,136,255,0.25)',
-  transition: 'transform 0.3s, box-shadow 0.3s',
   position: 'relative',
-  zIndex: 2,
-  '&:hover': {
-    transform: 'translateY(-10px) scale(1.04)',
-    boxShadow: '0 16px 40px 0 rgba(255,0,0,0.25), 0 0 40px rgba(0,136,255,0.15)'
-  }
-});
+  overflow: 'hidden',
+  fontFamily: '"Poppins", sans-serif',
+  isolation: 'isolate',
+  zIndex: 1,
+  boxShadow: `0 0 20px ${color}33`,
+
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    width: '200%',
+    height: '200%',
+    inset: '-50%',
+    zIndex: -2,
+    backgroundImage: `conic-gradient(
+      var(--color) 0deg,
+      transparent 60deg,
+      transparent 180deg,
+      var(--color) 180deg,
+      transparent 240deg
+    )`,
+    animation: 'borderSpin 5s linear infinite',
+  },
+
+  '&:hover::before': {
+    animationPlayState: 'paused',
+  },
+
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    inset: '5px',
+    background: 'var(--bg-color)',
+    borderRadius: 'calc(var(--border-radius) - 5px)',
+    zIndex: -1,
+    transition: 'all 0.3s linear',
+  },
+
+  clipPath: 'polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%)',
+}));
 
 const MemberAvatar = styled(Avatar)({
   width: 80,
@@ -90,17 +125,25 @@ const teamMembers = [
   { name: "Nishchay Chaurasia", role: "Lead Developer" }
 ];
 
+const colors = ['#FF0000', '#0088ff', '#FF0000']; // 3 colors for cycling
+
 function Team() {
   return (
     <TeamSection>
-      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
+     <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
+
         <SectionTitle variant="h2" align="center">
           Meet the <span style={{ color: '#0088ff' }}>Team</span>
         </SectionTitle>
         <Grid container spacing={4} justifyContent="center">
           {teamMembers.map((member, idx) => (
-            <Grid item key={idx} sx={{ display: 'flex', justifyContent: 'center' }}>
-              <MemberCard>
+            <Grid 
+              item 
+              key={idx} 
+              xs={12} sm={6} md={4}  // 3 cards per row on md+ screens
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            >
+              <MemberCard color={colors[idx % colors.length]}>
                 <MemberAvatar>
                   {member.name.split(' ').map(n => n[0]).join('')}
                 </MemberAvatar>

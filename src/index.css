@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* @keyframes borderanimation {
+  to {
+    transform: rotate(-360deg);
+  }
+} */
+
+@keyframes borderSpin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
