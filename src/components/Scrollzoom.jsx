@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import hackvideo from '../videos/hack-main.mp4';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollZoomVideo() {
@@ -10,6 +9,9 @@ export default function ScrollZoomVideo() {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    const container = videoContainerRef.current;
+
+    // Scroll zoom animation
     const ctx = gsap.context(() => {
       gsap.fromTo(
         videoRef.current,
@@ -23,17 +25,51 @@ export default function ScrollZoomVideo() {
           duration: 1.5,
           ease: 'power2.out',
           scrollTrigger: {
-            trigger: videoContainerRef.current,
+            trigger: container,
             start: 'top 80%',
             end: 'top 50%',
             scrub: true,
-            // toggleActions: 'play none none none' // optional for 1-time reveal
           },
         }
       );
     }, videoContainerRef);
 
-    return () => ctx.revert(); // Clean up on unmount
+    // Mousemove tilt animation
+    function handleMouseMove(e) {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const rotateX = ((y / rect.height) - 0.5) * 30;
+      const rotateY = ((x / rect.width) - 0.5) * 30;
+
+      gsap.to(container, {
+        rotationX: -rotateX,
+        rotationY: rotateY,
+        transformPerspective: 600,
+        ease: "power3.out",
+        duration: 0.3,
+        transformOrigin: "center",
+      });
+    }
+
+    function resetRotation() {
+      gsap.to(container, {
+        rotationX: 0,
+        rotationY: 0,
+        ease: "power3.out",
+        duration: 0.5,
+      });
+    }
+
+    container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('mouseleave', resetRotation);
+
+    return () => {
+      ctx.revert();
+      container.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('mouseleave', resetRotation);
+    };
   }, []);
 
   return (
@@ -48,6 +84,8 @@ export default function ScrollZoomVideo() {
         justifyContent: 'center',
         alignItems: 'center',
         mb: 6,
+        perspective: 800,
+        cursor: 'pointer',
       }}
     >
       <video
@@ -61,6 +99,10 @@ export default function ScrollZoomVideo() {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
+          clipPath: 'polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%)',
+          borderRadius: '1rem',
+          userSelect: 'none',
+          pointerEvents: 'none',
         }}
       />
     </Box>
