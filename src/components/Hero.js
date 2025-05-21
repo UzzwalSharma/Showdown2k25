@@ -41,28 +41,30 @@ const GlassMorphicCard = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ImageSection = styled(Box)(({ theme }) => ({
-  flex: 1,
+const ImageSection = styled(Box)({
+  flex: '1',
+  position: 'relative',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   '& img': {
-    width: '100%',
-    maxWidth: '300px',
+    width: '110%', // Increase width to enlarge the image
     height: 'auto',
-    filter: 'drop-shadow(0 0 20px rgba(255, 0, 0, 0.2))',
-
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: '240px',
-    },
-
-    '@media (max-width:400px) and (max-height:700px)': {
-      maxWidth: '100%',
-      maxHeight: '300px',
-      objectFit: 'contain',
-    },
+    maxHeight: '650px', // Increase maxHeight for larger image
+    objectFit: 'contain',
+    filter: 'brightness(1.2) drop-shadow(0 0 30px rgba(255, 0, 0, 0.3))', // Increase brightness and drop shadow
+    animation: 'breathing 4s ease-in-out infinite' // Adjusted timing for breathing animation
   },
-}));
+  '@keyframes breathing': {
+    '0%, 100%': {
+      transform: 'scale(1)',
+    },
+    '50%': {
+      transform: 'scale(1.05)', // Slightly enlarge the image
+    }
+  }
+});
+
 
 const HeroBackground = styled(Box)({
   position: 'relative',
@@ -266,14 +268,13 @@ function Hero() {
           </ContentSection>
 
           {/* Image Section */}
-          <ImageSection>
+        <ImageSection>
             <m.img
               src="/images/FrontImage.jpg"
               alt="Tekken Character"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              style={{ borderRadius: '20px', maxWidth: '100%', height: 'auto' }}
             />
           </ImageSection>
         </GlassMorphicCard>
@@ -283,3 +284,6 @@ function Hero() {
 }
 
 export default Hero;
+
+
+
