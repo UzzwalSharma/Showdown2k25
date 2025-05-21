@@ -1,5 +1,5 @@
 import React from 'react';
-
+import TechkkenCursor from './components/cursor/cursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './pages/About';
@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
+         <TechkkenCursor />
       <Navbar />
       <main style={{ padding: 0, margin: 0 }}>
         <section id="home" style={{ padding: 0, margin: 0 }}>

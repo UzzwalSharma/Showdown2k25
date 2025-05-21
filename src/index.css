@@ -24,3 +24,43 @@ code {
     transform: rotate(-360deg);
   }
 }
+
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0a0f1f; /* very dark blue/black */
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 5px rgba(255, 0, 0, 0.6),
+              inset -2px -2px 5px rgba(0, 0, 255, 0.6);
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff1744, #2979ff); /* red to blue */
+  border-radius: 8px;
+  border: 3px solid #0a0f1f; /* matches track color for padding effect */
+  box-shadow:
+    0 0 8px #ff1744,
+    inset 0 0 6px #2979ff;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff4566, #5599ff);
+  box-shadow:
+    0 0 15px #ff4566,
+    inset 0 0 10px #5599ff;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff1744 #0a0f1f;
+}
