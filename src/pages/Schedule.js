@@ -50,11 +50,11 @@ const DayCard = styled(Paper)(({ side, bgimg }) => ({
   marginBottom: "3rem",
   position: "relative",
   width: "45%",
-  clipPath:
-  side === "left"
-    ? "polygon(0 0, 100% 10%, 100% 90%, 0% 100%)"
-    : "polygon(0 10%, 100% 0%, 100% 100%, 0 90%)"
-,
+  // clipPath:
+  // side === "left"
+  //   ? "polygon(0 0, 100% 10%, 100% 90%, 0% 100%)"
+  //   : "polygon(0 10%, 100% 0%, 100% 100%, 0 90%)"
+
   marginLeft: side === "left" ? "2rem" : "auto",
   marginRight: side === "left" ? "auto" : "2rem",
   boxShadow: "0 0 20px rgba(255, 0, 0, 0.6)",
