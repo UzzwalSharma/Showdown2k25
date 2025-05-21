@@ -2,7 +2,19 @@ import { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { keyframes } from '@emotion/react'; // For defining CSS animation
+
 gsap.registerPlugin(ScrollTrigger);
+
+// Define the spinning keyframe animation
+const borderSpin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 export default function ScrollZoomVideo() {
   const videoContainerRef = useRef(null);
@@ -86,6 +98,30 @@ export default function ScrollZoomVideo() {
         mb: 6,
         perspective: 800,
         cursor: 'pointer',
+        borderRadius: '1rem',
+        isolation: 'isolate',
+        boxShadow: '0 0 20px #00ffe733',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          width: '200%',
+          height: '200%',
+          inset: '-50%',
+          zIndex: 1,
+          borderRadius: '1rem',
+          backgroundImage: `conic-gradient(
+            #00ffe7 0deg,
+            transparent 60deg,
+            transparent 180deg,
+            #00ffe7 180deg,
+            transparent 240deg
+          )`,
+          animation: `${borderSpin} 5s linear infinite`,
+          pointerEvents: 'none',
+        },
+        '&:hover::before': {
+          animationPlayState: 'paused',
+        },
       }}
     >
       <video
@@ -103,6 +139,8 @@ export default function ScrollZoomVideo() {
           borderRadius: '1rem',
           userSelect: 'none',
           pointerEvents: 'none',
+          position: 'relative',
+          zIndex: 2,
         }}
       />
     </Box>

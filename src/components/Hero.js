@@ -260,7 +260,8 @@ function Hero() {
                 transition={{ duration: 0.5, delay: 1.0 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => (window.location.href = '#register')}
+               onClick={() => window.location.href = 'https://lu.ma/7spa1ao7'}
+
               >
                 Register Now
               </MotionButton>
