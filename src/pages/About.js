@@ -1,6 +1,6 @@
 import React from 'react';
 import Scrollzoom from '../components/Scrollzoom'; // ✅ relative path within src/
-
+import TournamentAboutSection from '../components/TournamentAboutSection.jsx';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 // import Timer from '/Timer.jsx';
@@ -33,14 +33,14 @@ const InfoCard = styled(Paper)({
   marginBottom: '2rem'
 });
 
-const SectionTitle = styled(Typography)({
-  color: '#ff0000',
-  fontFamily: '"Tekken", sans-serif',
-  marginBottom: '1rem',
-  textTransform: 'uppercase',
-  letterSpacing: '2px',
-  fontSize: '3rem'  // Increased font size for main title
-});
+// const SectionTitle = styled(Typography)({
+//   color: '#ff0000',
+//   fontFamily: '"Tekken", sans-serif',
+//   marginBottom: '1rem',
+//   textTransform: 'uppercase',
+//   letterSpacing: '2px',
+//   fontSize: '3rem'  // Increased font size for main title
+// });
 
 const SubSectionTitle = styled(Typography)({
   color: '#ff0000',
@@ -51,9 +51,9 @@ const SubSectionTitle = styled(Typography)({
   fontSize: '2rem'  // Consistent size for subsection titles
 });
 
-const BlueText = styled('span')({
-  color: '#0088ff'
-});
+// const BlueText = styled('span')({
+//   color: '#0088ff'
+// });
 
 const TimelineContainer = styled(Box)({
   width: '100%',
@@ -105,36 +105,37 @@ const TimelinePoint = styled(Box)(({ isEnd }) => ({
   }
 }));
 
-const BulletPoint = styled('li')({
-  listStyle: 'none',
-  position: 'relative',
-  paddingLeft: '2rem',
-  marginBottom: '1rem',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    left: 0,
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: '20px',
-    height: '20px',
-    backgroundImage: 'url("/images/BulletPunch.jpg")',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat'
-  }
-});
+// const BulletPoint = styled('li')({
+//   listStyle: 'none',
+//   position: 'relative',
+//   paddingLeft: '2rem',
+//   marginBottom: '1rem',
+//   '&::before': {
+//     content: '""',
+//     position: 'absolute',
+//     left: 0,
+//     top: '50%',
+//     transform: 'translateY(-50%)',
+//     width: '20px',
+//     height: '20px',
+//     backgroundImage: 'url("/images/BulletPunch.jpg")',
+//     backgroundSize: 'contain',
+//     backgroundRepeat: 'no-repeat'
+//   }
+// });
 
 function About() {
   return (
     <AboutSection>
+      <TournamentAboutSection/>
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 4 }}>
-        <Box sx={{ mb: 6 }}>
+        {/* <Box sx={{ mb: 6 }}>
           <SectionTitle variant="h2" align="center">
             About <BlueText component="span" sx={{ fontSize: 'inherit' }}>The Tournament</BlueText>
           </SectionTitle>
-        </Box>
+        </Box> */}
         
-         <Box
+         {/* <Box
   sx={{
     display: 'flex',
     flexDirection: { xs: 'column', md: 'row' },
@@ -143,7 +144,7 @@ function About() {
   }}
 >
 
-          {/* ye overview wala card hai */}
+          ye overview wala card hai
           
           <InfoCard sx={{ 
             flex: 1, 
@@ -174,7 +175,7 @@ function About() {
             </ul>
           </InfoCard>
 
-{/* ye challenge wala card hai  */}
+ye challenge wala card hai 
 
 
           <InfoCard sx={{ 
@@ -205,7 +206,7 @@ function About() {
               </BulletPoint>
             </ul>
           </InfoCard>
-        </Box>
+        </Box> */}
 
        <InfoCard
   sx={{
