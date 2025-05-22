@@ -1,24 +1,48 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Box, Container, Typography, Grid, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import gsap from 'gsap';
 
-const FooterSection = styled(Box)({
-  backgroundImage: 'url("/images/footer.jpg")', // Add your footer background image here
+const FooterSection = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  backgroundColor: '#0c0c0c',
+  backgroundImage: 'url("/images/Gemini_Generated_Image_l8nylul8nylul8ny.png")', // Replace with your image path
   backgroundSize: 'cover',
-  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center -190px',
   color: '#ffffff',
-  padding: '2rem 0',
+  padding: '3rem 0',
   textAlign: 'center',
-});
+  perspective: '1000px',
+  borderTop: '3px solid #ff0000',
+  boxShadow: '0 -5px 20px rgba(255, 0, 0, 0.4)',
+  zIndex: 1,
+  overflow: 'hidden',
+
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    background: 'rgba(0, 0, 0, 0.7)', // Dark overlay
+    zIndex: -1,
+  },
+}));
+
+
 
 const FooterTitle = styled(Typography)({
   color: '#ff0000',
   fontFamily: '"Tekken", sans-serif',
-  fontSize: '1.8rem',
+  fontSize: '2rem',
   marginBottom: '1rem',
+  textShadow: '0 0 8px #ff0000',
+  transform: 'rotateX(10deg)',
 });
 
 const FooterLink = styled('a')({
@@ -28,16 +52,45 @@ const FooterLink = styled('a')({
   marginBottom: '0.5rem',
   cursor: 'pointer',
   textDecoration: 'none',
-  '&:hover': {
-    textDecoration: 'underline',
-  },
   display: 'block',
-  textAlign: 'left', // Align text to the left
-  marginLeft: 'auto', // Align links vertically
-  marginRight: 'auto', // Center the links horizontally
+  textAlign: 'left',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  transition: 'transform 0.3s, text-shadow 0.3s',
+  '&:hover': {
+    textShadow: '0 0 10px #ffd700',
+    transform: 'scale(1.1) translateZ(5px)',
+  },
+});
+
+const MadeWithLove = styled(Typography)({
+  marginTop: '2rem',
+  fontFamily: 'sans-serif',
+  fontSize: '1rem',
+  color: '#ffd700',
+  fontWeight: 'bolder',
+  textShadow: '0 0 6px #ffdd57',
+  transform: 'rotateX(10deg)',
 });
 
 function Footer() {
+  const loveRef = useRef();
+
+  useEffect(() => {
+    gsap.fromTo(
+      loveRef.current,
+      { scale: 0.5, opacity: 0, y: 50 },
+      {
+        scale: 1,
+        opacity: 1,
+        y: 0,
+        ease: 'back.out(1.7)',
+        duration: 1.5,
+        delay: 0.3,
+      }
+    );
+  }, []);
+
   return (
     <FooterSection>
       <Container maxWidth="lg">
@@ -45,13 +98,14 @@ function Footer() {
         <Typography variant="body2" gutterBottom>
           The ultimate coding tournament inspired by the legendary Tekken fighting game series.
         </Typography>
+
         <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
           <IconButton href="https://twitter.com" target="_blank" sx={{ color: '#1DA1F2' }}>
             <TwitterIcon />
           </IconButton>
           <IconButton href="https://discord.com" target="_blank" sx={{ color: '#5865F2' }}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px">
-              <path d="M12 0C5.372 0 0 5.372 0 12c0 5.302 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58 0-.287-.011-1.244-.017-2.444-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.984-.399 3.005-.404 1.02.005 2.048.138 3.006.404 2.292-1.552 3.298-1.23 3.298-1.23.654 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.807 5.625-5.479 5.921.43.371.814 1.102.814 2.222 0 1.606-.014 2.898-.014 3.293 0 .321.218.694.824.576C20.565 21.796 24 17.298 24 12c0-6.628-5.372-12-12-12z"/>
+              <path d="M12 0C5.372 0 0 5.372 0 12c0 5.302 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58..." />
             </svg>
           </IconButton>
           <IconButton href="https://www.instagram.com/tsd.2k25_hackathon?igsh=aXJ5bTBtZTRiZ2Vr&utm_source=qr" target="_blank" sx={{ color: '#9146FF' }}>
@@ -61,6 +115,7 @@ function Footer() {
             <YouTubeIcon />
           </IconButton>
         </Box>
+
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} sm={4}>
             <FooterLink href="#home">Home</FooterLink>
@@ -81,12 +136,15 @@ function Footer() {
                 hackathon@tekken.com
               </a>
             </Typography>
-            <Typography variant="body2">Nishchay Chaurasia</Typography>
           </Grid>
         </Grid>
+
         <Typography variant="body2" sx={{ mt: 2 }}>
           © 2025 Techken Showdown 2K25 Hackathon. All Rights Reserved.
         </Typography>
+        <MadeWithLove ref={loveRef}>
+          Made with ❤️ by Ujjwal Sharma & Nishchay Chaurasia
+        </MadeWithLove>
       </Container>
     </FooterSection>
   );
