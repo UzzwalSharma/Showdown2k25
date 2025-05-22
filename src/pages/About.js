@@ -3,8 +3,8 @@ import Scrollzoom from '../components/Scrollzoom'; // ✅ relative path within s
 import TournamentAboutSection from '../components/TournamentAboutSection.jsx';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
-// import Timer from '/Timer.jsx';
-import Timer from '../components/Timer.jsx';
+// // import Timer from '/Timer.jsx';
+// import Timer from '../components/Timer.jsx';
 import AnimatedTitle from '../components/Animated_Title.jsx';
 const AboutSection = styled(Box)({
   backgroundImage: 'url("/images/temple.jpg")',

@@ -64,3 +64,41 @@ code {
   scrollbar-width: thin;
   scrollbar-color: #ff1744 #0a0f1f;
 }
+
+
+.clipped-btn {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #ff0055, #ff7b00);
+  border: none;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  clip-path: polygon(0 0, 90% 0, 100% 25%, 100% 100%, 10% 100%, 0% 75%);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.clipped-btn::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.clipped-btn:hover::before {
+  top: 100%;
+  left: 100%;
+}
+
+.clipped-btn:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.6), 0 0 40px rgba(255, 123, 0, 0.4);
+}
