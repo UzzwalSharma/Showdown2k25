@@ -22,54 +22,91 @@ const PrizesSection = styled(Box)({
 });
 
 const PrizeCard = styled(Paper)(({ tier }) => ({
-  background: 'rgba(0, 0, 0, 0.8)',
-  padding: '1.5rem',
-  borderRadius: '12px',
-  border: '2px solid',
-  borderColor: tier === 'first' ? '#ffd700' : tier === 'second' ? '#c0c0c0' : tier === 'third' ? '#cd7f32' : '#ff0000',
-  width: '300px',
-  height: '300px',
+  position: 'relative',
+  width: '320px',
+  height: '340px',
+  padding: '2rem',
+  background: 'rgba(255, 255, 255, 0.05)',
+  border: '2px solid rgba(255, 255, 255, 0.15)',
+  borderRadius: '24px',
+  backdropFilter: 'blur(10px)',
+  boxShadow: `
+    0 8px 16px rgba(0,0,0,0.4),
+    0 0 0 2px ${tier === 'first' ? '#ffd70099' : tier === 'second' ? '#c0c0c099' : tier === 'third' ? '#cd7f3299' : '#ff000099'}
+  `,
+  clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)',
+  overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
   transition: 'all 0.4s ease-in-out',
-  position: 'relative',
-  overflow: 'hidden',
-  margin: '0 auto',
+  transformStyle: 'preserve-3d',
+  color: '#fff',
+
   '&:hover': {
-    transform: 'translateY(-15px) scale(1.02)',
-    boxShadow: tier === 'first' 
-      ? '0 20px 30px rgba(255, 215, 0, 0.3), 0 0 50px rgba(255, 215, 0, 0.1)' 
-      : tier === 'second' 
-      ? '0 20px 30px rgba(192, 192, 192, 0.3), 0 0 50px rgba(192, 192, 192, 0.1)' 
-      : tier === 'third' 
-      ? '0 20px 30px rgba(205, 127, 50, 0.3), 0 0 50px rgba(205, 127, 50, 0.1)'
-      : '0 20px 30px rgba(255, 0, 0, 0.3), 0 0 50px rgba(255, 0, 0, 0.1)',
-    '&::before': {
-      transform: 'translateY(0)',
-      opacity: 0.15
-    }
+    transform: 'translateY(-12px) scale(1.03)',
+    boxShadow: `
+      0 20px 40px rgba(0, 0, 0, 0.6),
+      0 0 30px ${tier === 'first' ? '#ffd70066' : tier === 'second' ? '#c0c0c066' : tier === 'third' ? '#cd7f3266' : '#ff000066'}
+    `
   },
+
   '&::before': {
     content: '""',
     position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: tier === 'first' 
-      ? 'linear-gradient(135deg, #ffd700, #fff6a6, #ffd700)' 
-      : tier === 'second' 
-      ? 'linear-gradient(135deg, #c0c0c0, #ffffff, #c0c0c0)' 
-      : tier === 'third' 
-      ? 'linear-gradient(135deg, #cd7f32, #ffc8a6, #cd7f32)'
-      : 'linear-gradient(135deg, #ff0000, #ff8888, #ff0000)',
-    opacity: 0,
-    transform: 'translateY(100%)',
-    transition: 'all 0.4s ease-in-out',
+    top: '-50%',
+    left: '-50%',
+    width: '200%',
+    height: '200%',
+    background: tier === 'first'
+      ? 'radial-gradient(circle, #ffd70055, transparent 60%)'
+      : tier === 'second'
+      ? 'radial-gradient(circle, #c0c0c055, transparent 60%)'
+      : tier === 'third'
+      ? 'radial-gradient(circle, #cd7f3255, transparent 60%)'
+      : 'radial-gradient(circle, #ff000055, transparent 60%)',
+    animation: 'rotateLight 6s linear infinite',
     zIndex: 0
+  },
+
+  '&::after': {
+    content: tier
+      ? `"${tier === 'first' ? 'CHAMPION' : tier === 'second' ? 'RUNNER-UP' : tier === 'third' ? '3RD PLACE' : 'SPECIAL'}"`
+      : '"SPECIAL"',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    background: tier === 'first'
+      ? '#ffd700'
+      : tier === 'second'
+      ? '#c0c0c0'
+      : tier === 'third'
+      ? '#cd7f32'
+      : '#0088ff',
+    color: '#000',
+    fontWeight: 'bold',
+    fontSize: '0.75rem',
+    padding: '5px 12px',
+    clipPath: 'polygon(100% 0, 100% 100%, 30% 100%, 0 50%, 30% 0)',
+    zIndex: 2,
+    textShadow: 'none',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+  },
+
+  '& *': {
+    zIndex: 1
+  },
+
+  '@keyframes rotateLight': {
+    from: {
+      transform: 'rotate(0deg)'
+    },
+    to: {
+      transform: 'rotate(360deg)'
+    }
   }
 }));
+
 
 const SectionTitle = styled(Typography)({
   color: '#ff0000',
