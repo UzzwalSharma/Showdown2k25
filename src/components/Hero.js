@@ -128,7 +128,7 @@ function Hero() {
           objectFit: 'cover',
           zIndex: 0,
         }}
-        src="/tvv.mp4"
+        src="https://res.cloudinary.com/dvmqxb8kd/video/upload/v1747932844/tvv_vabrdv.mp4"
         type="video/mp4"
       />
 
