@@ -208,15 +208,44 @@ ye challenge wala card hai
           </InfoCard>
         </Box> */}
 
-       <InfoCard
+  <InfoCard
   sx={{
     mb: 6,
-    background: 'rgba(0, 0, 0, 0.9)',
+    background: 'rgba(0, 0, 0, 0.85)', // dark translucent background
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     px: { xs: 2, md: 4 },
     py: { xs: 4, md: 6 },
+
+      clipPath: `polygon(
+      5% 0%, 95% 0%,       /* top edge */
+      100% 5%, 100% 95%,   /* right edge */
+      95% 100%, 5% 100%,   /* bottom edge */
+      0% 95%, 0% 5%        /* left edge */
+    )`,
+
+    // Neon border effect: bright glowing cyan/neon color
+    border: '2px solid rgba(0, 136, 255, 0.95)',
+    boxShadow: `
+      0 0 8px #00fff7,
+      0 0 20px #00fff7,
+      0 0 30px #00fff7,
+      inset 0 0 10px #00fff7
+    `,
+
+    // Smooth scaling and glowing on hover
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    '&:hover': {
+      transform: 'scale(1.05)',
+      boxShadow: `
+        0 0 15px #00fff7,
+        0 0 40px #00fff7,
+        0 0 50px #00fff7,
+        inset 0 0 15px #00fff7
+      `,
+      borderColor: '#00fff7',
+    },
   }}
 >
   <SubSectionTitle variant="h4" align="center" sx={{ mb: 4 }}>
