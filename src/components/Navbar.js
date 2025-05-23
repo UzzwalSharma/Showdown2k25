@@ -23,12 +23,32 @@ const NavButton = styled(Button)({
   fontFamily: '"Tekken", sans-serif',
   fontSize: '0.9rem',
   padding: '6px 12px',
-  height: '36px',
   margin: '0 4px',
+  height: '36px',
+  position: 'relative',
+  transition: 'all 0.3s ease-in-out',
+  '&:before': {
+    content: '""',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    height: '2px',
+    backgroundColor: '#00ccff',
+    transform: 'scaleX(0)',
+    transformOrigin: 'right',
+    transition: 'transform 0.3s ease',
+  },
   '&:hover': {
-    backgroundColor: 'rgba(255, 0, 0, 0.2)'
-  }
+    backgroundColor: 'rgba(0, 204, 255, 0.15)',
+    boxShadow: '0 0 8px #00ccff',
+  },
+  '&:hover:before': {
+    transform: 'scaleX(1)',
+    transformOrigin: 'left',
+  },
 });
+
 
 const NavLinks = styled('div')({
   display: 'flex',
@@ -99,11 +119,19 @@ function Navbar() {
                 <MenuIcon />
               </IconButton>
 
-              <Drawer
-                anchor="right"
-                open={drawerOpen}
-                onClose={() => setDrawerOpen(false)}
-              >
+<Drawer
+  anchor="right"
+  open={drawerOpen}
+  onClose={() => setDrawerOpen(false)}
+  PaperProps={{
+    sx: {
+      background: 'rgba(0, 0, 0, 0.9)',
+      backdropFilter: 'blur(10px)',
+      boxShadow: '0 0 20px #00ccff',
+    },
+  }}
+>
+
                  <Box
     sx={{
       display: 'flex',

@@ -170,24 +170,23 @@ function Hero() {
   >
     Showdown 2K25
   </MotionTypography>
-
-  <MotionTypography
-    variant="h3"
-    component={m.div}
-    initial={{ opacity: 0, y: 50, scale: 0.95 }}
-    animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 0.8, delay: 0.4 }}
-    sx={{
-      fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' },
-      fontWeight: 700,
-      color: '#ffd700',
-      mb: '1.5rem',
-      fontFamily: '"Tekken", sans-serif',
-      textShadow: '0 0 6px rgba(255,215,0,0.4)',
-    }}
-  >
-    HACKATHON
-  </MotionTypography>
+<MotionTypography
+  variant="h3"
+  component={m.div}
+  className="flicker-gold"
+  initial={{ opacity: 0, y: 50, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  sx={{
+    fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' },
+    fontWeight: 700,
+    color: '#ffd700',
+    mb: '1.5rem',
+    fontFamily: '"Tekken", sans-serif',
+  }}
+>
+  HACKATHON
+</MotionTypography>
 
   <MotionTypography
     variant="body1"
@@ -202,8 +201,9 @@ function Hero() {
       mb: '2rem',
       margin: '0 auto',
       textAlign: 'center',
-      fontWeight: 500,
-      lineHeight: 1.6,
+      fontWeight: 700,
+      lineHeight: 1.6
+   
     }}
   >
     Battle it out in the ultimate coding tournament. Show your skills, defeat your opponents, and
