@@ -2,11 +2,15 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper, Avatar } from '@mui/material';
 import "../index.css";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+gsap.registerPlugin(ScrollTrigger);
 
-const TeamSection = styled(Box)({
-  backgroundImage: 'url("/images/colosseum.jpg")',
+const TeamSection = styled(Box)(({ theme }) => ({
+  backgroundImage: 'url("/images/bg2.png")',
   backgroundSize: 'cover',
-  backgroundPosition: 'center',
+  backgroundPosition: 'center center',
   backgroundAttachment: 'fixed',
   minHeight: '80vh',
   width: '100%',
@@ -21,7 +25,7 @@ const TeamSection = styled(Box)({
     background: 'linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 100%)',
     zIndex: 1
   }
-});
+}));
 
 const SectionTitle = styled(Typography)({
   color: '#ff0000',
@@ -125,13 +129,31 @@ const teamMembers = [
   { name: "Nishchay Chaurasia", role: "Lead Developer" }
 ];
 
-const colors = ['#FF0000', '#0088ff', '#FF0000']; // 3 colors for cycling
+const colors = ['#FF0000', '#0088ff', '#FF0000'];
 
 function Team() {
-  return (
-    <TeamSection>
-     <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
+  const sectionRef = useRef(null);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    gsap.to(section, {
+      backgroundPositionY: '30%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+    });
+
+    return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  }, []);
+
+  return (
+    <TeamSection ref={sectionRef}>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
         <SectionTitle variant="h2" align="center">
           Meet the <span style={{ color: '#0088ff' }}>Team</span>
         </SectionTitle>
@@ -140,7 +162,7 @@ function Team() {
             <Grid 
               item 
               key={idx} 
-              xs={12} sm={6} md={4}  // 3 cards per row on md+ screens
+              xs={12} sm={6} md={4}  
               sx={{ display: 'flex', justifyContent: 'center' }}
             >
               <MemberCard color={colors[idx % colors.length]}>

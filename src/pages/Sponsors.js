@@ -26,18 +26,47 @@ const SponsorCard = styled(Paper)(({ index, isVisible, position }) => ({
   padding: '2rem',
   borderRadius: '8px',
   border: '1px solid #ff0000',
+  position: 'relative',
+  overflow: 'hidden',
   height: '100%',
   transition: 'all 0.8s ease',
   cursor: 'pointer',
   opacity: isVisible ? 1 : 0,
-  transform: isVisible 
-    ? `scale(1) translateX(${position * 120}%)` // Increased from 100% to 120%
-    : 'scale(0.8) translateX(-120%)', // Adjusted to match
+  transform: isVisible
+    ? `scale(1) translateX(${position * 120}%)`
+    : 'scale(0.8) translateX(-120%)',
   '&:hover': {
-    transform: `scale(1.05) translateX(${position * 120}%) translateY(-10px)`, // Adjusted to match
+    transform: `scale(1.05) translateX(${position * 120}%) translateY(-10px)`,
     border: '1px solid #0088ff',
-    boxShadow: '0 0 30px rgba(0, 136, 255, 0.3)'
-  }
+    boxShadow: '0 0 30px rgba(0, 136, 255, 0.3)',
+  },
+  // Top-left badge
+  '&::before': {
+    content: `"⭐ ${index === 0 ? 'Platinum' : index === 1 ? 'Diamond' : index === 2 ? 'Gold' : 'Sponsor'}"`,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    backgroundColor: '#0088ff',
+    color: '#fff',
+    fontWeight: 'bold',
+    padding: '0.3rem 0.7rem',
+    fontSize: '0.75rem',
+    fontFamily: '"Tekken", sans-serif',
+    clipPath: 'polygon(0 0, 100% 0, 80% 100%, 0% 100%)',
+    zIndex: 2,
+  },
+  // Bottom-right clipped accent
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    width: '60px',
+    height: '60px',
+    backgroundColor: '#ff0000',
+    clipPath: 'polygon(100% 0, 100% 100%, 0 100%)',
+    zIndex: 1,
+  },
 }));
 
 const SectionTitle = styled(Typography)({
@@ -57,37 +86,37 @@ function Sponsors() {
   const sponsors = [
     {
       name: "Microsoft Azure",
-      logo: "/images/microsoft.png",
-      description: "Cloud Computing Partner",
+      logo: "https://i0.wp.com/startupnews.fyi/wp-content/uploads/2024/01/Unstop-Logo.png?ssl=1",
+      description: "Platform Partner",
       tier: "Platinum Sponsor"
     },
     {
       name: "NVIDIA",
-      logo: "/images/nvidia.png",
+      logo: "/images/nvidia.webp",
       description: "GPU Technology Partner",
       tier: "Diamond Sponsor"
     },
     {
       name: "Intel",
-      logo: "/images/intel.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/250px-Intel_logo_%282006-2020%29.svg.png",
       description: "Processing Power Partner",
       tier: "Gold Sponsor"
     },
     {
       name: "AWS GameTech",
-      logo: "/images/aws.png",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2pjb1FnBCnn-Z6BL7dQ1rzqOvaAnVFDWeVg&s",
       description: "Gaming Infrastructure Partner",
       tier: "Platinum Sponsor"
     },
     {
       name: "Razer",
-      logo: "/images/razer.png",
-      description: "Gaming Hardware Partner",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3oo4tEKtG8OAGNQTcSjKYvC0ilW8-5h1Kqw&s",
+      description: "Venue Partner",
       tier: "Gold Sponsor"
     },
     {
       name: "Discord",
-      logo: "/images/discord.png",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZA1OIJivenlamVPe42zVb-hKvzCv13swsFQ&s",
       description: "Community Platform Partner",
       tier: "Silver Sponsor"
     }
@@ -153,30 +182,30 @@ function Sponsors() {
             isVisible={visibleSponsors.includes(index)}
             position={visibleSponsors.indexOf(index) - 1}
           >
-            <Box
-              sx={{
-                height: '200px',
-                mb: 3,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: 'rgba(255, 255, 255, 0.05)',
-                borderRadius: '4px',
-                overflow: 'hidden',
-              }}
-            >
-              <Typography
-                variant="h4"
-                sx={{
-                  color: '#ff0000',
-                  fontFamily: '"Tekken", sans-serif',
-                  textAlign: 'center',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {sponsor.name}
-              </Typography>
-            </Box>
+        <Box
+  sx={{
+    height: '200px',
+    mb: 3,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'rgba(255, 255, 255, 0.05)',
+    borderRadius: '4px',
+    overflow: 'hidden',
+    p: 2
+  }}
+>
+  <img
+    src={sponsor.logo}
+    alt={sponsor.name}
+    style={{
+      maxHeight: '100%',
+      maxWidth: '100%',
+      objectFit: 'contain',
+    }}
+  />
+</Box>
+
             <Typography
               variant="h6"
               sx={{
