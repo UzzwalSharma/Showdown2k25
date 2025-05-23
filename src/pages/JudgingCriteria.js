@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 
 const JudgingSection = styled(Box)({
-  backgroundImage: 'url("/images/yakushima.jpg")',
+  backgroundImage: 'url("https://media.eventhubs.com/images/2023/11/01_ted14.jpg")',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundAttachment: 'fixed',
@@ -22,41 +22,51 @@ const JudgingSection = styled(Box)({
 });
 
 const CriteriaCard = styled(Paper)({
-  background: 'rgba(0, 0, 0, 0.8)',
-  padding: '1.2rem',
-  borderRadius: '12px',
+  background: 'radial-gradient(circle at 30% 30%, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65))',
+  padding: '1.5rem',
   border: '2px solid #ff0000',
-  width: '240px',
-  height: '240px',
+  borderRadius: '0',
+  clipPath: 'polygon(0% 10%, 10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%)',
+  width: '260px',
+  height: '260px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  transition: 'all 0.4s ease-in-out',
   position: 'relative',
   overflow: 'hidden',
-  margin: '0 auto',
+  boxShadow: '0 0 10px rgba(255,0,0,0.3)',
+  transition: 'all 0.4s ease-in-out',
+
   '&:hover': {
-    transform: 'translateY(-10px) scale(1.03)',
-    boxShadow: '0 12px 24px rgba(255, 0, 0, 0.3), 0 0 30px rgba(255, 0, 0, 0.1)',
+    transform: 'translateY(-10px) scale(1.05)',
+    boxShadow: '0 12px 24px rgba(255, 0, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.2)',
+
     '&::before': {
-      transform: 'translateY(0)',
-      opacity: 0.15
+      transform: 'translateX(100%)',
+      opacity: 0.25
     }
   },
+
   '&::before': {
     content: '""',
     position: 'absolute',
     top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'linear-gradient(135deg, #ff0000, #ff8888, #ff0000)',
-    opacity: 0,
-    transform: 'translateY(100%)',
-    transition: 'all 0.4s ease-in-out',
-    zIndex: 0
+    left: '-100%',
+    width: '100%',
+    height: '100%',
+    background: 'linear-gradient(120deg, transparent, rgba(255, 0, 0, 0.2), transparent)',
+    zIndex: 1,
+    transition: 'all 0.5s ease-in-out',
+    opacity: 0
+  },
+
+  '& > *': {
+    position: 'relative',
+    zIndex: 2
   }
 });
+
+
 
 const SectionTitle = styled(Typography)({
   color: '#ff0000',

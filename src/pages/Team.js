@@ -122,10 +122,10 @@ const MemberRole = styled(Typography)({
 });
 
 const teamMembers = [
-  { name: "Advay Anand", role: "AI & Game Logic" },
+  { name: "Anmol Agarwal", role: "AI & Game Logic" },
   { name: "Nishant Sankar Swain", role: "Frontend Specialist" },
   { name: "Ujjwal Sharma", role: "Backend Architect" },
-  { name: "Anmol Aggarwal", role: "UI/UX Designer" },
+  { name: "Advay Anand", role: "UI/UX Designer" },
   { name: "Nishchay Chaurasia", role: "Lead Developer" }
 ];
 
