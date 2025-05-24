@@ -2,17 +2,65 @@ import { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { keyframes } from '@emotion/react'; // For defining CSS animation
+import { keyframes } from '@emotion/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Define the spinning keyframe animation
 const borderSpin = keyframes`
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+`;
+
+// Glitch flicker keyframe animation
+const glitchFlicker = keyframes`
+  0%, 100% {
+    text-shadow:
+      2px 0 red,
+      -2px 0 cyan;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  20% {
+    text-shadow:
+      3px 0 red,
+      -3px 0 cyan;
+    transform: translate(-1px, 0);
+    opacity: 0.9;
+  }
+  40% {
+    text-shadow:
+      2px 0 red,
+      -2px 0 cyan;
+    transform: translate(1px, 0);
+    opacity: 1;
+  }
+  60% {
+    text-shadow:
+      4px 0 red,
+      -4px 0 cyan;
+    transform: translate(0, -1px);
+    opacity: 0.8;
+  }
+  80% {
+    text-shadow:
+      2px 0 red,
+      -2px 0 cyan;
+    transform: translate(0, 1px);
+    opacity: 1;
+  }
+`;
+
+// Pulse glow animation
+const pulseGlow = keyframes`
+  0%, 100% {
+    box-shadow: 0 0 6px #00ffe7, 0 0 20px #ff0040;
+  }
+  50% {
+    box-shadow: 0 0 15px #00ffe7, 0 0 35px #ff0040;
   }
 `;
 
@@ -23,14 +71,10 @@ export default function ScrollZoomVideo() {
   useEffect(() => {
     const container = videoContainerRef.current;
 
-    // Scroll zoom animation
     const ctx = gsap.context(() => {
       gsap.fromTo(
         videoRef.current,
-        {
-          scale: 1.2,
-          opacity: 0,
-        },
+        { scale: 1.2, opacity: 0 },
         {
           scale: 1,
           opacity: 1,
@@ -46,7 +90,6 @@ export default function ScrollZoomVideo() {
       );
     }, videoContainerRef);
 
-    // Mousemove tilt animation
     function handleMouseMove(e) {
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -122,8 +165,38 @@ export default function ScrollZoomVideo() {
         '&:hover::before': {
           animationPlayState: 'paused',
         },
+        // Fade out badge on hover
+        '&:hover .tekken-hover-badge': {
+          opacity: 0,
+          transition: 'opacity 0.5s ease',
+        },
       }}
     >
+      {/* Tekken-style cursed badge */}
+      <Box
+        className="tekken-hover-badge"
+        sx={{
+          position: 'absolute',
+          top: 12,
+          left: 12,
+          background: 'linear-gradient(45deg, #00ffe7, #ff0040)',
+          color: '#000',
+          fontWeight: '900',
+          fontSize: '0.9rem',
+          letterSpacing: '0.1em',
+          padding: '6px 16px',
+          clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)',
+          boxShadow: '0 0 8pxrgb(7, 10, 43), 0 0 15px #ff0040',
+          userSelect: 'none',
+          pointerEvents: 'none',
+          zIndex: 10,
+          opacity: 1,
+          animation: `${glitchFlicker} 2.5s infinite, ${pulseGlow} 3s infinite ease-in-out`,
+        }}
+      >
+        I'M CURSED — DON'T HOVER ME!
+      </Box>
+
       <video
         ref={videoRef}
         src="https://res.cloudinary.com/dvmqxb8kd/video/upload/v1747718863/mainvideo_-_Made_with_Clipchamp_xq5xjk.mp4"

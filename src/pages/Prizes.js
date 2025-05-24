@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 
 const PrizesSection = styled(Box)({
-  backgroundImage: 'url("/images/cyber-arena.jpg")',
+  backgroundImage: 'url("https://img.freepik.com/premium-photo/stage-with-water-show-bottom_1064589-118312.jpg")',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundAttachment: 'fixed',
@@ -26,29 +26,37 @@ const PrizeCard = styled(Paper)(({ tier }) => ({
   width: '320px',
   height: '340px',
   padding: '2rem',
-  background: 'rgba(255, 255, 255, 0.05)',
-  border: '2px solid rgba(255, 255, 255, 0.15)',
+  background: 'rgba(255, 255, 255, 0.08)',
   borderRadius: '24px',
-  backdropFilter: 'blur(10px)',
+  backdropFilter: 'blur(12px)',
+  border: '1px solid rgba(255, 255, 255, 0.2)',
   boxShadow: `
-    0 8px 16px rgba(0,0,0,0.4),
-    0 0 0 2px ${tier === 'first' ? '#ffd70099' : tier === 'second' ? '#c0c0c099' : tier === 'third' ? '#cd7f3299' : '#ff000099'}
+    /* Soft ambient shadow */
+    0 8px 15px rgba(0, 0, 0, 0.4),
+    /* Colored glow based on tier */
+    0 0 15px 3px ${tier === 'first' ? '#ffd700cc' : tier === 'second' ? '#c0c0c0cc' : tier === 'third' ? '#cd7f32cc' : '#ff0000cc'},
+    /* Inner shadow for depth */
+    inset 0 -5px 10px rgba(0, 0, 0, 0.3),
+    inset 0 5px 8px rgba(255, 255, 255, 0.15)
   `,
   clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)',
   overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  transition: 'all 0.4s ease-in-out',
-  transformStyle: 'preserve-3d',
   color: '#fff',
+  transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+  transformStyle: 'preserve-3d',
 
   '&:hover': {
-    transform: 'translateY(-12px) scale(1.03)',
+    transform: 'translateY(-20px) scale(1.05) perspective(600px) rotateX(8deg)',
     boxShadow: `
-      0 20px 40px rgba(0, 0, 0, 0.6),
-      0 0 30px ${tier === 'first' ? '#ffd70066' : tier === 'second' ? '#c0c0c066' : tier === 'third' ? '#cd7f3266' : '#ff000066'}
-    `
+      0 25px 40px rgba(0, 0, 0, 0.7),
+      0 0 25px 8px ${tier === 'first' ? '#ffd700bb' : tier === 'second' ? '#c0c0c0bb' : tier === 'third' ? '#cd7f32bb' : '#ff0000bb'},
+      inset 0 -10px 15px rgba(0, 0, 0, 0.45),
+      inset 0 10px 12px rgba(255, 255, 255, 0.2)
+    `,
+    zIndex: 10,
   },
 
   '&::before': {
@@ -59,14 +67,15 @@ const PrizeCard = styled(Paper)(({ tier }) => ({
     width: '200%',
     height: '200%',
     background: tier === 'first'
-      ? 'radial-gradient(circle, #ffd70055, transparent 60%)'
+      ? 'radial-gradient(circle, #ffd70033, transparent 60%)'
       : tier === 'second'
-      ? 'radial-gradient(circle, #c0c0c055, transparent 60%)'
+      ? 'radial-gradient(circle, #c0c0c033, transparent 60%)'
       : tier === 'third'
-      ? 'radial-gradient(circle, #cd7f3255, transparent 60%)'
-      : 'radial-gradient(circle, #ff000055, transparent 60%)',
+      ? 'radial-gradient(circle, #cd7f3233, transparent 60%)'
+      : 'radial-gradient(circle, #ff000033, transparent 60%)',
     animation: 'rotateLight 6s linear infinite',
-    zIndex: 0
+    zIndex: 0,
+    filter: 'blur(40px)',
   },
 
   '&::after': {
@@ -89,23 +98,21 @@ const PrizeCard = styled(Paper)(({ tier }) => ({
     padding: '5px 12px',
     clipPath: 'polygon(100% 0, 100% 100%, 30% 100%, 0 50%, 30% 0)',
     zIndex: 2,
-    textShadow: 'none',
-    boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+    boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
+    textShadow: '0 0 3px rgba(255,255,255,0.6)',
   },
 
   '& *': {
-    zIndex: 1
+    zIndex: 1,
   },
 
   '@keyframes rotateLight': {
-    from: {
-      transform: 'rotate(0deg)'
-    },
-    to: {
-      transform: 'rotate(360deg)'
-    }
-  }
+    from: { transform: 'rotate(0deg)' },
+    to: { transform: 'rotate(360deg)' },
+  },
 }));
+
+
 
 
 const SectionTitle = styled(Typography)({

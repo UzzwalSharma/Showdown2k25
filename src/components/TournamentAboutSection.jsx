@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container, Box, Typography, Paper } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, keyframes } from '@mui/material/styles';
 import { gsap } from 'gsap';
 import NeonStrikeLine from './Neonline.jsx';
+
 // Styled Typography for section titles
 const SectionTitle = styled(Typography)(({ theme }) => ({
   color: '#ff0000',
@@ -45,24 +46,42 @@ const BulletPoint = styled('li')({
   },
 });
 
-// Clipped Card Style
+// 3D Floating Animation for cards
+const float3d = keyframes`
+  0%, 100% {
+    transform: rotateY(0deg) rotateX(0deg) translateZ(0);
+    box-shadow: 0 10px 15px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    transform: rotateY(8deg) rotateX(6deg) translateZ(15px);
+    box-shadow: 0 20px 35px rgba(255, 0, 0, 0.7);
+  }
+`;
+
+// Clipped Card Style with 3D effect and floating animation
 const ClippedCard = styled(Paper)({
   background: 'rgba(0, 0, 0, 0.75)',
   border: '2px solid #ff0000',
   clipPath: 'polygon(0 0, 95% 0, 100% 15%, 100% 100%, 5% 100%, 0 85%)',
-  transition: 'all 0.4s ease-in-out',
+  transition: 'background 0.4s ease, border-color 0.4s ease',
   padding: '2rem',
   minHeight: '300px',
+  transformStyle: 'preserve-3d',
+  cursor: 'pointer',
+  animation: `${float3d} 5s ease-in-out infinite`,
+
   '&:hover': {
     background: 'rgba(255, 0, 0, 0.1)',
     borderColor: '#ff0000',
+    animationPlayState: 'paused',
+    transform: 'rotateY(15deg) rotateX(10deg) translateZ(30px)',
+    boxShadow: '0 15px 25px rgba(255, 0, 0, 0.7)',
   },
 });
 
 const bgImages = [
-     '/images/Gemini_Generated_Image_f35c7sf35c7sf35c.png',
+  '/images/Gemini_Generated_Image_f35c7sf35c7sf35c.png',
   '/images/Gemini_Generated_Image_fgk8xofgk8xofgk8.png',
- 
   '/images/Gemini_Generated_Image_eu1l3weu1l3weu1l.png',
 ];
 
@@ -129,19 +148,20 @@ const TournamentAboutSection = () => {
 
       {/* Content Layer */}
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
-       <Box sx={{ mb: 6 }}>
-  <SectionTitle align="center">
-    About <BlueText>The Tournament</BlueText>
-  </SectionTitle>
-  <NeonStrikeLine />
-</Box>
-
+        <Box sx={{ mb: 6 }}>
+          <SectionTitle align="center">
+            About <BlueText>The Tournament</BlueText>
+          </SectionTitle>
+          <NeonStrikeLine />
+        </Box>
 
         <Box
           sx={{
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
             gap: 4,
+            perspective: 1500, // Perspective for 3D effect
+            justifyContent: 'center',
           }}
         >
           {/* Event Overview Card */}
@@ -187,6 +207,7 @@ const TournamentAboutSection = () => {
               </BulletPoint>
             </ul>
           </ClippedCard>
+
         </Box>
       </Container>
     </Box>
