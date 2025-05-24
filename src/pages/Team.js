@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Container, Typography, Grid, Paper, Avatar } from '@mui/material';
+import { Box, Container, Typography, Paper, Avatar } from '@mui/material';
 import "../index.css";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
+// Team section background styling
 const TeamSection = styled(Box)(({ theme }) => ({
   backgroundImage: 'url("/images/bg2.png")',
   backgroundSize: 'cover',
@@ -15,6 +15,7 @@ const TeamSection = styled(Box)(({ theme }) => ({
   minHeight: '80vh',
   width: '100%',
   position: 'relative',
+  overflow: 'hidden',
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -38,6 +39,23 @@ const SectionTitle = styled(Typography)({
   zIndex: 2
 });
 
+// Marquee wrapper for infinite scroll
+const MarqueeTrack = styled(Box)(({ reverse }) => ({
+  display: 'flex',
+  gap: '2rem',
+  animation: `${reverse ? 'marqueeReverse' : 'marquee'} 25s linear infinite`,
+  width: 'max-content',
+  padding: '2rem 0',
+  '@keyframes marquee': {
+    '0%': { transform: 'translateX(0%)' },
+    '100%': { transform: 'translateX(-50%)' }
+  },
+  '@keyframes marqueeReverse': {
+    '0%': { transform: 'translateX(-50%)' },
+    '100%': { transform: 'translateX(0%)' }
+  }
+}));
+
 const MemberCard = styled(Paper)(({ color = '#00ffe7' }) => ({
   '--border-radius': '1rem',
   '--bg-color': '#0f1923',
@@ -45,9 +63,9 @@ const MemberCard = styled(Paper)(({ color = '#00ffe7' }) => ({
   borderRadius: 'var(--border-radius)',
   background: 'var(--bg-color)',
   color: '#fff',
-  width: '240px',
-  height: '320px',
-  padding: '1.5rem 1rem',
+  width: '220px',
+  height: '260px',
+  padding: '1rem',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -55,10 +73,10 @@ const MemberCard = styled(Paper)(({ color = '#00ffe7' }) => ({
   position: 'relative',
   overflow: 'hidden',
   fontFamily: '"Poppins", sans-serif',
-  isolation: 'isolate',
   zIndex: 1,
   boxShadow: `0 0 20px ${color}33`,
-
+  transition: 'all 0.4s ease-in-out',
+  clipPath: 'polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%)',
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -75,11 +93,9 @@ const MemberCard = styled(Paper)(({ color = '#00ffe7' }) => ({
     )`,
     animation: 'borderSpin 5s linear infinite',
   },
-
   '&:hover::before': {
     animationPlayState: 'paused',
   },
-
   '&::after': {
     content: '""',
     position: 'absolute',
@@ -87,10 +103,11 @@ const MemberCard = styled(Paper)(({ color = '#00ffe7' }) => ({
     background: 'var(--bg-color)',
     borderRadius: 'calc(var(--border-radius) - 5px)',
     zIndex: -1,
-    transition: 'all 0.3s linear',
   },
-
-  clipPath: 'polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%)',
+  '&:hover .details': {
+    opacity: 1,
+    transform: 'translateY(0)',
+  },
 }));
 
 const MemberAvatar = styled(Avatar)({
@@ -98,7 +115,8 @@ const MemberAvatar = styled(Avatar)({
   height: 80,
   marginBottom: '1rem',
   border: '3px solid #ffd700',
-  boxShadow: '0 0 16px #0088ff, 0 0 8px #ff0000'
+  boxShadow: '0 0 16px #0088ff, 0 0 8px #ff0000',
+  zIndex: 2,
 });
 
 const MemberName = styled(Typography)({
@@ -106,19 +124,30 @@ const MemberName = styled(Typography)({
   fontFamily: '"Tekken", sans-serif',
   fontWeight: 700,
   fontSize: '1.3rem',
-  marginBottom: '0.5rem',
+  marginBottom: '0.3rem',
   letterSpacing: '1px',
   textAlign: 'center',
-  textShadow: '0 0 8px #ff0000'
+  textShadow: '0 0 8px #ff0000',
+  transition: 'all 0.3s ease',
 });
 
 const MemberRole = styled(Typography)({
   color: '#00ffe7',
   fontSize: '1rem',
   fontStyle: 'italic',
-  marginBottom: '0.5rem',
   textAlign: 'center',
-  textShadow: '0 0 8px #0088ff'
+  textShadow: '0 0 8px #0088ff',
+  transition: 'all 0.3s ease',
+});
+
+const DetailsBox = styled(Box)({
+  position: 'absolute',
+  bottom: '1.5rem',
+  opacity: 0,
+  transform: 'translateY(20px)',
+  transition: 'all 0.3s ease-in-out',
+  textAlign: 'center',
+  zIndex: 2,
 });
 
 const teamMembers = [
@@ -126,7 +155,11 @@ const teamMembers = [
   { name: "Nishant Sankar Swain", role: "Frontend Specialist" },
   { name: "Ujjwal Sharma", role: "Lead Developer" },
   { name: "Advay Anand", role: "UI/UX Designer" },
-  { name: "Nishchay Chaurasia", role: "Lead Developer" }
+  { name: "Mahak Gupta", role: "Lead UI/UX Designer" },
+  { name: "Disha Sharma", role: "PR Head" },
+  { name: "Ujjwal Agarwal", role: "Sponser-Team" },
+  { name: "Devansh Bhardwaj", role: "Backend-Expert" },
+  { name: "Nishchay Chaurasia", role: "Lead Developer" },
 ];
 
 const colors = ['#FF0000', '#0088ff', '#FF0000'];
@@ -136,7 +169,6 @@ function Team() {
 
   useEffect(() => {
     const section = sectionRef.current;
-
     gsap.to(section, {
       backgroundPositionY: '30%',
       ease: 'none',
@@ -151,30 +183,29 @@ function Team() {
     return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
   }, []);
 
+  const renderCards = () =>
+    [...teamMembers, ...teamMembers].map((member, idx) => (
+      <MemberCard key={`${member.name}-${idx}`} color={colors[idx % colors.length]}>
+        <MemberAvatar>
+          {member.name.split(' ').map(n => n[0]).join('')}
+        </MemberAvatar>
+        <DetailsBox className="details">
+          <MemberName>{member.name}</MemberName>
+          <MemberRole>{member.role}</MemberRole>
+        </DetailsBox>
+      </MemberCard>
+    ));
+
   return (
     <TeamSection ref={sectionRef}>
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
+      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2, py: 8 , mb: 4 }}>
         <SectionTitle variant="h2" align="center">
           Meet the <span style={{ color: '#0088ff' }}>Team</span>
         </SectionTitle>
-        <Grid container spacing={4} justifyContent="center">
-          {teamMembers.map((member, idx) => (
-            <Grid 
-              item 
-              key={idx} 
-              xs={12} sm={6} md={4}  
-              sx={{ display: 'flex', justifyContent: 'center' }}
-            >
-              <MemberCard color={colors[idx % colors.length]}>
-                <MemberAvatar>
-                  {member.name.split(' ').map(n => n[0]).join('')}
-                </MemberAvatar>
-                <MemberName>{member.name}</MemberName>
-                <MemberRole>{member.role}</MemberRole>
-              </MemberCard>
-            </Grid>
-          ))}
-        </Grid>
+        <Box sx={{ overflow: 'hidden' }}>
+          <MarqueeTrack>{renderCards()}</MarqueeTrack>
+          <MarqueeTrack reverse>{renderCards()}</MarqueeTrack>
+        </Box>
       </Container>
     </TeamSection>
   );

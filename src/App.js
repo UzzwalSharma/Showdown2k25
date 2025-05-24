@@ -12,7 +12,7 @@ import Team from './pages/Team';
 import Rules from './pages/Rules';
 import FAQs from './pages/FAQs';
 import Footer from './components/Footer';
-
+// import TekkenProblemSection from './components/Prblms/TekkenProblemSection';
 function App() {
   return (
     <div className="App">
@@ -35,6 +35,9 @@ function App() {
         <section id="timeline" style={{ padding: 0, margin: 0 }}>
           <Schedule />
         </section>
+        {/* <section  style={{ padding: 0, margin: 0 }}>
+         <TekkenProblemSection />
+        </section> */}
         <section id="sponsors" style={{ padding: 0, margin: 0 }}>
           <Sponsors />
         </section>
