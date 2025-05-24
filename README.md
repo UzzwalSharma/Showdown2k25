@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Tekken_8_cover_art.jpg" alt="Tekken Showdown 2K25 Logo" width="200"/>
+  <img src="https://res.cloudinary.com/dvmqxb8kd/image/upload/v1748073652/Gemini_Generated_Image_tm7pxbtm7pxbtm7p_kgcck3.png" alt="Tekken Showdown 2K25 Logo" width="200"/>
 </p>
 
 <h1 align="center">🥋 Tekken Showdown 2K25 - Official Website</h1>
@@ -11,8 +11,6 @@
 </p>
 
 ---
-
-![Tekken Showdown Banner](banner-image-url)
 
 ## ⚔️ About the Event
 
