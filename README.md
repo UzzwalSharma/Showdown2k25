@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/Gemini_Generated_Image_igrkwuigrkwuigrk.png" alt="Tekken Showdown 2K25 Logo" width="200"/>
+  <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Tekken_8_cover_art.jpg" alt="Tekken Showdown 2K25 Logo" width="200"/>
 </p>
 
 <h1 align="center">🥋 Tekken Showdown 2K25 - Official Website</h1>
