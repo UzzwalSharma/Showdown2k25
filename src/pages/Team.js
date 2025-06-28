@@ -8,24 +8,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Team section background styling
 const TeamSection = styled(Box)(({ theme }) => ({
-  backgroundImage: 'url("/images/bg2.png")',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center center',
-  backgroundAttachment: 'fixed',
-  minHeight: '80vh',
-  width: '100%',
-  position: 'relative',
-  overflow: 'hidden',
-  '&::before': {
+  backgroundImage: 'url("/BGMI_images/gemini-wali.png")',
+  backgroundSize: "cover",
+  backgroundPosition: "center center",
+  backgroundAttachment: "fixed",
+  minHeight: "80vh",
+  width: "100%",
+  position: "relative",
+  overflow: "hidden",
+  "&::before": {
     content: '""',
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    background: 'linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 100%)',
-    zIndex: 1
-  }
+    background:
+      "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 100%)",
+    zIndex: 1,
+  },
 }));
 
 const SectionTitle = styled(Typography)({
@@ -160,6 +161,7 @@ const teamMembers = [
   { name: "Ujjwal Agarwal", role: "Sponser-Team" },
   { name: "Devansh Bhardwaj", role: "Backend-Expert" },
   { name: "Nishchay Chaurasia", role: "Lead Developer" },
+  { name: "Aman Bobal", role: "Technical Team" },
 ];
 
 const colors = ['#FF0000', '#0088ff', '#FF0000'];

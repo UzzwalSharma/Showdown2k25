@@ -12,7 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const RulesSection = styled(Box)({
-  backgroundImage: 'url("/images/rules.png")',
+  backgroundImage: 'url("/BGMI_images/pubg-helmet-guy-immortality-ao-1920x1080.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed",

@@ -7,7 +7,7 @@ import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 // import Timer from '../components/Timer.jsx';
 import AnimatedTitle from '../components/Animated_Title.jsx';
 const AboutSection = styled(Box)({
-  backgroundImage: 'url("/images/temple.jpg")',
+  backgroundImage: 'url("/BGMI_images/Gemini_Generated_Image_77n3px77n3px77n3.png")',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundAttachment: 'fixed', // Added for parallax effect

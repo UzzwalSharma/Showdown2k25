@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 
 const PrizesSection = styled(Box)({
-  backgroundImage: 'url("https://img.freepik.com/premium-photo/stage-with-water-show-bottom_1064589-118312.jpg")',
+  backgroundImage: 'url("/BGMI_images/pubg-sniper-mode-0o-1920x1080.jpg")',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundAttachment: 'fixed',

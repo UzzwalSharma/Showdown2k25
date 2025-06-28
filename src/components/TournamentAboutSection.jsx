@@ -80,9 +80,9 @@ const ClippedCard = styled(Paper)({
 });
 
 const bgImages = [
-  '/images/Gemini_Generated_Image_f35c7sf35c7sf35c.png',
-  '/images/Gemini_Generated_Image_fgk8xofgk8xofgk8.png',
-  '/images/Gemini_Generated_Image_eu1l3weu1l3weu1l.png',
+  '/BGMI_images/drop-loot.jpg',
+  '/BGMI_images/kv.jpg',
+  '/BGMI_images/pubg-mobile-steampunk-frontier-2025-gq-1920x1080.jpg',
 ];
 
 const TournamentAboutSection = () => {

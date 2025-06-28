@@ -9,7 +9,7 @@ import gsap from 'gsap';
 const FooterSection = styled(Box)(({ theme }) => ({
   position: 'relative',
   backgroundColor: '#0c0c0c',
-  backgroundImage: 'url("/images/Gemini_Generated_Image_l8nylul8nylul8ny.png")', // Replace with your image path
+  backgroundImage: 'url("/BGMI_images/pubg-2025-cb-1920x1080.jpg")', // Replace with your image path
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center -190px',
