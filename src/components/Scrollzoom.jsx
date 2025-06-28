@@ -131,27 +131,27 @@ export default function ScrollZoomVideo() {
     <Box
       ref={videoContainerRef}
       sx={{
-        width: '100%',
-        height: '80vh',
-        overflow: 'hidden',
-        position: 'relative',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: "100%",
+        height: "80vh",
+        overflow: "hidden",
+        position: "relative",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         mb: 6,
         perspective: 800,
-        cursor: 'pointer',
-        borderRadius: '1rem',
-        isolation: 'isolate',
-        boxShadow: '0 0 20px #00ffe733',
-        '&::before': {
+        cursor: "pointer",
+        borderRadius: "1rem",
+        isolation: "isolate",
+        boxShadow: "0 0 20px #00ffe733",
+        "&::before": {
           content: '""',
-          position: 'absolute',
-          width: '200%',
-          height: '200%',
-          inset: '-50%',
+          position: "absolute",
+          width: "200%",
+          height: "200%",
+          inset: "-50%",
           zIndex: 1,
-          borderRadius: '1rem',
+          borderRadius: "1rem",
           backgroundImage: `conic-gradient(
             #00ffe7 0deg,
             transparent 60deg,
@@ -160,15 +160,15 @@ export default function ScrollZoomVideo() {
             transparent 240deg
           )`,
           animation: `${borderSpin} 5s linear infinite`,
-          pointerEvents: 'none',
+          pointerEvents: "none",
         },
-        '&:hover::before': {
-          animationPlayState: 'paused',
+        "&:hover::before": {
+          animationPlayState: "paused",
         },
         // Fade out badge on hover
-        '&:hover .tekken-hover-badge': {
+        "&:hover .tekken-hover-badge": {
           opacity: 0,
-          transition: 'opacity 0.5s ease',
+          transition: "opacity 0.5s ease",
         },
       }}
     >
@@ -176,19 +176,19 @@ export default function ScrollZoomVideo() {
       <Box
         className="tekken-hover-badge"
         sx={{
-          position: 'absolute',
+          position: "absolute",
           top: 12,
           left: 12,
-          background: 'linear-gradient(45deg, #00ffe7, #ff0040)',
-          color: '#000',
-          fontWeight: '900',
-          fontSize: '0.9rem',
-          letterSpacing: '0.1em',
-          padding: '6px 16px',
-          clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)',
-          boxShadow: '0 0 8pxrgb(7, 10, 43), 0 0 15px #ff0040',
-          userSelect: 'none',
-          pointerEvents: 'none',
+          background: "linear-gradient(45deg, #00ffe7, #ff0040)",
+          color: "#000",
+          fontWeight: "900",
+          fontSize: "0.9rem",
+          letterSpacing: "0.1em",
+          padding: "6px 16px",
+          clipPath: "polygon(0 0, 85% 0, 100% 100%, 0% 100%)",
+          boxShadow: "0 0 8pxrgb(7, 10, 43), 0 0 15px #ff0040",
+          userSelect: "none",
+          pointerEvents: "none",
           zIndex: 10,
           opacity: 1,
           animation: `${glitchFlicker} 2.5s infinite, ${pulseGlow} 3s infinite ease-in-out`,
@@ -199,20 +199,21 @@ export default function ScrollZoomVideo() {
 
       <video
         ref={videoRef}
-        src="https://res.cloudinary.com/dvmqxb8kd/video/upload/v1747718863/mainvideo_-_Made_with_Clipchamp_xq5xjk.mp4"
+        src="https://res.cloudinary.com/djer7pmxt/video/upload/n9ggmiantm2lpgxhb5hp.mp4" // new video
+        //src="https://res.cloudinary.com/dvmqxb8kd/video/upload/v1747718863/mainvideo_-_Made_with_Clipchamp_xq5xjk.mp4" - old video
         autoPlay
         muted
         loop
         playsInline
         style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          clipPath: 'polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%)',
-          borderRadius: '1rem',
-          userSelect: 'none',
-          pointerEvents: 'none',
-          position: 'relative',
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          clipPath: "polygon(0 0, 92% 0, 100% 10%, 100% 100%, 8% 100%, 0 90%)",
+          borderRadius: "1rem",
+          userSelect: "none",
+          pointerEvents: "none",
+          position: "relative",
           zIndex: 2,
         }}
       />

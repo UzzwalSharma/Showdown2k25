@@ -103,7 +103,7 @@ const events = [
       "11:00 AM - Team formation",
       "12:00 PM - Hacking begins!",
     ],
-    img: "/day1.jpg",
+    img: "/BGMI_images/Gemini_Generated_Image_hackathon.png",
     side: "left",
   },
   {
@@ -114,7 +114,7 @@ const events = [
       "12:00 PM - Workshop: Advanced combat mechanics",
       "6:00 PM - Tekken 8 exhibition match",
     ],
-    img: "/Gemini_Generated_Image_3xo56m3xo56m3xo5.png",
+    img: "/BGMI_images/day2.png",
     side: "right",
   },
   {
@@ -126,7 +126,7 @@ const events = [
       "2:00 PM - Judging and awards",
       "4:00 PM - Closing ceremony",
     ],
-    img: "/Gemini_Generated_Image_3l1niz3l1niz3l1n.png",
+    img: "/BGMI_images/Gemini_Generated_Image_finale.png",
     side: "left",
   },
 ];
