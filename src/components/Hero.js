@@ -18,6 +18,7 @@ const HeroBackground = styled(Box)({
   background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1))',
   backdropFilter: 'blur(2px)',
   zIndex: 1,
+  marginTop: '0px', // Adjusted to avoid cutoff on small screens
 },
 
 });
@@ -271,7 +272,7 @@ export default Hero;
 
 
 
-// old hero code 
+
 
 
 // import React from 'react';
