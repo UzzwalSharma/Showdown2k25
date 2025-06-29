@@ -155,7 +155,7 @@ const teamMembers = [
   { name: "Anmol Agarwal", role: "AI & Game Logic" },
   { name: "Nishant Sankar Swain", role: "Frontend Specialist" },
   { name: "Ujjwal Sharma", role: "Lead Developer" },
-  { name: "Advay Anand", role: "UI/UX Designer" },
+  { name: "Advay Anand", role: "Frontend Developer" },
   { name: "Mahak Gupta", role: "Lead UI/UX Designer" },
   { name: "Disha Sharma", role: "PR Head" },
   { name: "Ujjwal Agarwal", role: "Sponser-Team" },
