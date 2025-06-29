@@ -121,140 +121,140 @@ function Hero() {
         loop
         playsInline
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
           zIndex: 0,
         }}
-        src="https://res.cloudinary.com/dvmqxb8kd/video/upload/v1747932844/tvv_vabrdv.mp4"
+        src="https://motionbgs.com/media/4817/pubg-mobile.960x540.mp4" //- new video
+        //src="https://res.cloudinary.com/dvmqxb8kd/video/upload/v1747932844/tvv_vabrdv.mp4" - old video
         type="video/mp4"
       />
 
       <HeroContent>
         {/* Text Content */}
-      <ContentSection>
-  <MotionTypography
-    variant="h1"
-    component={m.div}
-    initial={{ opacity: 0, y: 50, scale: 0.95 }}
-    animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 0.8 }}
-    sx={{
-      fontSize: { xs: '2.5rem', sm: '3rem', md: '4.5rem' },
-      fontWeight: 900,
-      color: '#ff0000',
-      mb: '0.5rem',
-      fontFamily: '"Tekken", sans-serif',
-      textShadow: '0 0 10px rgba(255,0,0,0.5)',
-    }}
-  >
-    Techken
-  </MotionTypography>
+        <ContentSection>
+          <MotionTypography
+            variant="h1"
+            component={m.div}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            sx={{
+              fontSize: { xs: "2.5rem", sm: "3rem", md: "4.5rem" },
+              fontWeight: 900,
+              color: "#ff0000",
+              mb: "0.5rem",
+              fontFamily: '"Tekken", sans-serif',
+              textShadow: "0 0 10px rgba(255,0,0,0.5)",
+            }}
+          >
+            Techken
+          </MotionTypography>
 
-  <MotionTypography
-    variant="h2"
-    component={m.div}
-    initial={{ opacity: 0, y: 50, scale: 0.95 }}
-    animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ duration: 0.8, delay: 0.2 }}
-    sx={{
-      fontSize: { xs: '2rem', sm: '2.5rem', md: '4rem' },
-      fontWeight: 800,
-      color: '#00aaff',
-      mb: '0.5rem',
-      fontFamily: '"Tekken", sans-serif',
-      textShadow: '0 0 8px rgba(0, 136, 255, 0.5)',
-    }}
-  >
-    Showdown 2K25
-  </MotionTypography>
-<MotionTypography
-  variant="h3"
-  component={m.div}
-  className="flicker-gold"
-  initial={{ opacity: 0, y: 50, scale: 0.95 }}
-  animate={{ opacity: 1, y: 0, scale: 1 }}
-  transition={{ duration: 0.8, delay: 0.4 }}
-  sx={{
-    fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' },
-    fontWeight: 700,
-    color: '#ffd700',
-    mb: '1.5rem',
-    fontFamily: '"Tekken", sans-serif',
-  }}
->
-  HACKATHON
-</MotionTypography>
+          <MotionTypography
+            variant="h2"
+            component={m.div}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            sx={{
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "4rem" },
+              fontWeight: 800,
+              color: "#00aaff",
+              mb: "0.5rem",
+              fontFamily: '"Tekken", sans-serif',
+              textShadow: "0 0 8px rgba(0, 136, 255, 0.5)",
+            }}
+          >
+            Showdown 2K25
+          </MotionTypography>
+          <MotionTypography
+            variant="h3"
+            component={m.div}
+            className="flicker-gold"
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            sx={{
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
+              fontWeight: 700,
+              color: "#ffd700",
+              mb: "1.5rem",
+              fontFamily: '"Tekken", sans-serif',
+            }}
+          >
+            HACKATHON
+          </MotionTypography>
 
-  <MotionTypography
-    variant="body1"
-    component={m.div}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, delay: 0.6 }}
-    sx={{
-      fontSize: { xs: '1rem', sm: '1.1rem', md: '1.3rem' },
-      color: '#ffffffcc',
-      maxWidth: '600px',
-      mb: '2rem',
-      margin: '0 auto',
-      textAlign: 'center',
-      fontWeight: 700,
-      lineHeight: 1.6
-   
-    }}
-  >
-    Battle it out in the ultimate coding tournament. Show your skills, defeat your opponents, and
-    claim the title of <strong>King of Techken Showdown 2K25</strong>!
-  </MotionTypography>
+          <MotionTypography
+            variant="body1"
+            component={m.div}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            sx={{
+              fontSize: { xs: "1rem", sm: "1.1rem", md: "1.3rem" },
+              color: "#ffffffcc",
+              maxWidth: "600px",
+              mb: "2rem",
+              margin: "0 auto",
+              textAlign: "center",
+              fontWeight: 700,
+              lineHeight: 1.6,
+            }}
+          >
+            Battle it out in the ultimate coding tournament. Show your skills,
+            defeat your opponents, and claim the title of{" "}
+            <strong>King of Techken Showdown 2K25</strong>!
+          </MotionTypography>
 
-  <Box
-    sx={{
-      display: 'flex',
-      flexDirection: { xs: 'column', sm: 'row' },
-      gap: 2,
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-    }}
-  >
-    <MotionButton
-      className="clipped-btn learn"
-      component={m.button}
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: 0.8 }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => (window.location.href = '#about')}
-    >
-      Learn More
-    </MotionButton>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              gap: 2,
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <MotionButton
+              className="clipped-btn learn"
+              component={m.button}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => (window.location.href = "#about")}
+            >
+              Learn More
+            </MotionButton>
 
-    <MotionButton
-      className="clipped-btn register"
-      component={m.button}
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay: 1.0 }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => (window.location.href = 'https://lu.ma/7spa1ao7')}
-    >
-      Register Now
-    </MotionButton>
-  </Box>
-</ContentSection>
-
+            <MotionButton
+              className="clipped-btn register"
+              component={m.button}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => (window.location.href = "https://lu.ma/7spa1ao7")}
+            >
+              Register Now
+            </MotionButton>
+          </Box>
+        </ContentSection>
 
         {/* Image Section */}
         <ImageSection>
           <m.img
-            src="Gemini_Generated_Image_igrkwuigrkwuigrk-Photoroom.png"
-            alt="Tekken Character"
+            src="BGMI_images\pubg-mobile-helmet-guy-4k-7g-removebg-preview.png"
+            alt="pubg helmet guy"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

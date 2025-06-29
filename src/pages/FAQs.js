@@ -42,44 +42,46 @@ const SectionTitle = styled(Typography)({
 const faqs = [
   {
     question: "Who can participate in the hackathon?",
-    answer: "Anyone with a passion for gaming, coding, or design can participate...",
-    bg: "https://c4.wallpaperflare.com/wallpaper/234/719/610/tekken-7-wallpaper-preview.jpg"
+    answer:
+      "Anyone with a passion for gaming, coding, or design can participate...",
+    bg: "https://images.hdqwalls.com/download/pubg-mobile-godzilla-x-kong-game-vd-1920x1080.jpg",
   },
   {
     question: "How many members can be in a team?",
     answer: "Teams can have 2-5 members. Solo participation is also allowed.",
-    bg: "/images/Gemini_Generated_Image_f35c7sf35c7sf35c.png"
+    bg: "/BGMI_images/teamup.jpg",
   },
   {
     question: "Can I use existing code or assets?",
     answer: "All code must be written during the hackathon...",
-    bg: "/images/thunder.jpg"
+    bg: "/BGMI_images/pubg-helmet-guy-immortality-ao-1920x1080.jpg",
   },
   {
     question: "What is the judging criteria?",
     answer: "Projects are judged on Technical Innovation...",
-    bg: "/images/into-the-stratosphere.jpg"
+    bg: "/BGMI_images/drop-loot.jpg",
   },
   {
     question: "What should I include in my demo?",
     answer: "Your demo should showcase gameplay, innovation...",
-    bg: "/images/Gemini_Generated_Image_f35c7sf35c7sf35c.png"
+    bg: "/BGMI_images/pubg-mobile-between-you-and-the-chicken-dinner-km-1920x1080.jpg",
   },
   {
     question: "Will there be mentors or support?",
     answer: "Yes, mentors from the industry will be available...",
-    bg: "/images/Gemini_Generated_Image_l8nylul8nylul8ny.png"
+    bg: "BGMI_images/pubg-mobile-metro-royale-chapter-25-5t-1920x1080.jpg",
   },
   {
     question: "How do I submit my project?",
     answer: "Submission details will be provided during the event...",
-    bg: "/images/thunder.jpg"
+    bg: "/BGMI_images/teamup.jpg",
   },
   {
     question: "What are the prizes?",
-    answer: "Exciting prizes await the winners! Details can be found in the Prizes section.",
-    bg: "https://media.eventhubs.com/images/2023/11/01_ted14.jpg"
-  }
+    answer:
+      "Exciting prizes await the winners! Details can be found in the Prizes section.",
+    bg: "https://media.eventhubs.com/images/2023/11/01_ted14.jpg",
+  },
 ];
 
 function FAQs() {
