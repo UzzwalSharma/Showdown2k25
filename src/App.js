@@ -12,6 +12,7 @@ import Team from './pages/Team';
 import Rules from './pages/Rules';
 import FAQs from './pages/FAQs';
 import Footer from './components/Footer';
+import Hero2 from './components/New';
 // import TekkenProblemSection from './components/Prblms/TekkenProblemSection';
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       <Navbar />
       <main style={{ padding: 0, margin: 0 }}>
         <section id="home" style={{ padding: 0, margin: 0 }}>
-          <Hero />
+          {/* <Hero /> */}
+          <Hero2 />
         </section>
         <section id="about" style={{ padding: 0, margin: 0 }}>
           <About />

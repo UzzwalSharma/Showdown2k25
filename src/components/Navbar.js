@@ -1,209 +1,139 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Box,AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText
+  AppBar,
+  Toolbar,
+  Box,
+  Button,
+  IconButton,
+  useMediaQuery,
 } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import { styled } from '@mui/material/styles';
-import MenuIcon from '@mui/icons-material/Menu';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
+import SearchIcon from '@mui/icons-material/Search';
+import LoginIcon from '@mui/icons-material/Login';
+import { Typography } from '@mui/material';
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  background: 'linear-gradient(90deg, #000000 0%, #1a1a1a 100%)',
-  padding: '0.5rem 1rem',
-  borderBottom: '2px solid #ff0000',
-  height: '60px'
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  position: 'absolute', // ✅ Make it overlay hero
+  top: 0,
+  left: 0,
+  right: 0,
+  background: '#1c1c22',
+  boxShadow: 'none',
+  padding: '0 2rem',
+  clipPath:
+    'polygon(0 0, 100% 0, 100% 90%, 95% 90%, 94% 100%, 6% 100%, 5% 90%, 0 90%)',
+  zIndex: 1300,
 }));
 
-const NavButton = styled(Button)({
-  color: '#FFFFFF',
-  fontFamily: '"Tekken", sans-serif',
-  fontSize: '0.9rem',
-  padding: '6px 12px',
-  margin: '0 4px',
-  height: '36px',
-  position: 'relative',
-  transition: 'all 0.3s ease-in-out',
-  '&:before': {
-    content: '""',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    width: '100%',
-    height: '2px',
-    backgroundColor: '#00ccff',
-    transform: 'scaleX(0)',
-    transformOrigin: 'right',
-    transition: 'transform 0.3s ease',
+
+const NavLinks = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  gap: '2.5rem',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flex: 1,
+  fontFamily: '"Orbitron", sans-serif',
+  fontWeight: 700,
+  textTransform: 'uppercase',
+  fontSize: '14px',
+  color: '#ffffff',
+  '& a': {
+    color: '#ffffff',
+    textDecoration: 'none',
+    transition: '0.3s ease',
+    '&:hover': {
+      color: '#ff7b00',
+    },
   },
+}));
+
+const Logo = styled('img')({
+  height: '40px',
+});
+
+const SearchBox = styled(IconButton)({
+  color: '#fff',
+  padding: '0.5rem',
   '&:hover': {
-    backgroundColor: 'rgba(0, 204, 255, 0.15)',
-    boxShadow: '0 0 8px #00ccff',
-  },
-  '&:hover:before': {
-    transform: 'scaleX(1)',
-    transformOrigin: 'left',
+    color: '#ff7b00',
   },
 });
 
+const Divider = styled('div')({
+  width: '2px',
+  height: '28px',
+  backgroundColor: '#2a1d24',
+  margin: '0 1rem',
+});
 
-const NavLinks = styled('div')({
+const LoginBtn = styled(Button)({
   display: 'flex',
   alignItems: 'center',
-  gap: '0.5rem'
-});
-
-const Logo = styled('div')({
-  cursor: 'pointer',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  '& .techken': {
-    color: '#ff0000',
-    fontSize: '1.8rem',
-    fontFamily: '"Tekken", sans-serif',
-    fontWeight: 'bold',
-    lineHeight: 1
+  backgroundColor: '#2c2e35',
+  color: '#fff',
+  fontWeight: 700,
+  textTransform: 'uppercase',
+  borderLeft: '3px solid orange',
+  padding: '8px 16px',
+  gap: '0.5rem',
+  fontSize: '12px',
+  '&:hover': {
+    backgroundColor: '#3a3c45',
+    color: '#ff7b00',
   },
-  '& .showdown': {
-    color: '#0088ff',
-    fontSize: '1.2rem',
-    fontFamily: '"Tekken", sans-serif'
-  }
 });
 
-function Navbar() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+const GameXNavbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setDrawerOpen(false); // Close drawer on selection
-    }
-  };
-
-  const navItems = [
-    { label: 'About', id: 'about' },
-    { label: 'Team', id: 'team' },
-    { label: 'Timeline', id: 'timeline' },
-    { label: 'Sponsors', id: 'sponsors' },
-    { label: 'Judging Criteria', id: 'judging' },
-    { label: 'Rules', id: 'rules' },
-    { label: 'Prizes', id: 'prizes' },
-    { label: 'FAQs', id: 'faqs', special: true }
-  ];
-
   return (
-    <>
-      <AppBar position="fixed">
-        <StyledToolbar>
-          <Logo onClick={() => scrollToSection('home')}>
-            <span className="techken">Techken</span>
-            <span className="showdown">Showdown 2K25</span>
-          </Logo>
-
-          {isMobile ? (
-            <>
-              <IconButton
-                edge="end"
-                color="inherit"
-                aria-label="menu"
-                onClick={() => setDrawerOpen(true)}
-              >
-                <MenuIcon />
-              </IconButton>
-
-<Drawer
-  anchor="right"
-  open={drawerOpen}
-  onClose={() => setDrawerOpen(false)}
-  PaperProps={{
-    sx: {
-      background: 'rgba(0, 0, 0, 0.9)',
-      backdropFilter: 'blur(10px)',
-      boxShadow: '0 0 20px #00ccff',
-    },
+    <StyledAppBar position="static">
+      <Toolbar disableGutters sx={{ justifyContent: 'space-between', alignItems: 'center', height: '120px' }}>
+        {/* Logo */}
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+         <Typography
+  variant="h5"
+  sx={{
+    fontFamily: '"Orbitron", sans-serif',
+    fontWeight: 900,
+    fontSize: '1.8rem',
+    background: 'linear-gradient(to right, #ff0000, #ffaa00)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    textShadow: '0 0 8px rgba(255, 0, 0, 0.6), 0 0 12px rgba(255, 165, 0, 0.4)',
+    letterSpacing: '2px',
+    ml: 2,
   }}
 >
+  HackGround 2K25
+</Typography>
 
-                 <Box
-    sx={{
-      display: 'flex',
-      justifyContent: 'flex-end',
-      p: 2,
-      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-      backgroundColor: '#000', // or your drawer bg color
-    }}
-  >
-    <IconButton onClick={() => setDrawerOpen(false)} aria-label="close drawer" sx={{ color: '#ff0000' }}>
-      <CloseIcon fontSize="large" />
-    </IconButton>
-  </Box>
-               <List sx={{ width: 250 }}>
-  {navItems.map(({ label, id, special }) => (
-    <ListItem
-      button
-      key={id}
-      onClick={() => {
-        scrollToSection(id);
-        setDrawerOpen(false); // close drawer on click
-      }}
-      sx={{
-        backgroundColor: special ? '#ff0000' : 'inherit',
-        color: special ? '#fff' : '#00ccff',
-        transition: 'all 0.3s ease',
-        '&:hover': {
-          backgroundColor: '#001f33',
-          boxShadow: '0 0 10px #00ccff, 0 0 20px #00ccff',
-          transform: 'scale(1.03)',
-        },
-      }}
-    >
-      <ListItemText
-        primary={label}
-        primaryTypographyProps={{
-          sx: {
-            color: special ? '#fff' : '#ff0000',
-            fontFamily: '"Tekken", sans-serif',
-            textTransform: 'uppercase',
-            letterSpacing: '2px',
-            fontSize: '1.5rem',
-            marginBottom: '0.5rem',
-          },
-        }}
-      />
-    </ListItem>
-  ))}
-</List>
+        </Box>
 
-              </Drawer>
-            </>
-          ) : (
-            <NavLinks>
-              {navItems.map(({ label, id, special }) => (
-                <NavButton
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  sx={special && {
-                    backgroundColor: '#ff0000',
-                    '&:hover': { backgroundColor: '#cc0000' }
-                  }}
-                >
-                  {label}
-                </NavButton>
-              ))}
-            </NavLinks>
-          )}
-        </StyledToolbar>
-      </AppBar>
-    </>
+        {/* Nav Links */}
+        {!isMobile && (
+          <NavLinks>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#tournament">Tournament</a>
+            <a href="#team">Team</a>
+            <a href="#gears">Gears</a>
+            <a href="#contact">Contact</a>
+          </NavLinks>
+        )}
+
+        {/* Right Actions */}
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <SearchBox>
+            <SearchIcon />
+          </SearchBox>
+          <Divider />
+          <LoginBtn startIcon={<LoginIcon />}>Log-in</LoginBtn>
+        </Box>
+      </Toolbar>
+    </StyledAppBar>
   );
-}
+};
 
-export default Navbar;
+export default GameXNavbar;
