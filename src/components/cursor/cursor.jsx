@@ -88,7 +88,7 @@ const TechkkenCursor = () => {
           zIndex: 9999,
           mixBlendMode: 'screen',
           userSelect: 'none',
-          filter: 'drop-shadow(0 0 8px #ff1744) drop-shadow(0 0 8px #2979ff)',
+          filter: 'drop-shadow(0 0 8pxrgb(236, 255, 23)) drop-shadow(0 0 8pxrgb(255, 169, 41))',
         }}
         width={size}
         height={size}

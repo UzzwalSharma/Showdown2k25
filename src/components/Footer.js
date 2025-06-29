@@ -1,152 +1,232 @@
-import React, { useEffect, useRef } from 'react';
-import { Box, Container, Typography, Grid, IconButton } from '@mui/material';
+import React, { useRef, useEffect } from 'react';
+import {
+  Box,
+  Container,
+  Typography,
+  IconButton,
+  Button,
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
+import gsap from 'gsap';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import gsap from 'gsap';
+import DiscordIcon from '@mui/icons-material/Chat'; // Using chat icon as placeholder for Discord
 
-const FooterSection = styled(Box)(({ theme }) => ({
+
+const LogoText = styled(Typography)({
+  fontFamily: '"Orbitron", sans-serif',
+  fontWeight: 800,
+  fontSize: '1.6rem',        // smaller size
+  color: '#FFD700',          // gold/yellow color
+  textShadow: `
+    0 0 6px #FFD700,
+    0 0 12px #FFA500,
+    0 0 18px #FF8C00
+  `,
+  userSelect: 'none',
+  letterSpacing: '0.08em',
+});
+const FooterWrapper = styled(Box)({
+  background: '#0a0a0a',
+  color: '#fff',
   position: 'relative',
-  backgroundColor: '#0c0c0c',
-  backgroundImage: 'url("/BGMI_images/pubg-2025-cb-1920x1080.jpg")', // Replace with your image path
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center -190px',
-  color: '#ffffff',
-  padding: '3rem 0',
-  textAlign: 'center',
-  perspective: '1000px',
-  borderTop: '3px solid #ff0000',
-  boxShadow: '0 -5px 20px rgba(255, 0, 0, 0.4)',
-  zIndex: 1,
+  zIndex: 10,
   overflow: 'hidden',
+  fontFamily: '"Orbitron", sans-serif',
+});
 
+const FooterTop = styled(Box)({
+  padding: '8rem 0',
+  minHeight: '300px', // or height: '400px' or more depending on content
+  backgroundImage: 'url("/BGMI_images/pubg-2025-cb-1920x1080.jpg")',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundAttachment: 'fixed',
+  position: 'relative',
   '&::before': {
     content: '""',
     position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    background: 'rgba(0, 0, 0, 0.7)', // Dark overlay
-    zIndex: -1,
+    inset: 0,
+    background: 'rgba(0, 0, 0, 0.8)',
+    zIndex: 1,
   },
-}));
+});
 
 
+const FooterContainer = styled(Container)({
+  display: 'grid',
+  gap: '80px',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
+  position: 'relative',
+  zIndex: 2,
+});
 
 const FooterTitle = styled(Typography)({
-  color: '#ff0000',
-  fontFamily: '"Tekken", sans-serif',
-  fontSize: '2rem',
+  fontSize: '1.2rem',
+  fontWeight: 700,
+  textTransform: 'uppercase',
+  marginBottom: '15px',
+  color: '#FFA500',
+  position: 'relative',
+  paddingBottom: '10px',
+  width: 'max-content',
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+    height: '3px',
+    width: '50%',
+    backgroundColor: '#FF4500',
+  },
+});
+
+const FooterText = styled(Typography)({
+  fontSize: '0.95rem',
+  color: '#ccc',
+  lineHeight: 1.6,
   marginBottom: '1rem',
-  textShadow: '0 0 8px #ff0000',
-  transform: 'rotateX(10deg)',
 });
 
 const FooterLink = styled('a')({
-  color: '#ffd700',
-  fontFamily: '"Tekken", sans-serif',
-  fontSize: '1rem',
-  marginBottom: '0.5rem',
-  cursor: 'pointer',
-  textDecoration: 'none',
   display: 'block',
-  textAlign: 'left',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  transition: 'transform 0.3s, text-shadow 0.3s',
+  color: '#ddd',
+  marginBottom: '8px',
+  fontSize: '0.95rem',
+  textDecoration: 'none',
+  transition: 'all 0.3s',
   '&:hover': {
-    textShadow: '0 0 10px #ffd700',
-    transform: 'scale(1.1) translateZ(5px)',
+    color: '#FFA500',
+    transform: 'translateX(4px)',
   },
 });
 
-const MadeWithLove = styled(Typography)({
-  marginTop: '2rem',
-  fontFamily: 'sans-serif',
-  fontSize: '1rem',
-  color: '#ffd700',
-  fontWeight: 'bolder',
-  textShadow: '0 0 6px #ffdd57',
-  transform: 'rotateX(10deg)',
+const SocialIcon = styled(IconButton)({
+  width: 40,
+  height: 40,
+  background: 'rgba(255,255,255,0.08)',
+  backdropFilter: 'blur(6px)',
+  marginRight: '10px',
+  transition: 'all 0.3s',
+  borderRadius: '8px',
+  '&:hover': {
+    background: '#FF4500',
+    transform: 'translateY(-3px)',
+  },
+});
+
+const DiscordButton = styled(Button)({
+  backgroundColor: '#5865F2',
+  color: '#fff',
+  fontWeight: 'bold',
+  textTransform: 'uppercase',
+  borderRadius: '8px',
+  padding: '12px 24px',
+  boxShadow: '0 0 15px #5865F2',
+  transition: 'all 0.3s ease-in-out',
+  '&:hover': {
+    backgroundColor: '#4752c4',
+    boxShadow: '0 0 25px #4752c4',
+    transform: 'scale(1.05)',
+  },
+  display: 'flex',
+  alignItems: 'center',
+  gap: '10px',
+});
+
+const FooterBottom = styled(Box)({
+  background: '#111',
+  textAlign: 'center',
+  padding: '1rem 0',
+  borderTop: '2px solid #FF4500',
+  color: '#888',
+  fontSize: '0.9rem',
 });
 
 function Footer() {
-  const loveRef = useRef();
+  const ref = useRef();
 
   useEffect(() => {
     gsap.fromTo(
-      loveRef.current,
-      { scale: 0.5, opacity: 0, y: 50 },
-      {
-        scale: 1,
-        opacity: 1,
-        y: 0,
-        ease: 'back.out(1.7)',
-        duration: 1.5,
-        delay: 0.3,
-      }
+      ref.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
     );
   }, []);
 
   return (
-    <FooterSection>
-      <Container maxWidth="lg">
-        <FooterTitle variant="h6">Techken Showdown 2K25</FooterTitle>
-        <Typography variant="body2" gutterBottom>
-          The ultimate coding tournament inspired by the legendary Tekken fighting game series.
-        </Typography>
+    <FooterWrapper>
+      <FooterTop>
+        <FooterContainer ref={ref}>
+          {/* Brand + Social */}
+          <Box>
+          <LogoText>
+  Hackground2k25
+</LogoText>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-          <IconButton href="https://twitter.com" target="_blank" sx={{ color: '#1DA1F2' }}>
-            <TwitterIcon />
-          </IconButton>
-          <IconButton href="https://discord.com" target="_blank" sx={{ color: '#5865F2' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px">
-              <path d="M12 0C5.372 0 0 5.372 0 12c0 5.302 3.438 9.8 8.205 11.387.6.111.82-.261.82-.58..." />
-            </svg>
-          </IconButton>
-          <IconButton href="https://www.instagram.com/tsd.2k25_hackathon?igsh=aXJ5bTBtZTRiZ2Vr&utm_source=qr" target="_blank" sx={{ color: '#9146FF' }}>
-            <InstagramIcon />
-          </IconButton>
-          <IconButton href="https://youtube.com" target="_blank" sx={{ color: '#FF0000' }}>
-            <YouTubeIcon />
-          </IconButton>
-        </Box>
+            <FooterText>
+              Our success in this battleground comes from code, passion, and a team forged in fire.
+            </FooterText>
+            <Box>
+              <SocialIcon aria-label="Twitter">
+                <TwitterIcon />
+              </SocialIcon>
+              <SocialIcon aria-label="Instagram">
+                <InstagramIcon />
+              </SocialIcon>
+              <SocialIcon aria-label="YouTube">
+                <YouTubeIcon />
+              </SocialIcon>
+            </Box>
+          </Box>
 
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} sm={4}>
-            <FooterLink href="#home">Home</FooterLink>
-            <FooterLink href="#about">About</FooterLink>
-            <FooterLink href="#team">Team</FooterLink>
-            <FooterLink href="#timeline">Timeline</FooterLink>
-            <FooterLink href="#sponsors">Sponsors</FooterLink>
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <FooterLink href="#judging">Judging Criteria</FooterLink>
-            <FooterLink href="#rules">Rules</FooterLink>
-            <FooterLink href="#prizes">Prizes</FooterLink>
-            <FooterLink href="#faqs">FAQs</FooterLink>
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <Typography variant="body2">
-              <a href="mailto:hackathon@tekken.com" style={{ color: '#ffd700', textDecoration: 'none' }}>
-                hackathon@tekken.com
+          {/* Useful Links */}
+          <Box>
+            <FooterTitle>Useful Links</FooterTitle>
+            <FooterLink href="#">Tournaments</FooterLink>
+            <FooterLink href="#">Help Center</FooterLink>
+            <FooterLink href="#">Privacy Policy</FooterLink>
+            <FooterLink href="#">Terms of Use</FooterLink>
+            <FooterLink href="#">Contact</FooterLink>
+          </Box>
+
+          {/* Contact Info */}
+          <Box>
+            <FooterTitle>Contact Us</FooterTitle>
+            <FooterText><strong>Location:</strong> 153 Hapur Gaming Arena, Delhi NCR</FooterText>
+            <FooterText>
+              <strong>Email:</strong>{' '}
+              <a href="mailto:info@techken.com" style={{ color: '#FFA500' }}>
+                info@techken.com
               </a>
-            </Typography>
-          </Grid>
-        </Grid>
+            </FooterText>
+            <FooterText><strong>Phone:</strong> +91 9876543210</FooterText>
+          </Box>
 
-        <Typography variant="body2" sx={{ mt: 2 }}>
-          © 2025 Techken Showdown 2K25 Hackathon. All Rights Reserved.
+          {/* Discord Join */}
+          <Box>
+            <FooterTitle>Join Our Discord</FooterTitle>
+            <DiscordButton
+              variant="contained"
+              href="https://discord.gg/yourserver"
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<DiscordIcon />}
+            >
+              Connect Now
+            </DiscordButton>
+          </Box>
+        </FooterContainer>
+      </FooterTop>
+
+      <FooterBottom>
+        <Typography>
+          &copy; 2025 Hackground 2K25. All rights reserved. | Built with{' '}
+          <span className="animate-pulse">💖</span> by <strong>Ujjwal & Nishchay</strong>
         </Typography>
-        <MadeWithLove ref={loveRef}>
-          Made with ❤️ by Ujjwal Sharma & Nishchay Chaurasia
-        </MadeWithLove>
-      </Container>
-    </FooterSection>
+      </FooterBottom>
+    </FooterWrapper>
   );
 }
 
