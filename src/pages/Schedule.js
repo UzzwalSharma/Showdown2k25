@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ScheduleSection = styled(Box)({
  
-   backgroundImage: 'url("/images/thunder.jpg")',
+   backgroundImage: 'url("https://wallpapers.com/images/hd/playerunknowns-battlegrounds-4k-199qn3rz37tm9ivs.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed",
@@ -37,37 +37,49 @@ const TimelineContainer = styled(Box)({
     left: "50%",
     width: "4px",
     height: "100%",
-    background: "linear-gradient(180deg, #ff0000 0%, #0088ff 100%)",
+    background: "linear-gradient(180deg, #ff9900 0%, #ffffff 100%)",
     transform: "translateX(-50%)",
   },
 });
 
+
 const DayCard = styled(Paper)(({ side, bgimg }) => ({
-  background: "rgba(0, 0, 0, 0.85)",
-  padding: "2rem 2rem 3rem",
-  borderRadius: "16px",
-  border: "2px solid #ff0000",
-  marginBottom: "3rem",
+  background: "rgba(255, 255, 255, 0.05)",
+  padding: "2.5rem 2rem 3rem",
   position: "relative",
   width: "45%",
-  // clipPath:
-  // side === "left"
-  //   ? "polygon(0 0, 100% 10%, 100% 90%, 0% 100%)"
-  //   : "polygon(0 10%, 100% 0%, 100% 100%, 0 90%)"
-
   marginLeft: side === "left" ? "2rem" : "auto",
   marginRight: side === "left" ? "auto" : "2rem",
-  boxShadow: "0 0 20px rgba(255, 0, 0, 0.6)",
+  border: "2px solid #ff9900",
+  boxShadow: `
+    0 0 8px #ff9900,
+    0 0 20px #ff9900,
+    0 0 30px #ff9900,
+    inset 0 0 10px #ff9900
+  `,
+  borderRadius: 0,
+  clipPath:
+    side === "left"
+      ? "polygon(0 0, 96% 0, 100% 10%, 100% 90%, 96% 100%, 0 100%)"
+      : "polygon(4% 0, 100% 0, 100% 100%, 4% 100%, 0 90%, 0 10%)",
   backgroundImage: `url(${bgimg})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
+  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+  "&:hover": {
+    transform: "scale(1.03)",
+    boxShadow: `
+      0 0 12px #ff9900,
+      0 0 40px #ff9900,
+      inset 0 0 20px #ff9900
+    `,
+  },
   "&::before": {
     content: '""',
     position: "absolute",
     inset: 0,
-    backgroundColor: "rgba(0,0,0,0.7)",
-    borderRadius: "16px",
+    backgroundColor: "rgba(0,0,0,0.75)",
     zIndex: 1,
   },
   "& > *": {
@@ -76,23 +88,34 @@ const DayCard = styled(Paper)(({ side, bgimg }) => ({
   },
 }));
 
+
+
 const DayLabel = styled(Box)({
-  border: "3px solid #ff0000",
-  borderRadius: "50%",
-  width: "90px",
-  height: "90px",
+  border: "4px solid #ff0000",
+  width: "100px",
+  height: "100px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   position: "absolute",
-  top: "-45px",
+  top: "-50px",
   left: "50%",
   transform: "translateX(-50%)",
   zIndex: 20,
-  boxShadow: "0 0 20px rgba(255, 0, 0, 0.6)",
+  background: "black",
+  fontFamily: '"Tekken", sans-serif',
   color: "#ff0000",
-  backgroundColor: "rgba(0, 0, 0, 0.7)",
+  fontWeight: "bold",
+  fontSize: "1rem",
+  borderRadius: "50%",
+  boxShadow: `
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000,
+    inset 0 0 10px #ff0000
+  `,
 });
+
 
 const events = [
   {
@@ -161,19 +184,27 @@ const Schedule = () => {
   return (
     <ScheduleSection>
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 5, py: 8 }}>
-        <Typography
-          variant="h2"
-          align="center"
-          sx={{
-            color: "#ff0000",
-            fontFamily: '"Tekken", sans-serif',
-            textTransform: "uppercase",
-            mb: 8,
-            "& span": { color: "#0088ff" },
-          }}
-        >
-          Event <span>Timeline</span>
-        </Typography>
+  <Typography
+  variant="h2"
+  align="center"
+  sx={{
+    color: "#ff9900",
+    fontFamily: '"Press Start 2P", "Tekken", sans-serif',
+    fontSize: "2.6rem",
+    letterSpacing: "2px",
+    textShadow: "0 0 12px #ff9900",
+    textTransform: "uppercase",
+    mb: 8,
+    "& span": {
+      color: "#ffffff",
+      textShadow: "0 0 20px #ffffff",
+    },
+  }}
+>
+  Event <span>Timeline</span>
+</Typography>
+
+
 
         <TimelineContainer>
           {events.map(({ day, title, desc, img, side }, index) => (
@@ -199,12 +230,17 @@ const Schedule = () => {
                 {title}
               </Typography>
               {desc.map((line, i) => (
-                <Typography
-                  key={i}
-                  sx={{ color: "#ffffff",fontWeight:"bolder", mb: i === desc.length - 1 ? 0 : 1 }}
-                >
-                  {line}
-                </Typography>
+               <Typography
+  key={i}
+  sx={{
+    color: i % 2 === 0 ? "#ffffff" : "#ff9900",
+    fontWeight: "bolder",
+    mb: i === desc.length - 1 ? 0 : 1,
+  }}
+>
+  {line}
+</Typography>
+
               ))}
             </DayCard>
           ))}
