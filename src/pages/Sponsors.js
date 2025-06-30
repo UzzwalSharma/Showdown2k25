@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 
 const SponsorsSection = styled(Box)({
-  backgroundImage: 'url("/images/elegant-palace.jpg")',
+  backgroundImage: 'url("https://www.esportstalk.com/wp-content/uploads/2021/07/pubg-mobile-june-2021-revenue.jpg")',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundAttachment: 'fixed',
@@ -18,14 +18,16 @@ const SponsorsSection = styled(Box)({
     right: 0,
     bottom: 0,
     background: 'linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%)',
-  }
+  },
 });
 
+const glowYellow = '0 0 12px #FFD700, 0 0 24px #FFD700';
+
 const SponsorCard = styled(Paper)(({ index, isVisible, position }) => ({
-  background: 'rgba(0, 0, 0, 0.8)',
+  background: 'rgba(255, 255, 255, 0.05)',
   padding: '2rem',
-  borderRadius: '8px',
-  border: '1px solid #ff0000',
+  borderRadius: '12px',
+  border: '2px solid #FFD700',
   position: 'relative',
   overflow: 'hidden',
   height: '100%',
@@ -37,25 +39,26 @@ const SponsorCard = styled(Paper)(({ index, isVisible, position }) => ({
     : 'scale(0.8) translateX(-120%)',
   '&:hover': {
     transform: `scale(1.05) translateX(${position * 120}%) translateY(-10px)`,
-    border: '1px solid #0088ff',
-    boxShadow: '0 0 30px rgba(0, 136, 255, 0.3)',
+    borderColor: '#FFEA00',
+    boxShadow: glowYellow,
   },
-  // Top-left badge
   '&::before': {
-    content: `"⭐ ${index === 0 ? 'Platinum' : index === 1 ? 'Diamond' : index === 2 ? 'Gold' : 'Sponsor'}"`,
+    content: `"${index === 0 ? 'Platinum' : index === 1 ? 'Diamond' : index === 2 ? 'Gold' : 'Sponsor'}"`,
     position: 'absolute',
     top: 0,
     left: 0,
-    backgroundColor: '#0088ff',
-    color: '#fff',
+    background: 'linear-gradient(135deg, #FFEA00, #FFD700)',
+    color: '#111',
     fontWeight: 'bold',
-    padding: '0.3rem 0.7rem',
-    fontSize: '0.75rem',
-    fontFamily: '"Tekken", sans-serif',
+    padding: '0.4rem 0.8rem',
+    fontSize: '0.7rem',
+   fontFamily: '"Oswald", sans-serif',
     clipPath: 'polygon(0 0, 100% 0, 80% 100%, 0% 100%)',
     zIndex: 2,
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    boxShadow: glowYellow,
   },
-  // Bottom-right clipped accent
   '&::after': {
     content: '""',
     position: 'absolute',
@@ -63,24 +66,31 @@ const SponsorCard = styled(Paper)(({ index, isVisible, position }) => ({
     right: 0,
     width: '60px',
     height: '60px',
-    backgroundColor: '#ff0000',
+    backgroundColor: '#FFD700',
     clipPath: 'polygon(100% 0, 100% 100%, 0 100%)',
     zIndex: 1,
   },
 }));
 
 const SectionTitle = styled(Typography)({
-  color: '#ff0000',
-  fontFamily: '"Tekken", sans-serif',
+  color: '#FFD700',
+  fontFamily: '"Oswald", sans-serif',
   marginBottom: '2rem',
   textTransform: 'uppercase',
   letterSpacing: '2px',
-  fontSize: '3rem'
+  fontSize: '3rem',
+  textAlign: 'center',
 });
 
-const BlueText = styled('span')({
-  color: '#0088ff'
+const YellowText = styled('span')({
+  background: 'linear-gradient(90deg, #FFEA00, #FFD700)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  fontWeight: 700,
+  fontFamily: '"Oswald", sans-serif',
 });
+
+
 
 function Sponsors() {
   const sponsors = [
@@ -142,98 +152,105 @@ function Sponsors() {
         }
         return next;
       });
-    }, 3000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, [sponsors.length, direction]);
 
   return (
-   <SponsorsSection>
-  <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
-    <SectionTitle variant="h2" align="center">
-      Our <BlueText>Sponsors</BlueText>
-    </SectionTitle>
+    <SponsorsSection>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
+        <SectionTitle variant="h2">
+          Our <YellowText>Sponsors</YellowText>
+        </SectionTitle>
 
-    <Box
-      sx={{
-        position: 'relative',
-        overflow: 'hidden',
-        height: { xs: 'auto', md: '500px' }, // Auto height on small devices
-        display: { xs: 'flex', md: 'block' }, // Flex on small, block on md+
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: 4, // spacing between cards on small screens
-      }}
-    >
-      {sponsors.map((sponsor, index) => (
         <Box
-          key={index}
           sx={{
-            position: { xs: 'relative', md: 'absolute' },
-            width: { xs: '90%', sm: '45%', md: '28%' },
-            left: { xs: 'auto', md: '36%' },
-            transition: 'all 0.8s ease',
-            mb: { xs: 4, md: 0 }, // margin bottom on small screens for spacing
+            position: 'relative',
+            overflow: 'hidden',
+            height: { xs: 'auto', md: '500px' },
+            display: { xs: 'flex', md: 'block' },
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 4,
           }}
         >
-          <SponsorCard
-            index={index}
-            isVisible={visibleSponsors.includes(index)}
-            position={visibleSponsors.indexOf(index) - 1}
-          >
-        <Box
+          {sponsors.map((sponsor, index) => (
+            <Box
+              key={index}
+              sx={{
+                position: { xs: 'relative', md: 'absolute' },
+                width: { xs: '90%', sm: '45%', md: '28%' },
+                left: { xs: 'auto', md: '36%' },
+                transition: 'all 0.8s ease',
+                mb: { xs: 4, md: 0 },
+              }}
+            >
+              <SponsorCard
+                index={index}
+                isVisible={visibleSponsors.includes(index)}
+                position={visibleSponsors.indexOf(index) - 1}
+              >
+                <Box
+                  sx={{
+                    height: '200px',
+                    mb: 3,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'rgba(255, 255, 255, 0.07)',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    p: 2,
+                  }}
+                >
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    style={{
+                      maxHeight: '100%',
+                      maxWidth: '100%',
+                      objectFit: 'contain',
+                    }}
+                  />
+                </Box>
+
+         
+
+<Typography
+  variant="h6"
   sx={{
-    height: '200px',
-    mb: 3,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: 'rgba(255, 255, 255, 0.05)',
-    borderRadius: '4px',
-    overflow: 'hidden',
-    p: 2
+    color: '#FFEA00',
+    textAlign: 'center',
+    mb: 2,
+    fontFamily: '"Oswald", sans-serif',
+    fontSize: '1.1rem',
+    letterSpacing: '1px',
+    textTransform: 'uppercase',
   }}
 >
-  <img
-    src={sponsor.logo}
-    alt={sponsor.name}
-    style={{
-      maxHeight: '100%',
-      maxWidth: '100%',
-      objectFit: 'contain',
-    }}
-  />
-</Box>
+  {sponsor.tier}
+</Typography>
 
-            <Typography
-              variant="h6"
-              sx={{
-                color: '#0088ff',
-                textAlign: 'center',
-                mb: 2,
-                fontFamily: '"Tekken", sans-serif',
-              }}
-            >
-              {sponsor.tier}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: '#ffffff',
-                textAlign: 'center',
-                fontSize: '1.1rem',
-              }}
-            >
-              {sponsor.description}
-            </Typography>
-          </SponsorCard>
+<Typography
+  variant="body1"
+  sx={{
+    color: '#fffde7',
+    textAlign: 'center',
+    fontSize: '1.05rem',
+    fontWeight: 500,
+    fontFamily: '"Oswald", sans-serif',
+  }}
+>
+  {sponsor.description}
+</Typography>
+              </SponsorCard>
+            </Box>
+          ))}
         </Box>
-      ))}
-    </Box>
-  </Container>
-</SponsorsSection>
-
+      </Container>
+    </SponsorsSection>
   );
 }
 

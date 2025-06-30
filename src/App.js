@@ -14,6 +14,8 @@ import FAQs from './pages/FAQs';
 import Footer from './components/Footer';
 import Hero2 from './components/New';
 // import TekkenProblemSection from './components/Prblms/TekkenProblemSection';
+import Timer from './components/Timer';
+import Tracks from './components/Tracks';
 function App() {
   return (
     <div className="App">
@@ -23,6 +25,9 @@ function App() {
         <section id="home" style={{ padding: 0, margin: 0 }}>
           {/* <Hero /> */}
           <Hero2 />
+        </section>
+           <section id="judging" style={{ padding: 0, margin: 0 }}>
+    <Timer/>
         </section>
         <section id="about" style={{ padding: 0, margin: 0 }}>
           <About />
@@ -41,9 +46,10 @@ function App() {
         <section id="sponsors" style={{ padding: 0, margin: 0 }}>
           <Sponsors />
         </section>
-        <section id="judging" style={{ padding: 0, margin: 0 }}>
-          <JudgingCriteria />
-        </section>
+     
+         <section id="tracks" style={{ padding: 0, margin: 0 }}>
+          <Tracks />
+       </section>
         <section id="rules" style={{ padding: 0, margin: 0 }}>
           <Rules />
         </section>
