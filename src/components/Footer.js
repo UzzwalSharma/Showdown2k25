@@ -194,7 +194,7 @@ function Footer() {
           {/* Contact Info */}
           <Box>
             <FooterTitle>Contact Us</FooterTitle>
-            <FooterText><strong>Location:</strong> 153 Hapur Gaming Arena, Delhi NCR</FooterText>
+            <FooterText><strong>Location:</strong> MS OFFICE , Delhi NCR</FooterText>
             <FooterText>
               <strong>Email:</strong>{' '}
               <a href="mailto:info@techken.com" style={{ color: '#FFA500' }}>
