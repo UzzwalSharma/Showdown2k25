@@ -135,7 +135,7 @@ const events = [
     desc: [
       "10:00 AM - Progress presentations",
       "12:00 PM - Workshop: Advanced combat mechanics",
-      "6:00 PM - Tekken 8 exhibition match",
+      "6:00 PM - BGMI exhibition match",
     ],
     img: "/BGMI_images/day2.png",
     side: "right",
