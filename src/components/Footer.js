@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import Floatingbot from "./Chatboat/Floatingbot.jsx"
 import {
   Box,
   Container,
@@ -166,9 +167,34 @@ const MusicToggleButton = styled(IconButton)({
   },
 });
 
+const ChatbotToggleButton = styled(IconButton)({
+  position: 'fixed',
+  bottom: 112, // 32 (music) + 64 (button height) + 16 (gap)
+  right: 32,
+  zIndex: 2000,
+  width: 64,
+  height: 64,
+  borderRadius: '50%',
+  background: 'linear-gradient(135deg, #FFCC00 60%, #FFD700 100%)',
+  boxShadow: '0 4px 24px #000a',
+  color: '#222',
+  transition: 'all 0.3s',
+  border: '3px solid #fff',
+  fontSize: 32,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  '&:hover': {
+    background: 'linear-gradient(135deg, #FFD700 60%, #FFCC00 100%)',
+    color: '#fff',
+    transform: 'scale(1.07)',
+  },
+});
+
 function Footer() {
   const ref = useRef();
   const [musicOn, setMusicOn] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -199,6 +225,10 @@ function Footer() {
       >
         {musicOn ? <MusicNoteIcon fontSize="large" /> : <VolumeOffIcon fontSize="large" />}
       </MusicToggleButton>
+
+      {/* Chatbot Toggle Button */}
+     <Floatingbot className="animation-bounce"/>
+
       {/* Hidden audio element */}
       <audio
         ref={audioRef}
