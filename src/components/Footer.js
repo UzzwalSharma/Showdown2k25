@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import {
   Box,
   Container,
@@ -12,6 +12,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import DiscordIcon from '@mui/icons-material/Chat'; // Using chat icon as placeholder for Discord
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 
 
 const LogoText = styled(Typography)({
@@ -144,8 +146,30 @@ const FooterBottom = styled(Box)({
   fontSize: '0.9rem',
 });
 
+const MusicToggleButton = styled(IconButton)({
+  position: 'fixed',
+  bottom: 32,
+  right: 32,
+  zIndex: 2000,
+  width: 64,
+  height: 64,
+  borderRadius: '50%',
+  background: 'linear-gradient(135deg, #FFCC00 60%, #FFA500 100%)',
+  boxShadow: '0 4px 24px #000a',
+  color: '#222',
+  transition: 'all 0.3s',
+  border: '3px solid #fff',
+  '&:hover': {
+    background: 'linear-gradient(135deg, #FFA500 60%, #FFCC00 100%)',
+    color: '#fff',
+    transform: 'scale(1.07)',
+  },
+});
+
 function Footer() {
   const ref = useRef();
+  const [musicOn, setMusicOn] = useState(false);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -155,78 +179,104 @@ function Footer() {
     );
   }, []);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      if (musicOn) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    }
+  }, [musicOn]);
+
   return (
-    <FooterWrapper>
-      <FooterTop>
-        <FooterContainer ref={ref}>
-          {/* Brand + Social */}
-          <Box>
-          <LogoText>
+    <>
+      {/* Music Toggle Button */}
+      <MusicToggleButton
+        aria-label={musicOn ? "Turn off music" : "Turn on music"}
+        onClick={() => setMusicOn((prev) => !prev)}
+      >
+        {musicOn ? <MusicNoteIcon fontSize="large" /> : <VolumeOffIcon fontSize="large" />}
+      </MusicToggleButton>
+      {/* Hidden audio element */}
+      <audio
+        ref={audioRef}
+        src="/victory-awaits-in-the-gaming-universe_astronaut-265184.mp3"
+        loop
+      />
+      <FooterWrapper>
+        <FooterTop>
+          <FooterContainer ref={ref}>
+            {/* Brand + Social */}
+            <Box>
+            <LogoText>
   Hackground2k25
 </LogoText>
 
-            <FooterText>
-              Our success in this battleground comes from code, passion, and a team forged in fire.
-            </FooterText>
-            <Box>
-              <SocialIcon aria-label="Twitter">
-                <TwitterIcon />
-              </SocialIcon>
-              <SocialIcon aria-label="Instagram">
-                <InstagramIcon />
-              </SocialIcon>
-              <SocialIcon aria-label="YouTube">
-                <YouTubeIcon />
-              </SocialIcon>
+              <FooterText>
+                Our success in this battleground comes from code, passion, and a team forged in fire.
+              </FooterText>
+              <Box>
+                <SocialIcon aria-label="Twitter">
+                  <TwitterIcon />
+                </SocialIcon>
+                <SocialIcon aria-label="Instagram">
+                  <InstagramIcon />
+                </SocialIcon>
+                <SocialIcon aria-label="YouTube">
+                  <YouTubeIcon />
+                </SocialIcon>
+              </Box>
             </Box>
-          </Box>
 
-          {/* Useful Links */}
-          <Box>
-            <FooterTitle>Useful Links</FooterTitle>
-            <FooterLink href="#">Tournaments</FooterLink>
-            <FooterLink href="#">Help Center</FooterLink>
-            <FooterLink href="#">Privacy Policy</FooterLink>
-            <FooterLink href="#">Terms of Use</FooterLink>
-            <FooterLink href="#">Contact</FooterLink>
-          </Box>
+            {/* Useful Links */}
+            <Box>
+              <FooterTitle>Useful Links</FooterTitle>
+              <FooterLink href="#">Tournaments</FooterLink>
+              <FooterLink href="#">Help Center</FooterLink>
+              <FooterLink href="#">Privacy Policy</FooterLink>
+              <FooterLink href="#">Terms of Use</FooterLink>
+              <FooterLink href="#">Contact</FooterLink>
+            </Box>
 
-          {/* Contact Info */}
-          <Box>
-            <FooterTitle>Contact Us</FooterTitle>
-            <FooterText><strong>Location:</strong> MS OFFICE , Delhi NCR</FooterText>
-            <FooterText>
-              <strong>Email:</strong>{' '}
-              <a href="mailto:info@techken.com" style={{ color: '#FFA500' }}>
-                info@techken.com
-              </a>
-            </FooterText>
-            <FooterText><strong>Phone:</strong> +91 9876543210</FooterText>
-          </Box>
+            {/* Contact Info */}
+            <Box>
+              <FooterTitle>Contact Us</FooterTitle>
+              <FooterText><strong>Location:</strong> MS OFFICE , Delhi NCR</FooterText>
+              <FooterText>
+                <strong>Email:</strong>{' '}
+                <a href="mailto:info@techken.com" style={{ color: '#FFA500' }}>
+                  info@techken.com
+                </a>
+              </FooterText>
+              <FooterText><strong>Phone:</strong> +91 9876543210</FooterText>
+            </Box>
 
-          {/* Discord Join */}
-          <Box>
-            <FooterTitle>Join Our Discord</FooterTitle>
-            <DiscordButton
-              variant="contained"
-              href="https://discord.gg/yourserver"
-              target="_blank"
-              rel="noopener noreferrer"
-              startIcon={<DiscordIcon />}
-            >
-              Connect Now
-            </DiscordButton>
-          </Box>
-        </FooterContainer>
-      </FooterTop>
+            {/* Discord Join */}
+            <Box>
+              <FooterTitle>Join Our Discord</FooterTitle>
+              <DiscordButton
+                variant="contained"
+                href="https://discord.gg/yourserver"
+                target="_blank"
+                rel="noopener noreferrer"
+                startIcon={<DiscordIcon />}
+              >
+                Connect Now
+              </DiscordButton>
+            </Box>
+          </FooterContainer>
+        </FooterTop>
 
-      <FooterBottom>
-        <Typography>
-          &copy; 2025 Hackground 2K25. All rights reserved. | Built with{' '}
-          <span className="animate-pulse">💖</span> by <strong>Ujjwal & Nishchay</strong>
-        </Typography>
-      </FooterBottom>
-    </FooterWrapper>
+        <FooterBottom>
+          <Typography>
+            &copy; 2025 Hackground 2K25. All rights reserved. | Built with{' '}
+            <span className="animate-pulse">💖</span> by <strong>Ujjwal & Nishchay</strong>
+          </Typography>
+        </FooterBottom>
+      </FooterWrapper>
+    </>
   );
 }
 
