@@ -3,7 +3,7 @@ import CircularProgress from "@mui/material/CircularProgress"; // Material UI sp
 
 const sendChatMessage = async (inputMessage) => {
   try {
-    const res = await fetch("https://hackgroundbackend.onrender.com/chat", {
+    const res = await fetch("https://hackgroundbackend-1.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: inputMessage }),
