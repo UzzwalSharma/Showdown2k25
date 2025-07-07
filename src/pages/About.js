@@ -129,7 +129,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <Subtitle>HackGround 2K25</Subtitle>
+            <Subtitle>HackGrounds India 2K25</Subtitle>
             <Title>
               The Ultimate <strong>Code Clash</strong>
             </Title>

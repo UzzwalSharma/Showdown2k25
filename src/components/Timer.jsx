@@ -123,7 +123,7 @@ const HackgroundTimer = () => {
               mb: 2,
             }}
           >
-            HACKGROUND 2K25
+            HACKGROUNDS INDIA 2K25
           </Typography>
 
           <Typography
