@@ -43,18 +43,18 @@ function App() {
         {/* <section  style={{ padding: 0, margin: 0 }}>
          <TekkenProblemSection />
         </section> */}
-        <section id="sponsors" style={{ padding: 0, margin: 0 }}>
-          <Sponsors />
-        </section>
-     
+    
          <section id="tracks" style={{ padding: 0, margin: 0 }}>
           <Tracks />
        </section>
-        <section id="rules" style={{ padding: 0, margin: 0 }}>
+        {/*<section id="rules" style={{ padding: 0, margin: 0 }}>
           <Rules />
-        </section>
+        </section>*/}
         <section id="prizes" style={{ padding: 0, margin: 0 }}>
           <Prizes />
+        </section>
+        <section id="sponsors" style={{ padding: 0, margin: 0 }}>
+          <Sponsors />
         </section>
         <section id="faqs" style={{ padding: 0, margin: 0 }}>
           <FAQs />
