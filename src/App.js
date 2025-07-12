@@ -16,6 +16,7 @@ import Hero2 from './components/New';
 // import TekkenProblemSection from './components/Prblms/TekkenProblemSection';
 import Timer from './components/Timer';
 import Tracks from './components/Tracks';
+import Teamlist from "./pages/Teamlist"
 function App() {
   return (
     <div className="App">
@@ -35,7 +36,8 @@ function App() {
        
 
         <section id="team" style={{ padding: 0, margin: 0 }}>
-          <Team />
+          {/* <Team /> */}
+          <Teamlist/>
         </section>
         <section id="timeline" style={{ padding: 0, margin: 0 }}>
           <Schedule />
