@@ -7,8 +7,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const ScheduleSection = styled(Box)({
- 
-   backgroundImage: 'url("https://wallpapers.com/images/hd/playerunknowns-battlegrounds-4k-199qn3rz37tm9ivs.jpg")',
+  backgroundImage:
+    'url("https://wallpapers.com/images/hd/playerunknowns-battlegrounds-4k-199qn3rz37tm9ivs.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed",
@@ -42,12 +42,15 @@ const TimelineContainer = styled(Box)({
   },
 });
 
-
 const DayCard = styled(Paper)(({ side, bgimg }) => ({
   background: "rgba(255, 255, 255, 0.05)",
   padding: "2.5rem 2rem 3rem",
   position: "relative",
   width: "45%",
+  minHeight: 270, // Same as tracks' card :)
+  display: "flex", 
+  flexDirection: "column", 
+  justifyContent: "space-between",
   marginLeft: side === "left" ? "2rem" : "auto",
   marginRight: side === "left" ? "auto" : "2rem",
   border: "2px solid #ff9900",
@@ -88,8 +91,6 @@ const DayCard = styled(Paper)(({ side, bgimg }) => ({
   },
 }));
 
-
-
 const DayLabel = styled(Box)({
   border: "4px solid #ff0000",
   width: "100px",
@@ -116,7 +117,6 @@ const DayLabel = styled(Box)({
   `,
 });
 
-
 const events = [
   {
     day: "DAY 1",
@@ -135,7 +135,7 @@ const events = [
     desc: [
       "10:00 AM - Progress presentations",
       "12:00 PM - Workshop: Advanced combat mechanics",
-      "6:00 PM - Tekken 8 exhibition match",
+      "6:00 PM - BGMI exhibition match",
     ],
     img: "/BGMI_images/day2.png",
     side: "right",
@@ -184,27 +184,25 @@ const Schedule = () => {
   return (
     <ScheduleSection>
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 5, py: 8 }}>
-  <Typography
-  variant="h2"
-  align="center"
-  sx={{
-    color: "#ff9900",
-    fontFamily: '"Press Start 2P", "Tekken", sans-serif',
-    fontSize: "2.6rem",
-    letterSpacing: "2px",
-    textShadow: "0 0 12px #ff9900",
-    textTransform: "uppercase",
-    mb: 8,
-    "& span": {
-      color: "#ffffff",
-      textShadow: "0 0 20px #ffffff",
-    },
-  }}
->
-  Event <span>Timeline</span>
-</Typography>
-
-
+        <Typography
+          variant="h2"
+          align="center"
+          sx={{
+            color: "#ff9900",
+            fontFamily: '"Press Start 2P", "Tekken", sans-serif',
+            fontSize: "2.6rem",
+            letterSpacing: "2px",
+            textShadow: "0 0 12px #ff9900",
+            textTransform: "uppercase",
+            mb: 8,
+            "& span": {
+              color: "#ffffff",
+              textShadow: "0 0 20px #ffffff",
+            },
+          }}
+        >
+          Event <span>Timeline</span>
+        </Typography>
 
         <TimelineContainer>
           {events.map(({ day, title, desc, img, side }, index) => (
@@ -215,7 +213,9 @@ const Schedule = () => {
               ref={(el) => (cardsRef.current[index] = el)}
             >
               <DayLabel>
-                <Typography sx={{ color: "white", fontFamily: '"Tekken", sans-serif' }}>
+                <Typography
+                  sx={{ color: "white", fontFamily: '"Tekken", sans-serif' }}
+                >
                   {day}
                 </Typography>
               </DayLabel>
@@ -230,17 +230,16 @@ const Schedule = () => {
                 {title}
               </Typography>
               {desc.map((line, i) => (
-               <Typography
-  key={i}
-  sx={{
-    color: i % 2 === 0 ? "#ffffff" : "#ff9900",
-    fontWeight: "bolder",
-    mb: i === desc.length - 1 ? 0 : 1,
-  }}
->
-  {line}
-</Typography>
-
+                <Typography
+                  key={i}
+                  sx={{
+                    color: i % 2 === 0 ? "#ffffff" : "#ff9900",
+                    fontWeight: "bolder",
+                    mb: i === desc.length - 1 ? 0 : 1,
+                  }}
+                >
+                  {line}
+                </Typography>
               ))}
             </DayCard>
           ))}

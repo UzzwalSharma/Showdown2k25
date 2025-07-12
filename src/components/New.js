@@ -112,7 +112,7 @@ export default function Hero() {
       <BgText>SHOWDOWN</BgText>
 
       <HeroContainer maxWidth="md">
-        <Subtitle>The Season 1</Subtitle>
+        <Subtitle>The Season 1 of</Subtitle>
 
         <GlowingText
           component={m.h1}
@@ -120,7 +120,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          Hack Ground 2K25
+          Hackgrounds India 2K25
         </GlowingText>
 
         <Description
@@ -130,7 +130,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           Battle it out in the ultimate coding tournament. Show your skills, defeat your opponents,
-          and become the <strong>King of Techken Showdown 2K25</strong>!
+          and become the <strong>King of Hackgrounds India 2K25</strong>!
         </Description>
 
         <Box

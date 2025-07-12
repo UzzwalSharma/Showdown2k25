@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import Floatingbot from "./Chatboat/Floatingbot.jsx"
+//import Floatingbot from "./Chatboat/Floatingbot.jsx"
 import {
   Box,
   Container,
@@ -167,7 +167,7 @@ const MusicToggleButton = styled(IconButton)({
   },
 });
 
-const ChatbotToggleButton = styled(IconButton)({
+{/*} const ChatbotToggleButton = styled(IconButton)({
   position: 'fixed',
   bottom: 112, // 32 (music) + 64 (button height) + 16 (gap)
   right: 32,
@@ -189,12 +189,12 @@ const ChatbotToggleButton = styled(IconButton)({
     color: '#fff',
     transform: 'scale(1.07)',
   },
-});
+}); */}
 
 function Footer() {
   const ref = useRef();
   const [musicOn, setMusicOn] = useState(false);
-  const [chatOpen, setChatOpen] = useState(false);
+  //const [chatOpen, setChatOpen] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -223,11 +223,16 @@ function Footer() {
         aria-label={musicOn ? "Turn off music" : "Turn on music"}
         onClick={() => setMusicOn((prev) => !prev)}
       >
-        {musicOn ? <MusicNoteIcon fontSize="large" /> : <VolumeOffIcon fontSize="large" />}
+        {musicOn ? (
+          <MusicNoteIcon fontSize="large" />
+        ) : (
+          <VolumeOffIcon fontSize="large" />
+        )}
       </MusicToggleButton>
 
-      {/* Chatbot Toggle Button */}
+      {/* Chatbot Toggle Button 
      <Floatingbot className="animation-bounce"/>
+      */}
 
       {/* Hidden audio element */}
       <audio
@@ -240,12 +245,11 @@ function Footer() {
           <FooterContainer ref={ref}>
             {/* Brand + Social */}
             <Box>
-            <LogoText>
-  Hackground2k25
-</LogoText>
+              <LogoText>Hackgrounds India</LogoText>
 
               <FooterText>
-                Our success in this battleground comes from code, passion, and a team forged in fire.
+                Our success in this battleground comes from code, passion, and a
+                team forged in fire.
               </FooterText>
               <Box>
                 <SocialIcon aria-label="Twitter">
@@ -273,14 +277,18 @@ function Footer() {
             {/* Contact Info */}
             <Box>
               <FooterTitle>Contact Us</FooterTitle>
-              <FooterText><strong>Location:</strong> MS OFFICE , Delhi NCR</FooterText>
               <FooterText>
-                <strong>Email:</strong>{' '}
-                <a href="mailto:info@techken.com" style={{ color: '#FFA500' }}>
+                <strong>Location:</strong> MS OFFICE , Delhi NCR
+              </FooterText>
+              <FooterText>
+                <strong>Email:</strong>{" "}
+                <a href="mailto:info@techken.com" style={{ color: "#FFA500" }}>
                   info@techken.com
                 </a>
               </FooterText>
-              <FooterText><strong>Phone:</strong> +91 9876543210</FooterText>
+              <FooterText>
+                <strong>Phone:</strong> +91 9876543210
+              </FooterText>
             </Box>
 
             {/* Discord Join */}
@@ -301,8 +309,9 @@ function Footer() {
 
         <FooterBottom>
           <Typography>
-            &copy; 2025 Hackground 2K25. All rights reserved. | Built with{' '}
-            <span className="animate-pulse">💖</span> by <strong>Ujjwal & Nishchay</strong>
+            &copy; 2025 Hackgrounds India 2K25. All rights reserved. | Built with{" "}
+            <span className="animate-pulse">💖</span> by{" "}
+            <strong>Ujjwal & Nishchay</strong>
           </Typography>
         </FooterBottom>
       </FooterWrapper>

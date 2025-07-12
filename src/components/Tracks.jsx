@@ -1,14 +1,17 @@
 import React from "react";
-import { 
-  Box, 
-  Typography, 
-  Button, 
-  Grid, 
-  Container,
-  Chip
-} from "@mui/material";
+import { Box, Typography, Button, Grid, Container, Chip } from "@mui/material";
 import { styled, keyframes } from "@mui/material/styles";
-import { BookOpen, Brain, Wifi, HeartPulse, Lightbulb, Leaf, User, Calendar, Star } from "lucide-react";
+import {
+  BookOpen,
+  Brain,
+  Wifi,
+  HeartPulse,
+  Lightbulb,
+  Leaf,
+  User,
+  Calendar,
+  Star,
+} from "lucide-react";
 
 // PUBG-style bright yellow
 const BRIGHT_YELLOW = "#FFCC00"; // PUBG yellow
@@ -34,6 +37,9 @@ const GameContainer = styled(Box)({
 // Gaming card with PUBG yellow and white text
 const GameCard = styled(Box)({
   position: "relative",
+  display: "flex", 
+  flexDirection: "column", 
+  justifyContent: "space-between", 
   background: `linear-gradient(135deg, ${BRIGHT_YELLOW}22, ${BRIGHT_YELLOW_LIGHT}33)`,
   backdropFilter: "blur(15px)",
   border: `2px solid ${BRIGHT_YELLOW}`,
@@ -41,9 +47,11 @@ const GameCard = styled(Box)({
   cursor: "pointer",
   overflow: "hidden",
   animation: `${pulseGlow} 4s ease-in-out infinite alternate`,
-  clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
+  clipPath:
+    "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
   transition: "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
   maxWidth: 350,
+  minHeight: 400, // Added this so every should have same height
   margin: "0 auto",
   "&:hover": {
     transform: "translateY(-8px) scale(1.02)",
@@ -290,107 +298,122 @@ export default function PUBGGamingCardsMUI() {
     <GameContainer>
       <Container maxWidth="xl">
         {/* Header */}
-        <HeaderTitle variant="h1">
-          Hackground 2k25 Tracks
-        </HeaderTitle>
+        <HeaderTitle variant="h1">Hackgrounds India 2k25 Tracks</HeaderTitle>
         <HeaderLine />
 
         {/* Cards Grid */}
         <Grid container spacing={4} justifyContent="center">
-          {gamingCards.map(({ mode, rank, title, desc, teams, duration, difficulty, icon: IconComponent }) => (
-            <Grid item key={title} xs={12} sm={6} md={4}>
-              <GameCard>
-                {/* Corner decorations */}
-                <TopRightCorner />
-                <BottomLeftCorner />
-                
-                {/* Decorative lines */}
-                <VerticalLine sx={{ top: 0, right: "20px" }} />
-                <VerticalLine sx={{ bottom: 0, left: "20px" }} />
-                <HorizontalLine sx={{ top: "20px", right: 0 }} />
-                <HorizontalLine sx={{ bottom: "20px", left: 0 }} />
+          {gamingCards.map(
+            ({
+              mode,
+              rank,
+              title,
+              desc,
+              teams,
+              duration,
+              difficulty,
+              icon: IconComponent,
+            }) => (
+              <Grid item key={title} xs={12} sm={6} md={4}>
+                <GameCard>
+                  {/* Corner decorations */}
+                  <TopRightCorner />
+                  <BottomLeftCorner />
 
-                {/* Badges */}
-                <ModeBadge label={mode} />
-                <RankBadge label={rank} />
+                  {/* Decorative lines */}
+                  <VerticalLine sx={{ top: 0, right: "20px" }} />
+                  <VerticalLine sx={{ bottom: 0, left: "20px" }} />
+                  <HorizontalLine sx={{ top: "20px", right: 0 }} />
+                  <HorizontalLine sx={{ bottom: "20px", left: 0 }} />
 
-                {/* Icon */}
-                <IconContainer>
-                  <IconComponent size={28} color={BRIGHT_YELLOW} style={{ position: "relative", zIndex: 10 }} />
-                </IconContainer>
+                  {/* Badges */}
+                  <ModeBadge label={mode} />
+                  <RankBadge label={rank} />
 
-                {/* Title */}
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 800,
-                    color: "white",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                    textAlign: "center",
-                    marginBottom: "1rem",
-                    transition: "color 0.3s ease",
-                    "&:hover": {
-                      color: BRIGHT_YELLOW,
-                    },
-                  }}
-                >
-                  {title}
-                </Typography>
+                  {/* Icon */}
+                  <IconContainer>
+                    <IconComponent
+                      size={28}
+                      color={BRIGHT_YELLOW}
+                      style={{ position: "relative", zIndex: 10 }}
+                    />
+                  </IconContainer>
 
-                {/* Description */}
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "white",
-                    fontSize: "0.9rem",
-                    lineHeight: 1.5,
-                    fontWeight: 500,
-                    marginBottom: "1.5rem",
-                  }}
-                >
-                  {desc}
-                </Typography>
+                  {/* Title */}
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 800,
+                      color: "white",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                      textAlign: "center",
+                      marginBottom: "1rem",
+                      transition: "color 0.3s ease",
+                      "&:hover": {
+                        color: BRIGHT_YELLOW,
+                      },
+                    }}
+                  >
+                    {title}
+                  </Typography>
 
-                {/* Stats */}
-                <StatsContainer>
-                  <StatItem>
-                    <User size={12} />
-                    <Typography variant="caption">{teams}</Typography>
-                  </StatItem>
-                  <StatItem>
-                    <Calendar size={12} />
-                    <Typography variant="caption">{duration}</Typography>
-                  </StatItem>
-                  <StatItem>
-                    <Star size={12} />
-                    <Typography variant="caption">{difficulty}</Typography>
-                  </StatItem>
-                </StatsContainer>
+                  {/* Description */}
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "white",
+                      fontSize: "0.9rem",
+                      lineHeight: 1.5,
+                      fontWeight: 500,
+                      marginBottom: "1.5rem",
+                    }}
+                  >
+                    {desc}
+                  </Typography>
 
-                {/* Action Button */}
+                  {/* Stats */}
+                  <StatsContainer>
+                    <StatItem>
+                      <User size={12} />
+                      <Typography variant="caption">{teams}</Typography>
+                    </StatItem>
+                    <StatItem>
+                      <Calendar size={12} />
+                      <Typography variant="caption">{duration}</Typography>
+                    </StatItem>
+                    <StatItem>
+                      <Star size={12} />
+                      <Typography variant="caption">{difficulty}</Typography>
+                    </StatItem>
+                  </StatsContainer>
+
+                  {/* Action Button 
                 <ActionButton>
                   Join Track
                 </ActionButton>
+                */}
 
-                {/* Hover glow effect */}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    inset: 0,
-                    background: `linear-gradient(135deg, ${BRIGHT_YELLOW}11, #fff2)`,
-                    clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
-                    opacity: 0,
-                    transition: "opacity 0.5s ease",
-                    pointerEvents: "none",
-                    ".MuiBox-root:hover &": {
-                      opacity: 1,
-                    },
-                  }}
-                />
-              </GameCard>
-            </Grid>
-          ))}
+                  {/* Hover glow effect */}
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      inset: 0,
+                      background: `linear-gradient(135deg, ${BRIGHT_YELLOW}11, #fff2)`,
+                      clipPath:
+                        "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
+                      opacity: 0,
+                      transition: "opacity 0.5s ease",
+                      pointerEvents: "none",
+                      ".MuiBox-root:hover &": {
+                        opacity: 1,
+                      },
+                    }}
+                  />
+                </GameCard>
+              </Grid>
+            )
+          )}
         </Grid>
       </Container>
     </GameContainer>
