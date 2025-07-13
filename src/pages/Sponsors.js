@@ -95,41 +95,32 @@ const YellowText = styled('span')({
 function Sponsors() {
   const sponsors = [
     {
-      name: "Microsoft Azure",
-      logo: "https://i0.wp.com/startupnews.fyi/wp-content/uploads/2024/01/Unstop-Logo.png?ssl=1",
-      description: "Platform Partner",
-      tier: "Platinum Sponsor"
+      name: "Unstop",
+      logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg",
+     
+     
     },
     {
-      name: "NVIDIA",
-      logo: "/images/nvidia.webp",
-      description: "GPU Technology Partner",
-      tier: "Diamond Sponsor"
+      name: "Github",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPk0CDiJ70gAStxkNBNzIRLJr6XI_zeiOAECxoPu67ObNCD0P5GwEQuP3kDJ7o8lp1rQc&usqp=CAU",
+     
     },
     {
-      name: "Intel",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/250px-Intel_logo_%282006-2020%29.svg.png",
-      description: "Processing Power Partner",
-      tier: "Gold Sponsor"
+      name: "Gen.xyz",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1g07-ryq2kHE2EknOFU-pfqYtvYOwC8qVNw&s",
+   
     },
     {
-      name: "AWS GameTech",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2pjb1FnBCnn-Z6BL7dQ1rzqOvaAnVFDWeVg&s",
-      description: "Gaming Infrastructure Partner",
-      tier: "Platinum Sponsor"
+      name: "Interview Buddy",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJrquzHwOxN0bUKnchqkQIy7QhkvzUftsDb70tbF-TbzdwohwOLaZukMkKY6CgJacQ45M&usqp=CAU",
+   
     },
     {
-      name: "Razer",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3oo4tEKtG8OAGNQTcSjKYvC0ilW8-5h1Kqw&s",
-      description: "Venue Partner",
-      tier: "Gold Sponsor"
+      name: "Physicswallah",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA1ijYJKiY82YdiwN_8p-Ok7VnokZ7hmw4A6czeO_QWMrEa_aAocj0cwe5ExbO0UsLtXk&usqp=CAU",
+    
     },
-    {
-      name: "Discord",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZA1OIJivenlamVPe42zVb-hKvzCv13swsFQ&s",
-      description: "Community Platform Partner",
-      tier: "Silver Sponsor"
-    }
+    
   ];
 
   const [visibleSponsors, setVisibleSponsors] = useState([0, 1, 2]);

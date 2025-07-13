@@ -21,6 +21,7 @@ const CountdownWrapper = styled(Box)({
   alignItems: "center",
   justifyContent: "center",
   overflow: "hidden",
+  padding: "2rem 1rem",
   "&::before": {
     content: '""',
     position: "absolute",
@@ -35,14 +36,14 @@ const CountdownWrapper = styled(Box)({
 
 const GlowingBox = styled(Paper)(({ theme }) => ({
   position: "relative",
-  padding: theme.spacing(6),
+  padding: theme.spacing(3),
   borderRadius: "20px",
   background: "rgba(20, 20, 20, 0.7)",
   border: "2px solid #ff5500",
   backdropFilter: "blur(10px)",
   zIndex: 2,
   width: "100%",
-  maxWidth: 1200,
+  maxWidth: 1100,
   margin: "0 auto",
   boxShadow: "0 0 30px #ff550033",
   transition: "0.3s ease",
@@ -50,7 +51,7 @@ const GlowingBox = styled(Paper)(({ theme }) => ({
 
 const TimeUnit = styled(Box)({
   border: "2px solid #ff5500",
-  padding: "1.2rem",
+  padding: "1.1rem 0.8rem",
   borderRadius: "14px",
   textAlign: "center",
   background: "rgba(0,0,0,0.4)",
@@ -63,19 +64,25 @@ const TimeUnit = styled(Box)({
 });
 
 const UnitValue = styled(Typography)({
-  fontSize: "3.5rem",
+  fontSize: "2.4rem",
   fontWeight: "bold",
   color: "#fff",
   fontFamily: '"Oswald", sans-serif',
   textShadow: "0 0 12px #ff5500",
+  "@media (min-width:600px)": {
+    fontSize: "3.2rem",
+  },
 });
 
 const UnitLabel = styled(Typography)({
-  fontSize: "0.85rem",
+  fontSize: "0.7rem",
   fontWeight: 600,
   textTransform: "uppercase",
   letterSpacing: "1.5px",
   color: "#ff6600",
+  "@media (min-width:600px)": {
+    fontSize: "0.85rem",
+  },
 });
 
 const HackgroundTimer = () => {
@@ -113,33 +120,40 @@ const HackgroundTimer = () => {
         <GlowingBox>
           <Typography
             align="center"
-            variant="h2"
+            variant="h3"
             sx={{
               fontFamily: "Oswald, sans-serif",
               fontWeight: "bold",
               letterSpacing: "3px",
               color: "#fff",
               textShadow: "0 0 18px #ff5500",
-              mb: 2,
+              mb: 1,
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
             }}
           >
-            HACKGROUND 2K25
+            HACKGROUND INDIA 2K25
           </Typography>
 
           <Typography
             align="center"
             sx={{
-              fontSize: "1.2rem",
+              fontSize: { xs: "0.95rem", sm: "1.1rem" },
               color: "#ff9955",
               fontWeight: "bold",
-              letterSpacing: "2px",
-              mb: 5,
+              letterSpacing: "1.5px",
+              mb: { xs: 3, sm: 4 },
             }}
           >
-            JOIN THE BATTLEFIELD IN
+            {/** Shorter for mobile */}
+            <Box component="span" display={{ xs: "inline", sm: "none" }}>
+              STARTS IN
+            </Box>
+            <Box component="span" display={{ xs: "none", sm: "inline" }}>
+              JOIN THE BATTLEFIELD IN
+            </Box>
           </Typography>
 
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 2, sm: 3 }} justifyContent="center">
             <Grid item xs={6} sm={3}>
               <TimeUnit>
                 <UnitValue>{String(timeLeft.days).padStart(2, "0")}</UnitValue>
@@ -154,30 +168,26 @@ const HackgroundTimer = () => {
             </Grid>
             <Grid item xs={6} sm={3}>
               <TimeUnit>
-                <UnitValue>
-                  {String(timeLeft.minutes).padStart(2, "0")}
-                </UnitValue>
+                <UnitValue>{String(timeLeft.minutes).padStart(2, "0")}</UnitValue>
                 <UnitLabel>Minutes</UnitLabel>
               </TimeUnit>
             </Grid>
             <Grid item xs={6} sm={3}>
               <TimeUnit>
-                <UnitValue>
-                  {String(timeLeft.seconds).padStart(2, "0")}
-                </UnitValue>
+                <UnitValue>{String(timeLeft.seconds).padStart(2, "0")}</UnitValue>
                 <UnitLabel>Seconds</UnitLabel>
               </TimeUnit>
             </Grid>
           </Grid>
 
-          <Box textAlign="center" mt={5}>
+          <Box textAlign="center" mt={{ xs: 4, sm: 5 }}>
             <Button
               variant="contained"
               sx={{
-                fontSize: "1.1rem",
+                fontSize: { xs: "0.95rem", sm: "1.1rem" },
                 fontWeight: "bold",
-                px: 6,
-                py: 1.5,
+                px: { xs: 3.5, sm: 6 },
+                py: { xs: 1, sm: 1.5 },
                 borderRadius: "12px",
                 background: "linear-gradient(to right, #ff5500, #ff9900)",
                 boxShadow: "0 0 18px #ff5500",
@@ -189,14 +199,15 @@ const HackgroundTimer = () => {
                 },
               }}
             >
-              Register Now
+              REGISTRATION SOON
             </Button>
             <Typography
               sx={{
                 mt: 2,
-                color: "#999",
-                fontSize: "0.85rem",
-                letterSpacing: "1px",
+                color: "#bbb",
+                fontSize: { xs: "0.75rem", sm: "0.85rem" },
+                letterSpacing: "0.5px",
+                textAlign: "center",
               }}
             >
               Winner takes all • Limited slots • Server Online
