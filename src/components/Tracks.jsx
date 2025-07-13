@@ -111,45 +111,46 @@ const gamingCards = [
     mode: "EdTech",
     rank: "Innovator",
     title: "Education Revolution",
-    desc: "Transform learning experiences with cutting-edge educational technology. Build platforms that make education accessible, engaging, and effective for all learners.",
-    icon: BookOpen,
+    desc: "Transform learning experiences...",
+    image: "/Tracks/edtech.png",
   },
   {
     mode: "AI/ML",
     rank: "Mastermind",
     title: "Artificial Intelligence Hub",
-    desc: "Harness the power of machine learning and AI to solve complex problems. Create intelligent systems that can learn, adapt, and make decisions.",
-    icon: Brain,
+    desc: "Harness the power of AI...",
+    image: "https://st1.techlusive.in/wp-content/uploads/2024/12/bgmi-10.jpg",
   },
   {
     mode: "IoT",
     rank: "Connector",
     title: "Internet of Things Arena",
-    desc: "Connect the physical and digital worlds through smart IoT solutions. Build networks of interconnected devices that communicate seamlessly.",
-    icon: Wifi,
+    desc: "Connect physical and digital...",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKQQgnGVTQrbFwJd1n2DGdKtDSgqCQpVHw&s",
   },
   {
     mode: "Healthcare",
     rank: "Lifesaver",
     title: "Medical Technology Zone",
-    desc: "Develop healthcare solutions that save lives and improve patient outcomes. Create tools for better diagnosis, treatment, and care management.",
-    icon: HeartPulse,
+    desc: "Develop healthcare solutions...",
+    image: "https://wallpapers.com/images/hd/pubg-girl-hiding-and-scouting-cxfpeumaa68nvh1h.jpg",
   },
   {
     mode: "Open Innovation",
     rank: "Pioneer",
     title: "Creative Solutions Lab",
-    desc: "Think outside the box and create groundbreaking solutions for any challenge. This track welcomes innovative ideas across all domains.",
-    icon: Lightbulb,
+    desc: "Think outside the box...",
+    image: "https://images.moneycontrol.com/static-mcnews/2023/12/BGMI-X-Ranveer-Singh.png",
   },
   {
     mode: "Green Tech",
     rank: "Guardian",
     title: "Sustainability Command",
-    desc: "Build eco-friendly technology solutions that protect our planet. Focus on renewable energy, waste reduction, and environmental conservation.",
-    icon: Leaf,
+    desc: "Eco-friendly tech solutions...",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyGLGKBW5kW1BYfG3HxMj-JWyB9RB0EOM7XbClVCT9QTIJWjNxyZu5zF3jjj7er1Ch6Yg&usqp=CAU",
   },
 ];
+
 
 export default function PUBGGamingCardsMUI() {
   return (
@@ -158,14 +159,25 @@ export default function PUBGGamingCardsMUI() {
         <HeaderTitle variant="h1">Hackground India 2K25 Tracks</HeaderTitle>
         <HeaderLine />
         <Grid container spacing={4} justifyContent="center">
-          {gamingCards.map(({ mode, rank, title, desc, icon: Icon }) => (
+          {gamingCards.map(({ mode, rank, title, desc, image }) => (
             <Grid item key={title} xs={12} sm={6} md={4}>
               <GameCard>
                 <ModeBadge label={mode} />
                 <RankBadge label={rank} />
-                <IconContainer>
-                  <Icon size={28} color={NEON_ACCENT} />
-                </IconContainer>
+               <Box
+  sx={{
+    width: "100%",
+    height: "180px",
+    borderRadius: "12px",
+    backgroundImage: `url(${image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    border: `2px solid ${NEON_ACCENT}`,
+    boxShadow: `0 0 20px ${NEON_ACCENT}66`,
+    mb: 2,
+  }}
+/>
+
                 <Typography
                   variant="h6"
                   sx={{
