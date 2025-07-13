@@ -1,14 +1,14 @@
 import React from 'react';
 import TechkkenCursor from './components/cursor/cursor';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+
 import About from './pages/About';
 import Schedule from './pages/Schedule';
 import Prizes from './pages/Prizes';
 import Sponsors from './pages/Sponsors';
 import JudgingCriteria from './pages/JudgingCriteria';
 import './App.css';
-import Team from './pages/Team';
+
 import Rules from './pages/Rules';
 import FAQs from './pages/FAQs';
 import Footer from './components/Footer';
@@ -35,10 +35,7 @@ function App() {
         </section>
        
 
-        <section id="team" style={{ padding: 0, margin: 0 }}>
-          {/* <Team /> */}
-          <Teamlist/>
-        </section>
+       
         <section id="timeline" style={{ padding: 0, margin: 0 }}>
           <Schedule />
         </section>
@@ -57,6 +54,10 @@ function App() {
         </section>
         <section id="sponsors" style={{ padding: 0, margin: 0 }}>
           <Sponsors />
+        </section>
+         <section id="team" style={{ padding: 0, margin: 0 }}>
+          {/* <Team /> */}
+          <Teamlist/>
         </section>
         <section id="faqs" style={{ padding: 0, margin: 0 }}>
           <FAQs />

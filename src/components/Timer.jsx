@@ -123,7 +123,7 @@ const HackgroundTimer = () => {
               mb: 2,
             }}
           >
-            HACKGROUNDS INDIA 2K25
+            HACKGROUND INDIA 2K25
           </Typography>
 
           <Typography
@@ -189,7 +189,7 @@ const HackgroundTimer = () => {
                 },
               }}
             >
-              Register Now
+              REGISTRATION Opening SOON
             </Button>
             <Typography
               sx={{
