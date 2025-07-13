@@ -125,20 +125,17 @@ const GameXNavbar = () => {
             )}
           </Box>
 
-          {/* Desktop Nav Links */}
-          {!isMobile && (
-            <NavLinks>
-              <a href="#hero">Home</a>
-              <a href="#about">About</a>
-              <a href="#about">Timeline</a>
-              <a href="#gears">Tracks</a>
-              <a href="#gears">Rewards</a>
-              <a href="#gears">Sponsors</a>
-              <a href="#team">Our Team</a>
-              <a href="#gears">FAQs</a>
-              
-            </NavLinks>
-          )}
+        {/* Nav Links */}
+        {!isMobile && (
+          <NavLinks>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#tournament">Tournament</a>
+            <a href="#team">Team</a>
+            <a href="#gears">Gears</a>
+            <a href="#contact">Contact</a>
+          </NavLinks>
+        )}
 
           {/* Right Buttons */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>

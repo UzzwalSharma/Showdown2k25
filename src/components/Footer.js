@@ -247,22 +247,21 @@ function Footer() {
             <Box>
               <LogoText>Hackgrounds India</LogoText>
 
-              <FooterText>
-                Our success in this battleground comes from code, passion, and a
-                team forged in fire.
-              </FooterText>
-              <Box>
-                <SocialIcon component="a" href="https://x.com/TechverseNexus?t=9hSjpYXeqMjfAxEqXN4tug&s=09" target="_blank" rel="noopener noreferrer" aria-label="X">
-                  <XIcon />
-                </SocialIcon>
-                <SocialIcon component="a" href="https://www.instagram.com/techverse_nexus?igsh=cTU3N3FjYnJxZGt3" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <InstagramIcon />
-                </SocialIcon>
-                <SocialIcon component="a" href="https://www.linkedin.com/company/techverse-nexus/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <LinkedInIcon />
-                </SocialIcon>
-              </Box>
+            <FooterText>
+              Our success in this battleground comes from code, passion, and a team forged in fire.
+            </FooterText>
+            <Box>
+              <SocialIcon aria-label="Twitter">
+                <TwitterIcon />
+              </SocialIcon>
+              <SocialIcon aria-label="Instagram">
+                <InstagramIcon />
+              </SocialIcon>
+              <SocialIcon aria-label="YouTube">
+                <YouTubeIcon />
+              </SocialIcon>
             </Box>
+          </Box>
 
             {/* Useful Links */}
             <Box>
