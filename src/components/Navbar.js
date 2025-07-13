@@ -125,15 +125,20 @@ const GameXNavbar = () => {
             )}
           </Box>
 
-          {/* Desktop Nav Links */}
-          {!isMobile && (
-            <NavLinks>
-              <a href="#hero">Home</a>
-              <a href="#about">About</a>
-              <a href="#team">Our Team</a>
-              <a href="#gears">Tracks</a>
-            </NavLinks>
-          )}
+        {/* Nav Links */}
+        {!isMobile && (
+          <NavLinks>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#tracks">Tracks</a>
+            <a href="#prizes">Rewards</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#team">Team</a>
+            <a href="#faqs">FAQs</a>
+
+          </NavLinks>
+        )}
 
           {/* Right Buttons */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -180,7 +185,7 @@ const GameXNavbar = () => {
 
   {/* Menu Links */}
   <List>
-    {['Home', 'About', 'Our Team', 'Tracks'].map((text, i) => (
+    {['Home', 'About', 'Timeline', 'Tracks', 'Rewards', 'Sponsors', 'Team', 'FAQs'].map((text, i) => (
       <ListItem
         button
         key={i}
