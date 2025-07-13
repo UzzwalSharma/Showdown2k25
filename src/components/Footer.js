@@ -251,26 +251,35 @@ function Footer() {
               Our success in this battleground comes from code, passion, and a team forged in fire.
             </FooterText>
             <Box>
-              <SocialIcon aria-label="Twitter">
-                <TwitterIcon />
-              </SocialIcon>
-              <SocialIcon aria-label="Instagram">
+              <a href="https://x.com/TechverseNexus?t=9hSjpYXeqMjfAxEqXN4tug&s=09" target="_blank" rel="noopener noreferrer">
+                <SocialIcon aria-label="X">
+                <XIcon />
+                </SocialIcon>
+              </a>
+              <a href="https://www.instagram.com/techverse_nexus?igsh=cTU3N3FjYnJxZGt3" target="_blank" rel="noopener noreferrer">
+                <SocialIcon aria-label="Instagram">
                 <InstagramIcon />
-              </SocialIcon>
-              <SocialIcon aria-label="YouTube">
-                <YouTubeIcon />
-              </SocialIcon>
+                </SocialIcon>
+              </a>
+              <a href="https://www.linkedin.com/company/techverse-nexus/" target="_blank" rel="noopener noreferrer">
+                <SocialIcon aria-label="LinkedIn">
+                <LinkedInIcon />
+                </SocialIcon>
+                </a>
             </Box>
           </Box>
 
             {/* Useful Links */}
             <Box>
               <FooterTitle>Useful Links</FooterTitle>
-              <FooterLink href="#">Tournaments</FooterLink>
-              <FooterLink href="#">Help Center</FooterLink>
-              <FooterLink href="#">Privacy Policy</FooterLink>
-              <FooterLink href="#">Terms of Use</FooterLink>
-              <FooterLink href="#">Contact</FooterLink>
+              <FooterLink href="#hero">Home</FooterLink>
+              <FooterLink href="#about">About</FooterLink>
+              <FooterLink href="#timeline">Timeline</FooterLink>
+              <FooterLink href="#tracks">Tracks</FooterLink>
+              <FooterLink href="#prizes">Rewards</FooterLink>
+              <FooterLink href="#sponsors">Sponsors</FooterLink>
+              <FooterLink href="#team">Team</FooterLink>
+              <FooterLink href="#faqs">FAQs</FooterLink>
             </Box>
 
             {/* Contact Info */}
@@ -281,12 +290,12 @@ function Footer() {
               </FooterText>
               <FooterText>
                 <strong>Email:</strong>{" "}
-                <a href="mailto:info@techken.com" style={{ color: "#FFA500" }}>
-                  info@techken.com
+                <a href="techversenexusofficial@gmail.com" style={{ color: "#FFA500" }}>
+                  techversenexusofficial@gmail.com
                 </a>
               </FooterText>
               <FooterText>
-                <strong>Phone:</strong> +91 9876543210
+                <strong>Phone:</strong> +91 9693856529
               </FooterText>
             </Box>
 

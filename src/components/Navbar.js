@@ -130,10 +130,13 @@ const GameXNavbar = () => {
           <NavLinks>
             <a href="#hero">Home</a>
             <a href="#about">About</a>
-            <a href="#tournament">Tournament</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#tracks">Tracks</a>
+            <a href="#prizes">Rewards</a>
+            <a href="#sponsors">Sponsors</a>
             <a href="#team">Team</a>
-            <a href="#gears">Gears</a>
-            <a href="#contact">Contact</a>
+            <a href="#faqs">FAQs</a>
+
           </NavLinks>
         )}
 
@@ -182,7 +185,7 @@ const GameXNavbar = () => {
 
   {/* Menu Links */}
   <List>
-    {['Home', 'About', 'Our Team', 'Tracks'].map((text, i) => (
+    {['Home', 'About', 'Timeline', 'Tracks', 'Rewards', 'Sponsors', 'Team', 'FAQs'].map((text, i) => (
       <ListItem
         button
         key={i}

@@ -22,6 +22,7 @@ const NEON_ACCENT = "#ffa200ff";
 const SHADOW_LIGHT = "#2e2e2e";
 const SHADOW_DARK = "#000000";
 const TEXT_COLOR = "#f5f5f5";
+const BRIGHT_YELLOW = "#ffde00";
 
 const GameContainer = styled(Box)({
   minHeight: "100vh",
