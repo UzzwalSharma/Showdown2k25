@@ -132,7 +132,6 @@ const HackathonSections = () => {
       role: "Lead Organiser",
      
       avatar: "/Team/IMG-20250625-WA0285 - Maaz Anwar.jpg",
-      instagram: "https://www.instagram.com/maazanwar31/",
       linkedin: "https://www.linkedin.com/in/maazanwar414/",
     },
      {
@@ -141,7 +140,6 @@ const HackathonSections = () => {
       role: "Lead Organiser",
      
       avatar: "/Team/IMG-20250415-WA0050 - Ujjwal Agarwal (2).jpg",
-       instagram: "https://www.instagram.com/ujjwalagarwal918?igsh=aXY0ZTYzaW9iZ3dp",
       linkedin: "https://www.linkedin.com/in/ujjwal-agarwal-67b6a0323/",
     },
     {
@@ -151,8 +149,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/Animesh Singh - Animesh Singh.jpg",
      
-      linkedin: "https://www.linkedin.com/in/animeshsingh9693/",
-       instagram: "https://www.instagram.com/animesh.singh_rajput/",
+      linkedin: "https://www.linkedin.com/in/animeshsingh9693/"
     },
     {
       id: 4,
@@ -161,8 +158,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/Anmol Aggarwal.jpeg",
      
-      linkedin: "https://www.linkedin.com/in/anmol-agrawal25/",
-       instagram: "https://www.instagram.com/maaz.anwar",
+      linkedin: "https://www.linkedin.com/in/anmol-agrawal25/"
     },
    
     
@@ -173,8 +169,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/WhatsApp Image 2024-07-18 at 10.12.39_30e74f22.jpg",
      
-      linkedin: "https://www.linkedin.com/in/ujjwal-sharma-3a1395279/",
-       instagram: "https://www.instagram.com/ujjwalsharma.jsx/",
+      linkedin: "https://www.linkedin.com/in/ujjwal-sharma-3a1395279/"
     },
    
     {
@@ -184,8 +179,7 @@ const HackathonSections = () => {
      role: "Sponsership head",
       avatar: "/Team/WhatsApp Image 2025-04-02 at 21.44.21_496cb671 - Umesh Kataria.jpg",
      
-      linkedin: "https://www.linkedin.com/in/umeshxkataria/",
-       instagram: "https://www.instagram.com/katariaxumesh",
+      linkedin: "https://www.linkedin.com/in/umeshxkataria/"
     },
      {
       id: 7,
@@ -194,8 +188,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/my picture - Harsh Gupta.jpg",
      
-      linkedin: "https://www.linkedin.com/in/harsh-gupta-7b3b472a2/",
-       instagram: "https://www.instagram.com/harsh__6174__/",
+      linkedin: "https://www.linkedin.com/in/harsh-gupta-7b3b472a2/"
     },
      {
       id: 8,
@@ -204,8 +197,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/WhatsApp Image 2025-06-28 at 00.01.46_e8207855 - Nishchay Chaurasia.jpg",
      
-      linkedin: "https://www.linkedin.com/in/nishchaync-83b8152b0/",
-       instagram: "https://www.instagram.com/_nishchaync_/",
+      linkedin: "https://www.linkedin.com/in/nishchaync-83b8152b0/"
     },
      {
       id: 9,
@@ -214,8 +206,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/P1 - Advay Anand.jpg ",
      
-      linkedin: "https://www.linkedin.com/in/advay-anand-a89024277/",
-       instagram: "https://www.instagram.com/advay_anand_7/",
+      linkedin: "https://www.linkedin.com/in/advay-anand-a89024277/"
     },
      {
       id: 10,
@@ -224,8 +215,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/nay-khichwa-le-cropped - Aman Bobal.jpg",
      
-      linkedin: "https://www.linkedin.com/in/aman-bobal/",
-       instagram: "https://www.instagram.com/stealthbeast.3xx0/",
+      linkedin: "https://www.linkedin.com/in/aman-bobal/"
     },
     
      {
@@ -235,8 +225,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/Jigisha Baliyan.jpg",
      
-      linkedin: "https://www.linkedin.com/in/jigisha-baliyann/",
-       instagram: "https://www.instagram.com/j.baliyann/",
+      linkedin: "https://www.linkedin.com/in/jigisha-baliyann/"
     },
     
      {
@@ -247,8 +236,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/IMG_7302 - Keshav Mehta.JPG",
      
-      linkedin: "https://www.linkedin.com/in/keshav-mehta-b9a838305/",
-       instagram: "https://www.instagram.com/kesh.av891?igsh=MTNmNmM0NThtMDliaw==",
+      linkedin: "https://www.linkedin.com/in/keshav-mehta-b9a838305/"
     },
     
      {
@@ -259,8 +247,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/IMG20250316161749 - Rhythm Arora.jpg ",
      
-      linkedin: "https://www.linkedin.com/in/rhythmisloading/",
-       instagram: "https://www.instagram.com/rhythmisloading/",
+      linkedin: "https://www.linkedin.com/in/rhythmisloading/"
     },
     
      {
@@ -270,8 +257,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/IMG_20240626_113826 - Nitya Gosain.jpg",
      
-      linkedin: "https://www.linkedin.com/in/nitya-gosain-42037328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-       instagram: "https://www.instagram.com/nitya_1103?igsh=NTM0OHBvM2JjNGJi",
+      linkedin: "https://www.linkedin.com/in/nitya-gosain-42037328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     
      {
@@ -281,8 +267,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/IMG20250208153043~2 - Ankit Kumar.jpg",
      
-      linkedin: "https://www.linkedin.com/in/ankit-kumar5277/",
-       instagram: "https://www.instagram.com/softwarexankit/",
+      linkedin: "https://www.linkedin.com/in/ankit-kumar5277/"
     },
      {
       id: 15,
@@ -291,8 +276,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/Snapchat-1910008162 - Rohit Chauhan.jpg",
      
-      linkedin: "https://www.linkedin.com/in/rohit-chauhan-096847340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-       instagram: "https://www.instagram.com/_euphoria.us?igsh=MThpbHRtbzR3YWVxZw==",
+      linkedin: "https://www.linkedin.com/in/rohit-chauhan-096847340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
      {
       id: 15,
@@ -301,8 +285,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/DevopsOffice - Akash Gupta.jpg",
      
-      linkedin: "https://www.linkedin.com/in/akash-gupta-718363296/",
-       instagram: "https://www.instagram.com/i_am_akashit/",
+      linkedin: "https://www.linkedin.com/in/akash-gupta-718363296/"
     },
    
     
@@ -477,7 +460,7 @@ const HackathonSections = () => {
             animation: `${glitch} 2s finite`,
           }}
         >
-        Coming Soon
+        Revealing Soon
         </Typography>
         <Typography sx={{ color: "#aaa", mt: 1 }}>
           Stay tuned, we’re getting the best on board!
