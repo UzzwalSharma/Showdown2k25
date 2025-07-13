@@ -199,7 +199,7 @@ const HackathonSections = () => {
     },
      {
       id: 8,
-      name: "Nischay Chaurasia",
+      name: "Nishchay Chaurasia",
       role: "Tech Team",
      
       avatar: "/Team/WhatsApp Image 2025-06-28 at 00.01.46_e8207855 - Nishchay Chaurasia.jpg",
