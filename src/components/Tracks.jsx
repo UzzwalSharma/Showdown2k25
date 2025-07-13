@@ -171,6 +171,7 @@ const gamingCards = [
 ];
 
 
+
 export default function PUBGGamingCardsMUI() {
   return (
     <GameContainer>
