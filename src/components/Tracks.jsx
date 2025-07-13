@@ -16,27 +16,25 @@ import {
   Leaf,
 } from "lucide-react";
 
-// Hackground neomorphic colors
-const NEO_BG = "#fdf6c3"; // soft yellow base
-const SHADOW_LIGHT = "#fffef5";
-const SHADOW_DARK = "#e6ce7f";
-const ACCENT = "#FFCC00"; // Hackground Yellow
-const TEXT_DARK = "#222";
+const DARK_BG = "#0a0a0a";
+const NEOMORPH_CARD = "#1a1a1a";
+const NEON_ACCENT = "#ffa200ff";
+const SHADOW_LIGHT = "#2e2e2e";
+const SHADOW_DARK = "#000000";
+const TEXT_COLOR = "#f5f5f5";
 
-// Main container
 const GameContainer = styled(Box)({
   minHeight: "100vh",
-  background: "linear-gradient(135deg, #fffdee, #fffad2)",
+  background: `linear-gradient(135deg, ${DARK_BG}, #111111)`,
   padding: "4rem 2rem",
 });
 
-// Neomorphic card
 const GameCard = styled(Box)({
   position: "relative",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  background: NEO_BG,
+  background: NEOMORPH_CARD,
   borderRadius: "20px",
   padding: "1.5rem",
   boxShadow: `
@@ -44,27 +42,24 @@ const GameCard = styled(Box)({
     -8px -8px 16px ${SHADOW_LIGHT}
   `,
   transition: "all 0.3s ease-in-out",
-  maxWidth: 350,
+  maxWidth: 360,
   minHeight: 400,
   margin: "0 auto",
+  border: "1px solid #222",
   "&:hover": {
-    boxShadow: `
-      inset 4px 4px 8px ${SHADOW_DARK},
-      inset -4px -4px 8px ${SHADOW_LIGHT}
-    `,
-    transform: "translateY(-4px)",
+    boxShadow: `0 0 20px ${NEON_ACCENT}, inset 2px 2px 8px #111, inset -2px -2px 8px #222`,
+    transform: "translateY(-6px)",
   },
 });
 
-// Badges
 const ModeBadge = styled(Chip)({
   position: "absolute",
   top: "16px",
   left: "16px",
-  backgroundColor: "#fff6d5",
-  color: ACCENT,
-  borderRadius: "16px",
+  backgroundColor: "#0f0f0f",
+  color: NEON_ACCENT,
   fontSize: "0.7rem",
+  border: `1px solid ${NEON_ACCENT}`,
   fontWeight: 600,
 });
 
@@ -72,49 +67,45 @@ const RankBadge = styled(Chip)({
   position: "absolute",
   top: "16px",
   right: "16px",
-  backgroundColor: "#ffe880",
-  color: "#222",
-  borderRadius: "16px",
+  backgroundColor: "#1f1f1f",
+  color: "#ffd700",
   fontSize: "0.7rem",
-  fontWeight: 700,
+  border: "1px solid #ffda44",
+  fontWeight: 600,
 });
 
-// Neomorphic icon circle
 const IconContainer = styled(Box)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  width: "64px",
-  height: "64px",
+  width: "70px",
+  height: "70px",
   borderRadius: "50%",
   margin: "2rem auto 1.5rem",
-  background: NEO_BG,
-  boxShadow: `
-    inset 4px 4px 8px ${SHADOW_DARK},
-    inset -4px -4px 8px ${SHADOW_LIGHT}
-  `,
+  background: "#111",
+  boxShadow: `inset 4px 4px 8px #000, inset -4px -4px 8px #333`,
+  border: `2px solid ${NEON_ACCENT}`,
 });
 
-// Header
 const HeaderTitle = styled(Typography)({
   fontSize: "2.8rem",
   fontWeight: 800,
-  color: "#222",
+  color: "#ffe100",
   textAlign: "center",
-  marginBottom: "2rem",
+  marginBottom: "1rem",
   textTransform: "uppercase",
-  letterSpacing: "0.05em",
+  textShadow: `0 0 8px #ffb300`,
 });
 
 const HeaderLine = styled(Box)({
   width: "80px",
-  height: "4px",
-  background: ACCENT,
+  height: "3px",
+  background: "#ffe100",
   margin: "0 auto 3rem",
   borderRadius: "2px",
+  boxShadow: "0 0 12px #ffe100",
 });
 
-// Cards data
 const gamingCards = [
   {
     mode: "EdTech",
@@ -166,40 +157,31 @@ export default function PUBGGamingCardsMUI() {
       <Container maxWidth="xl">
         <HeaderTitle variant="h1">Hackground India 2K25 Tracks</HeaderTitle>
         <HeaderLine />
-
         <Grid container spacing={4} justifyContent="center">
-          {gamingCards.map(({ mode, rank, title, desc, icon: IconComponent }) => (
+          {gamingCards.map(({ mode, rank, title, desc, icon: Icon }) => (
             <Grid item key={title} xs={12} sm={6} md={4}>
               <GameCard>
-                {/* Badges */}
                 <ModeBadge label={mode} />
                 <RankBadge label={rank} />
-
-                {/* Icon */}
                 <IconContainer>
-                  <IconComponent size={28} color={ACCENT} />
+                  <Icon size={28} color={NEON_ACCENT} />
                 </IconContainer>
-
-                {/* Title */}
                 <Typography
-                  variant="h5"
+                  variant="h6"
                   sx={{
                     fontWeight: 700,
-                    color: TEXT_DARK,
+                    color: "#fff",
                     textAlign: "center",
                     marginBottom: "1rem",
-                    fontSize: "1.3rem",
                     letterSpacing: "0.03em",
                   }}
                 >
                   {title}
                 </Typography>
-
-                {/* Description */}
                 <Typography
                   variant="body2"
                   sx={{
-                    color: "#555",
+                    color: "#aaa",
                     fontSize: "0.95rem",
                     lineHeight: 1.6,
                     fontWeight: 400,
