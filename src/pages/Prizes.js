@@ -96,7 +96,7 @@ function Prizes() {
   {
     tier: 'first',
     title: ["Lone Survivor", "of HACKGROUND 2K25"],
-    prize: "₹50,000",
+    prize: "₹25,000",
     extras: [
       "PUBG Mobile Crate Bundle (Legendary)",
       "Feature in National Gaming Magazine",
@@ -106,7 +106,7 @@ function Prizes() {
   {
     tier: 'second',
     title: ["Top Fragger", "of HACKGROUND 2K25"],
-    prize: "₹25,000",
+    prize: "₹15,000",
     extras: [
       "PUBG Elite Outfit Pack",
       "RGB Mechanical Keyboard",
@@ -128,19 +128,9 @@ function Prizes() {
 
   const specialPrizes = [
     {
-      title: ["Most Innovative", "Combat System"],
+      title: ["Girls in Tech", "Naari Shakti"],
       prize: "₹15,000",
       extras: ["Gaming Monitor", "Special Recognition"]
-    },
-    {
-      title: ["Best AI", "Implementation"],
-      prize: "₹15,000",
-      extras: ["GPU Upgrade Kit", "Technical Excellence Certificate"]
-    },
-    {
-      title: ["Best User", "Experience"],
-      prize: "₹15,000",
-      extras: ["Premium Software Licenses", "UX Design Workshop Access"]
     }
   ];
 
