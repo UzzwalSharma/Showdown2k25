@@ -132,8 +132,8 @@ const HackathonSections = () => {
       role: "Lead Organiser",
      
       avatar: "/Team/IMG-20250625-WA0285 - Maaz Anwar.jpg",
-      instagram: "https://www.instagram.com/maaz.anwar",
-      linkedin: "https://www.linkedin.com/in/maazanwar414",
+      instagram: "https://www.instagram.com/maazanwar31/",
+      linkedin: "https://www.linkedin.com/in/maazanwar414/",
     },
      {
       id: 2,
@@ -141,8 +141,8 @@ const HackathonSections = () => {
       role: "Lead Organiser",
      
       avatar: "/Team/IMG-20250415-WA0050 - Ujjwal Agarwal (2).jpg",
-       instagram: "https://www.instagram.com/maaz.anwar",
-      linkedin: "sarahchen",
+       instagram: "https://www.instagram.com/ujjwalagarwal918?igsh=aXY0ZTYzaW9iZ3dp",
+      linkedin: "https://www.linkedin.com/in/ujjwal-agarwal-67b6a0323/",
     },
     {
       id: 3,
@@ -152,16 +152,16 @@ const HackathonSections = () => {
       avatar: "/Team/Animesh Singh - Animesh Singh.jpg",
      
       linkedin: "https://www.linkedin.com/in/animeshsingh9693/",
-       instagram: "https://www.instagram.com/maaz.anwar",
+       instagram: "https://www.instagram.com/animesh.singh_rajput/",
     },
     {
       id: 4,
       name: "Anmol",
       role: "Lead Organiser",
      
-      avatar: "/Team/IMG-20250625-WA0285 - Maaz Anwar.jpg",
+      avatar: "/Team/Anmol Aggarwal.jpeg",
      
-      linkedin: "https://www.linkedin.com/in/maazanwar414",
+      linkedin: "https://www.linkedin.com/in/anmol-agrawal25/",
        instagram: "https://www.instagram.com/maaz.anwar",
     },
    
@@ -173,8 +173,8 @@ const HackathonSections = () => {
      
       avatar: "/Team/WhatsApp Image 2024-07-18 at 10.12.39_30e74f22.jpg",
      
-      linkedin: "sarahchen",
-       instagram: "https://www.instagram.com/maaz.anwar",
+      linkedin: "https://www.linkedin.com/in/ujjwal-sharma-3a1395279/",
+       instagram: "https://www.instagram.com/ujjwalsharma.jsx/",
     },
    
     {
@@ -185,7 +185,7 @@ const HackathonSections = () => {
       avatar: "/Team/WhatsApp Image 2025-04-02 at 21.44.21_496cb671 - Umesh Kataria.jpg",
      
       linkedin: "https://www.linkedin.com/in/umeshxkataria/",
-       instagram: "https://www.instagram.com/maaz.anwar",
+       instagram: "https://www.instagram.com/katariaxumesh",
     },
      {
       id: 7,
@@ -194,7 +194,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/my picture - Harsh Gupta.jpg",
      
-      linkedin: "https://www.linkedin.com/in/rahulgoyal83789",
+      linkedin: "https://www.linkedin.com/in/harsh-gupta-7b3b472a2/",
        instagram: "https://www.instagram.com/harsh__6174__/",
     },
      {
@@ -233,7 +233,7 @@ const HackathonSections = () => {
       name: "Jigisha baliyan",
       role: "Pr & outreach team",
      
-      avatar: " ",
+      avatar: "/Team/Jigisha Baliyan.jpg",
      
       linkedin: "https://www.linkedin.com/in/jigisha-baliyann/",
        instagram: "https://www.instagram.com/j.baliyann/",
@@ -247,7 +247,7 @@ const HackathonSections = () => {
      
       avatar: "/Team/IMG_7302 - Keshav Mehta.JPG",
      
-      linkedin: "https://www.linkedin.com/in/aman-bobal/",
+      linkedin: "https://www.linkedin.com/in/keshav-mehta-b9a838305/",
        instagram: "https://www.instagram.com/kesh.av891?igsh=MTNmNmM0NThtMDliaw==",
     },
     

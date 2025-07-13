@@ -130,8 +130,13 @@ const GameXNavbar = () => {
             <NavLinks>
               <a href="#hero">Home</a>
               <a href="#about">About</a>
-              <a href="#team">Our Team</a>
+              <a href="#about">Timeline</a>
               <a href="#gears">Tracks</a>
+              <a href="#gears">Rewards</a>
+              <a href="#gears">Sponsors</a>
+              <a href="#team">Our Team</a>
+              <a href="#gears">FAQs</a>
+              
             </NavLinks>
           )}
 
