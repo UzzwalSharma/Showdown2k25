@@ -42,7 +42,7 @@ const GlowingBox = styled(Paper)(({ theme }) => ({
   border: "2px solid #ff5500",
   backdropFilter: "blur(10px)",
   zIndex: 2,
-  width: "100%",
+  width: "80%",
   maxWidth: 1100,
   margin: "0 auto",
   boxShadow: "0 0 30px #ff550033",
@@ -199,7 +199,7 @@ const HackgroundTimer = () => {
                 },
               }}
             >
-              REGISTRATION SOON
+              REGISTRATION OPENING SOON
             </Button>
             <Typography
               sx={{
