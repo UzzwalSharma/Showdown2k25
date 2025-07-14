@@ -3,21 +3,22 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 
 const SponsorsSection = styled(Box)({
-  backgroundImage: 'url("https://www.esportstalk.com/wp-content/uploads/2021/07/pubg-mobile-june-2021-revenue.jpg")',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundAttachment: 'fixed',
-  minHeight: '100vh',
-  width: '100%',
-  position: 'relative',
-  '&::before': {
+  backgroundImage: "url('BGMI_images/pubg-mobile-june-2021-revenue.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundAttachment: "fixed",
+  minHeight: "100vh",
+  width: "100%",
+  position: "relative",
+  "&::before": {
     content: '""',
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    background: 'linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%)',
+    background:
+      "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%)",
   },
 });
 

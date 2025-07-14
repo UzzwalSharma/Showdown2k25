@@ -235,43 +235,55 @@ function Footer() {
         src="/victory-awaits-in-the-gaming-universe_astronaut-265184.mp3"
         loop
       />
-    
-<ScrollToTopButton
-  aria-label="Scroll to top"
-  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
->
-  <ArrowUpwardIcon fontSize="large"/>
-</ScrollToTopButton>
 
+      <ScrollToTopButton
+        aria-label="Scroll to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <ArrowUpwardIcon fontSize="large" />
+      </ScrollToTopButton>
 
-      <FooterWrapper >
+      <FooterWrapper>
         <FooterTop>
           <FooterContainer ref={ref}>
             {/* Brand + Social */}
             <Box id="footer">
               <LogoText>Hackgrounds India</LogoText>
 
-            <FooterText>
-              Our success in this battleground comes from code, passion, and a team forged in fire.
-            </FooterText>
-            <Box>
-              <a href="https://x.com/TechverseNexus?t=9hSjpYXeqMjfAxEqXN4tug&s=09" target="_blank" rel="noopener noreferrer">
-                <SocialIcon aria-label="X">
-                <XIcon />
-                </SocialIcon>
-              </a>
-              <a href="https://www.instagram.com/techverse_nexus?igsh=cTU3N3FjYnJxZGt3" target="_blank" rel="noopener noreferrer">
-                <SocialIcon aria-label="Instagram">
-                <InstagramIcon />
-                </SocialIcon>
-              </a>
-              <a href="https://www.linkedin.com/company/techverse-nexus/" target="_blank" rel="noopener noreferrer">
-                <SocialIcon aria-label="LinkedIn">
-                <LinkedInIcon />
-                </SocialIcon>
+              <FooterText>
+                Our success in this battleground comes from code, passion, and a
+                team forged in fire.
+              </FooterText>
+              <Box>
+                <a
+                  href="https://x.com/TechverseNexus?t=9hSjpYXeqMjfAxEqXN4tug&s=09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SocialIcon aria-label="X">
+                    <XIcon />
+                  </SocialIcon>
                 </a>
+                <a
+                  href="https://www.instagram.com/techverse_nexus?igsh=cTU3N3FjYnJxZGt3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SocialIcon aria-label="Instagram">
+                    <InstagramIcon />
+                  </SocialIcon>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/techverse-nexus/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SocialIcon aria-label="LinkedIn">
+                    <LinkedInIcon />
+                  </SocialIcon>
+                </a>
+              </Box>
             </Box>
-          </Box>
 
             {/* Useful Links */}
             <Box>
@@ -294,12 +306,16 @@ function Footer() {
               </FooterText>
               <FooterText>
                 <strong>Email:</strong>{" "}
-                <a href="techversenexusofficial@gmail.com" style={{ color: "#FFA500" }}>
+                <a
+                  href="techversenexusofficial@gmail.com"
+                  style={{ color: "#FFA500" }}
+                >
                   techversenexusofficial@gmail.com
                 </a>
               </FooterText>
               <FooterText>
-                <strong>Phone:</strong> +91 9693856529
+                <strong>Phone:</strong> (+91) 9693856529 - Animesh
+                <div>(+91) 6395207811 - Ujjwal</div>
               </FooterText>
             </Box>
 
@@ -321,8 +337,8 @@ function Footer() {
 
         <FooterBottom>
           <Typography>
-            &copy; 2025 Hackgrounds India 2K25. All rights reserved. | Built with{" "}
-            <span className="animate-pulse">💖</span> by{" "}
+            &copy; 2025 Hackgrounds India 2K25. All rights reserved. | Built
+            with <span className="animate-pulse">💖</span> by{" "}
             <strong>Ujjwal & Nishchay</strong>
           </Typography>
         </FooterBottom>
