@@ -1,160 +1,101 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
+const BASE_SIZE = 40;
+const PADDING = 12;
+
 const TechkkenCursor = () => {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [confettiParticles, setConfettiParticles] = useState([]);
+  const cursorRef = useRef(null);
+  const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
+    const $cursor = cursorRef.current;
+
     const moveCursor = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-    };
+      const target = e.target.closest('button, a, img, .magnetic, .trackable, .hover-target');
 
-    const handleClick = (e) => {
-      const colors = ['#ff1c1c', '#007bff', '#ff1744', '#2979ff']; // Tekken reds & blues
-      let newParticles = [];
+      if (target) {
+        const rect = target.getBoundingClientRect();
+        const w = rect.width + PADDING * 2;
+        const h = rect.height + PADDING * 2;
 
-      for (let i = 0; i < 25; i++) {
-        newParticles.push({
-          id: Math.random(),
-          x: e.clientX,
-          y: e.clientY,
-          color: colors[Math.floor(Math.random() * colors.length)],
+        gsap.to($cursor, {
+          x: rect.left - PADDING,
+          y: rect.top - PADDING,
+          width: w,
+          height: h,
+          borderColor: 'rgba(236, 107, 38, 0.7)',
+          boxShadow: '0 0 12px rgba(255,255,255,0.45)',
+          duration: 0.3,
+          ease: 'power3.out',
         });
+
+        setHovering(true);
+      } else {
+        gsap.to($cursor, {
+          x: e.clientX - BASE_SIZE / 2,
+          y: e.clientY - BASE_SIZE / 2,
+          width: BASE_SIZE,
+          height: BASE_SIZE,
+          borderColor: 'rgba(255,255,255,0.2)',
+          boxShadow: '0 0 6px rgba(255,255,255,0.1)',
+          duration: 0.25,
+          ease: 'power3.out',
+        });
+
+        setHovering(false);
       }
-
-      setConfettiParticles(newParticles);
-
-      // Animate confetti with GSAP
-      newParticles.forEach((p) => {
-        const elem = document.getElementById(`confetti-${p.id}`);
-        if (elem) {
-          gsap.set(elem, {
-            transformPerspective: 600,
-            transformOrigin: '50% 50%',
-            scale: 1,
-            rotationX: 0,
-            rotationY: 0,
-            rotationZ: 0,
-            opacity: 1,
-          });
-
-          gsap.to(elem, {
-            duration: 1.5,
-            x: (Math.random() - 0.5) * 300,
-            y: (Math.random() - 1) * 300,
-            z: (Math.random() - 0.5) * 200,
-            scale: 0.2 + Math.random() * 0.6,
-            rotationX: Math.random() * 720,
-            rotationY: Math.random() * 720,
-            rotationZ: Math.random() * 720,
-            opacity: 0,
-            ease: 'power3.out',
-            onComplete: () => {
-              setConfettiParticles((particles) =>
-                particles.filter((pt) => pt.id !== p.id)
-              );
-            },
-          });
-        }
-      });
     };
 
-    window.addEventListener('mousemove', moveCursor);
-    window.addEventListener('click', handleClick);
-
-    return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      window.removeEventListener('click', handleClick);
-    };
+    document.addEventListener('mousemove', moveCursor);
+    return () => document.removeEventListener('mousemove', moveCursor);
   }, []);
-
-  const size = 40;
-  const lineThickness = 3;
 
   return (
     <>
-      {/* Hide default cursor */}
-      <style>{`body, html { cursor: none; }`}</style>
+      {/* Hide OS cursor */}
+      <style>{`html, body { cursor: none; }`}</style>
 
-      {/* Sniper Scope Cursor */}
-      <svg
-        style={{
-          position: 'fixed',
-          top: position.y,
-          left: position.x,
-          pointerEvents: 'none',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 9999,
-          mixBlendMode: 'screen',
-          userSelect: 'none',
-          filter: 'drop-shadow(0 0 8pxrgb(236, 255, 23)) drop-shadow(0 0 8pxrgb(255, 169, 41))',
-        }}
-        width={size}
-        height={size}
-        viewBox={`0 0 ${size} ${size}`}
-      >
-        {/* Red vertical lines */}
-        <line
-          x1={size / 2}
-          y1={0}
-          x2={size / 2}
-          y2={size / 3}
-          stroke="#ff1744"
-          strokeWidth={lineThickness}
-        />
-        <line
-          x1={size / 2}
-          y1={(size * 2) / 3}
-          x2={size / 2}
-          y2={size}
-          stroke="#ff1744"
-          strokeWidth={lineThickness}
-        />
+      {/* Cursor Box */}
+      <div
+  ref={cursorRef}
+  style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: BASE_SIZE,
+    height: BASE_SIZE,
+    pointerEvents: 'none',
+    zIndex: 9999,
+    borderRadius: 8,
+   
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    border: '1.5px solid rgba(255, 255, 255, 0.4)',
+   
+    mixBlendMode: 'lighten',
+    transition: 'background-color 0.2s ease-in-out',
+  }}
+>
 
-        {/* Blue horizontal lines */}
-        <line
-          x1={0}
-          y1={size / 2}
-          x2={size / 3}
-          y2={size / 2}
-          stroke="#2979ff"
-          strokeWidth={lineThickness}
-        />
-        <line
-          x1={(size * 2) / 3}
-          y1={size / 2}
-          x2={size}
-          y2={size / 2}
-          stroke="#2979ff"
-          strokeWidth={lineThickness}
-        />
-
-        {/* Center dot */}
-        <circle cx={size / 2} cy={size / 2} r={4} fill="#ff1744" />
-      </svg>
-
-      {/* Confetti particles */}
-      {confettiParticles.map(({ id, x, y, color }) => (
-        <div
-          key={id}
-          id={`confetti-${id}`}
-          style={{
-            position: 'fixed',
-            top: y,
-            left: x,
-            width: 10,
-            height: 10,
-            backgroundColor: color,
-            boxShadow: `0 0 6px ${color}`,
-            borderRadius: 2,
-            pointerEvents: 'none',
-            opacity: 1,
-            zIndex: 10000,
-            transformStyle: 'preserve-3d',
-          }}
-        />
-      ))}
+        {/* Brackets Only When Hovering */}
+        {hovering &&
+          ['tl', 'tr', 'bl', 'br'].map((pos) => (
+            <div
+              key={pos}
+              style={{
+                position: 'absolute',
+                width: 14,
+                height: 14,
+                border: '2px solid white',
+                opacity: 0.9,
+                ...(pos === 'tl' && { top: 0, left: 0, borderRight: 'none', borderBottom: 'none' }),
+                ...(pos === 'tr' && { top: 0, right: 0, borderLeft: 'none', borderBottom: 'none' }),
+                ...(pos === 'bl' && { bottom: 0, left: 0, borderRight: 'none', borderTop: 'none' }),
+                ...(pos === 'br' && { bottom: 0, right: 0, borderLeft: 'none', borderTop: 'none' }),
+              }}
+            />
+          ))}
+      </div>
     </>
   );
 };
