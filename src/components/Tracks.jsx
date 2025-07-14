@@ -133,14 +133,14 @@ const gamingCards = [
     rank: "🔐 Cybersecurity & Digital Trust",
     title: "Safer Internet",
     desc: "Create tools to protect privacy, prevent online threats, and build digital trust for communities and teams.",
-    image: "https://i.pinimg.com/736x/36/b9/86/36b9864914f2778db34c95abdc72fa1c.jpg",
+    image: "https://images.hdqwalls.com/wallpapers/pubg-2020-4k-ps.jpg",
   },
   {
     mode: "Web3",
     rank: "🔗 Web3 & Blockchain",
     title: "Decentralized Future",
     desc: "Use blockchain to build secure systems — smart contracts, digital identities, and dApps that empower users.",
-    image: "https://images.moneycontrol.com/static-mcnews/2023/12/BGMI-X-Ranveer-Singh.png",
+    image: "/Tracks/tidal-wargod-set-playerunknown-s-battlegrounds-pubg-wallpaper-1280x768_13.jpg",
   },
  
   {
@@ -155,7 +155,7 @@ const gamingCards = [
     rank: "🎖 Women in Tech",
     title: "All-Girls Squad Challenge",
     desc: "A special prize for the best women-led team. Celebrate creativity, teamwork, and leadership in tech.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKQQgnGVTQrbFwJd1n2DGdKtDSgqCQpVHw&s",
+    image: "https://wallpapers.com/images/hd/pubg-squad-two-girls-silver-and-golden-dress-66iemqjqa0obo20d.jpg",
   },
 ];
 
