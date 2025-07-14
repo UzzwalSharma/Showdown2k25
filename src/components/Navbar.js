@@ -71,7 +71,7 @@ const NavLinks = styled(Box)(() => ({
 }));
 
 const Logo = styled('img')({
-  height: '45px',
+  height: '65px',
   filter: 'drop-shadow(0 0 4px #ff7b00)',
 });
 
@@ -117,7 +117,7 @@ const GameXNavbar = () => {
         >
           {/* Logo + Menu Icon */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Logo src="/images/main logo.jpg" alt="GameX Logo" style={{ height: '40px' }} />
+            <Logo src="/main_logo-removebg-preview.png" alt="GameX Logo" style={{ height: '120px' }} />
             {isMobile && (
               <IconButton sx={{ color: '#fff' }} onClick={toggleDrawer(true)}>
                 <MenuIcon />
@@ -142,7 +142,10 @@ const GameXNavbar = () => {
 
           {/* Right Buttons */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <LoginBtn startIcon={<LoginIcon />}>Contact</LoginBtn>
+         <LoginBtn startIcon={<LoginIcon />} href="#footer">
+  Contact
+</LoginBtn>
+
           </Box>
         </Toolbar>
       </StyledAppBar>

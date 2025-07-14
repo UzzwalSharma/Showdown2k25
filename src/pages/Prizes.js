@@ -95,19 +95,19 @@ function Prizes() {
  const mainPrizes = [
   {
     tier: 'first',
-    title: ["Lone Survivor", "of HACKGROUND 2K25"],
+    title: ["Lone Survivor", "of HACKGROUND INDIA 2K25"],
     prize: "₹25,000",
    
   },
   {
     tier: 'second',
-    title: ["Top Fragger", "of HACKGROUND 2K25"],
+    title: ["Top Fragger", "of HACKGROUND INDIA 2K25"],
     prize: "₹15,000",
    
   },
   {
     tier: 'third',
-    title: ["Airdrop Ace", "of HACKGROUND 2K25"],
+    title: ["Free Thinking Zone", "of HACKGROUND INDIA 2K25"],
     prize: "₹10,000",
     
   }
@@ -116,7 +116,7 @@ function Prizes() {
 
   const specialPrizes = [
     {
-      title: ["Girls in Tech", "Naari Shakti"],
+      title: ["All-Girls Squad Challenge"],
       prize: "₹15,000",
       
     }

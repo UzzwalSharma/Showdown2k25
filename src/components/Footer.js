@@ -15,7 +15,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import DiscordIcon from '@mui/icons-material/Chat'; // Using chat icon as placeholder for Discord
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
-
+  import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'; // At the top
 
 const LogoText = styled(Typography)({
   fontFamily: '"Orbitron", sans-serif',
@@ -120,17 +120,17 @@ const SocialIcon = styled(IconButton)({
 });
 
 const DiscordButton = styled(Button)({
-  backgroundColor: '#5865F2',
+  backgroundColor: '#58f267ff',
   color: '#fff',
   fontWeight: 'bold',
   textTransform: 'uppercase',
   borderRadius: '8px',
   padding: '12px 24px',
-  boxShadow: '0 0 15px #5865F2',
+  boxShadow: '0 0 15px #58f2a2ff',
   transition: 'all 0.3s ease-in-out',
   '&:hover': {
-    backgroundColor: '#4752c4',
-    boxShadow: '0 0 25px #4752c4',
+    backgroundColor: '#47c45cff',
+    boxShadow: '0 0 15px #47c453ff',
     transform: 'scale(1.05)',
   },
   display: 'flex',
@@ -166,30 +166,25 @@ const MusicToggleButton = styled(IconButton)({
     transform: 'scale(1.07)',
   },
 });
-
-{/*} const ChatbotToggleButton = styled(IconButton)({
+const ScrollToTopButton = styled(IconButton)({
   position: 'fixed',
-  bottom: 112, // 32 (music) + 64 (button height) + 16 (gap)
+  bottom: 112, // Above the music button
   right: 32,
   zIndex: 2000,
   width: 64,
   height: 64,
   borderRadius: '50%',
-  background: 'linear-gradient(135deg, #FFCC00 60%, #FFD700 100%)',
+  background: 'linear-gradient(135deg, #ff7b00, #ffa500)',
+  color: '#fff',
   boxShadow: '0 4px 24px #000a',
-  color: '#222',
-  transition: 'all 0.3s',
+  transition: 'all 0.3s ease-in-out',
   border: '3px solid #fff',
-  fontSize: 32,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
   '&:hover': {
-    background: 'linear-gradient(135deg, #FFD700 60%, #FFCC00 100%)',
-    color: '#fff',
+    background: 'linear-gradient(135deg, #ffa500, #ff7b00)',
     transform: 'scale(1.07)',
   },
-}); */}
+});
+
 
 function Footer() {
   const ref = useRef();
@@ -240,11 +235,20 @@ function Footer() {
         src="/victory-awaits-in-the-gaming-universe_astronaut-265184.mp3"
         loop
       />
-      <FooterWrapper>
+    
+<ScrollToTopButton
+  aria-label="Scroll to top"
+  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+>
+  <ArrowUpwardIcon fontSize="large"/>
+</ScrollToTopButton>
+
+
+      <FooterWrapper >
         <FooterTop>
           <FooterContainer ref={ref}>
             {/* Brand + Social */}
-            <Box>
+            <Box id="footer">
               <LogoText>Hackgrounds India</LogoText>
 
             <FooterText>
@@ -301,10 +305,10 @@ function Footer() {
 
             {/* Discord Join */}
             <Box>
-              <FooterTitle>Join Our Discord</FooterTitle>
+              <FooterTitle>Join Our Whatsapp group</FooterTitle>
               <DiscordButton
                 variant="contained"
-                href="https://discord.gg/yourserver"
+                href="https://chat.whatsapp.com/CHEAvZxmpRM1ermtrIhLWT?mode=r_c"
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<DiscordIcon />}

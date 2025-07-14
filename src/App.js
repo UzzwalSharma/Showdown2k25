@@ -63,6 +63,7 @@ function App() {
           <FAQs />
         </section>
       </main>
+      
       <Footer />
     </div>
   );
