@@ -44,7 +44,7 @@ const TimelineContainer = styled(Box)({
 
 const DayCard = styled(Paper)(({ side, bgimg }) => ({
   background: "rgba(255, 255, 255, 0.05)",
-  padding: "2.5rem 2rem 3rem",
+  padding: "3rem 2rem 3rem",
   position: "relative",
   width: "45%",
   minHeight: 270, // Same as tracks' card :)

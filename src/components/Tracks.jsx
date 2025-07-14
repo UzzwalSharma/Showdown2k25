@@ -107,49 +107,58 @@ const HeaderLine = styled(Box)({
 });
 
 const gamingCards = [
-  {
-    mode: "EdTech",
-    rank: "Innovator",
-    title: "Education Revolution",
-    desc: "Transform learning experiences...",
-    image: "/Tracks/edtech.png",
+   {
+    mode: "GameDev",
+    rank: "🎮 Game On",
+    title: "Play & Inspire",
+    desc: "Design games that are fun and meaningful — from learning to problem-solving, build experiences that engage.",
+    image: "/Tracks/edtech.png", // your existing local image
   },
   {
     mode: "AI/ML",
-    rank: "Mastermind",
-    title: "Artificial Intelligence Hub",
-    desc: "Harness the power of AI...",
+    rank: "🤖 AI for Everything",
+    title: "Smarter Solutions",
+    desc: "Use AI to solve real-world problems in healthcare, education, and daily life. Let your code think and act smartly for society.",
     image: "https://st1.techlusive.in/wp-content/uploads/2024/12/bgmi-10.jpg",
   },
   {
-    mode: "IoT",
-    rank: "Connector",
-    title: "Internet of Things Arena",
-    desc: "Connect physical and digital...",
+    mode: "GreenTech",
+    rank: "🌱 GreenTech & Climate Innovation",
+    title: "Eco Tech Power",
+    desc: "Build technology to protect the planet — from clean energy to smart farming. Help nature and people thrive together.",
+    image: "https://e1.pxfuel.com/desktop-wallpaper/191/565/desktop-wallpaper-1280x1024-game-pubg-girl-2020-1280x1024-resolution-backgrounds-and-gaming-girl-pc.jpg",
+  },
+  {
+    mode: "Cybersecurity",
+    rank: "🔐 Cybersecurity & Digital Trust",
+    title: "Safer Internet",
+    desc: "Create tools to protect privacy, prevent online threats, and build digital trust for communities and teams.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKQQgnGVTQrbFwJd1n2DGdKtDSgqCQpVHw&s",
   },
   {
-    mode: "Healthcare",
-    rank: "Lifesaver",
-    title: "Medical Technology Zone",
-    desc: "Develop healthcare solutions...",
+    mode: "Web3",
+    rank: "🔗 Web3 & Blockchain",
+    title: "Decentralized Future",
+    desc: "Use blockchain to build secure systems — smart contracts, digital identities, and dApps that empower users.",
+    image: "https://images.moneycontrol.com/static-mcnews/2023/12/BGMI-X-Ranveer-Singh.png",
+  },
+ 
+  {
+    mode: "Wildcard",
+    rank: "💡 Open Innovation",
+    title: "Free Thinking Zone",
+    desc: "Got a bold idea that doesn't fit in a box? This is your space to innovate — assistive tech, future tools, and more.",
     image: "https://wallpapers.com/images/hd/pubg-girl-hiding-and-scouting-cxfpeumaa68nvh1h.jpg",
   },
   {
-    mode: "Open Innovation",
-    rank: "Pioneer",
-    title: "Creative Solutions Lab",
-    desc: "Think outside the box...",
-    image: "https://images.moneycontrol.com/static-mcnews/2023/12/BGMI-X-Ranveer-Singh.png",
-  },
-  {
-    mode: "Green Tech",
-    rank: "Guardian",
-    title: "Sustainability Command",
-    desc: "Eco-friendly tech solutions...",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyGLGKBW5kW1BYfG3HxMj-JWyB9RB0EOM7XbClVCT9QTIJWjNxyZu5zF3jjj7er1Ch6Yg&usqp=CAU",
+    mode: "Special",
+    rank: "🎖 Women in Tech",
+    title: "All-Girls Squad Challenge",
+    desc: "A special prize for the best women-led team. Celebrate creativity, teamwork, and leadership in tech.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmrKQQgnGVTQrbFwJd1n2DGdKtDSgqCQpVHw&s",
   },
 ];
+
 
 export default function PUBGGamingCardsMUI() {
   return (
@@ -166,7 +175,7 @@ export default function PUBGGamingCardsMUI() {
                 <Box
                   sx={{
                     width: "100%",
-                    height: "180px",
+                    height: "280px",
                     borderRadius: "12px",
                     backgroundImage: `url(${image})`,
                     backgroundSize: "cover",
