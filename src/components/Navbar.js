@@ -10,6 +10,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Typography,
 
 } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
@@ -116,18 +117,27 @@ const GameXNavbar = () => {
           }}
         >
           {/* Logo + Menu Icon */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Logo src="/main_logo-removebg-preview.png" alt="GameX Logo" style={{ height: '120px' }} />
-            {isMobile && (
-              <IconButton sx={{ color: '#fff' }} onClick={toggleDrawer(true)}>
-                <MenuIcon />
-              </IconButton>
-            )}
-          </Box>
+       <Box sx={{ display: 'flex', alignItems: 'center' }}>
+  <Logo
+    src="/main_logo-removebg-preview.png"
+    alt="GameX Logo"
+    style={{ height: isMobile ? '60px' : '120px' }}
+  />
+</Box>
+
+{isMobile && (
+  <IconButton
+    sx={{ color: '#fff', ml: 'auto' }} // pushes to the right
+    onClick={toggleDrawer(!drawerOpen)}
+  >
+    {drawerOpen ? <CloseIcon /> : <MenuIcon />}
+  </IconButton>
+)}
+
 
         {/* Nav Links */}
         {!isMobile && (
-          <NavLinks>
+          <NavLinks style={{mt:"2px",}}>
             <a href="#hero">Home</a>
             <a href="#about">About</a>
             <a href="#timeline">Timeline</a>
@@ -141,12 +151,32 @@ const GameXNavbar = () => {
         )}
 
           {/* Right Buttons */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-         <LoginBtn startIcon={<LoginIcon />} href="#footer">
+      <Box
+  sx={{
+    display: {
+      xs: 'none', 
+      sm: 'flex', // visible from sm and above
+    },
+    alignItems: 'center',
+    gap: 2,
+  }}
+>
+  <LoginBtn
+  startIcon={<LoginIcon />}
+  href="#footer"
+  sx={{
+    mt: 2,
+    width: '100%',
+    justifyContent: 'center',
+    fontSize: '14px',
+    padding: '10px',
+  }}
+>
   Contact
 </LoginBtn>
 
-          </Box>
+</Box>
+
         </Toolbar>
       </StyledAppBar>
 
@@ -162,68 +192,77 @@ const GameXNavbar = () => {
       backgroundColor: '#1c1c22',
       width: '70vw',
       maxWidth: 300,
-      paddingTop: '1rem',
-      paddingX: '1rem',
       zIndex: 1400,
     },
   }}
 >
-  {/* Close Icon */}
-  <Box display="flex" justifyContent="flex-end">
-    <IconButton
-      onClick={() => setDrawerOpen(false)}
+  {/* Drawer Content Wrapper */}
+  <Box sx={{ px: 2, pt: 4 }}>
+    <Typography
+      variant="h6"
       sx={{
-        color: '#fff',
-        mb: 1,
-        backgroundColor: '#2a2a2f',
-        '&:hover': {
-          backgroundColor: '#3a3c45',
-          color: '#ff7b00',
-        },
+        fontFamily: 'Orbitron',
+        fontWeight: 700,
+        color: '#ff7b00',
+        mb: 2,
+        textAlign: 'center',
+        borderBottom: '1px solid #ff7b00',
+        pb: 1,
       }}
     >
-      <CloseIcon />
-    </IconButton>
-  </Box>
+      MENU
+    </Typography>
 
-  {/* Menu Links */}
-  <List>
-    {['Home', 'About', 'Timeline', 'Tracks', 'Rewards', 'Sponsors', 'Team', 'FAQs'].map((text, i) => (
-      <ListItem
-        button
-        key={i}
-        component="a"
-        href={`#${text.toLowerCase().replace(/\s/g, '')}`}
-        onClick={() => setDrawerOpen(false)}
-        sx={{
-          py: 1.5,
-          px: 2,
-          '&:hover': {
-            backgroundColor: '#2a2a2f',
-            borderRadius: '8px',
-          },
-        }}
-      >
-        <ListItemText
-          primary={text}
-          primaryTypographyProps={{
-            sx: {
-              color: '#fff',
-              fontWeight: 600,
-              textTransform: 'uppercase',
-              fontFamily: 'Orbitron',
-              fontSize: '1rem',
-              '&:hover': {
-                color: '#ff7b00',
-                textShadow: '0 0 8px #ff7b00',
-              },
+    <List>
+      {['Home', 'About', 'Timeline', 'Tracks', 'Rewards', 'Sponsors', 'Team', 'FAQs'].map((text, i) => (
+        <ListItem
+          button
+          key={i}
+          component="a"
+          href={`#${text.toLowerCase().replace(/\s/g, '')}`}
+          onClick={() => setDrawerOpen(false)}
+          sx={{
+            py: 1.5,
+            px: 2,
+            '&:hover': {
+              backgroundColor: '#2a2a2f',
+              borderRadius: '8px',
             },
           }}
-        />
-      </ListItem>
-    ))}
-  </List>
+        >
+          <ListItemText
+            primary={text}
+            primaryTypographyProps={{
+              sx: {
+                color: '#fff',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                fontFamily: 'Orbitron',
+                fontSize: '1rem',
+              },
+            }}
+          />
+        </ListItem>
+      ))}
+    </List>
+
+    <LoginBtn
+      startIcon={<LoginIcon />}
+      href="#footer"
+      sx={{
+        mt: 3,
+        width: '100%',
+        justifyContent: 'center',
+        fontSize: '14px',
+        padding: '10px',
+      }}
+    >
+      Contact
+    </LoginBtn>
+  </Box>
 </Drawer>
+
+
 
 
     </>
