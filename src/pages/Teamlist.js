@@ -94,6 +94,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 
 
 const GlassCard = styled(Card)({
+  minWidth: '175px',
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
   border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -130,15 +131,13 @@ const HackathonSections = () => {
       id: 1,
       name: "Maaz Anwar",
       role: "Lead Organiser",
-     
       avatar: "/Team/IMG-20250625-WA0285 - Maaz Anwar.jpg",
       linkedin: "https://www.linkedin.com/in/maazanwar414/",
     },
-     {
+    {
       id: 2,
       name: "Ujjwal Aggarwal",
       role: "Lead Organiser",
-     
       avatar: "/Team/IMG-20250415-WA0050 - Ujjwal Agarwal (2).jpg",
       linkedin: "https://www.linkedin.com/in/ujjwal-agarwal-67b6a0323/",
     },
@@ -146,149 +145,132 @@ const HackathonSections = () => {
       id: 3,
       name: "Animesh",
       role: "Lead Organiser",
-     
       avatar: "/Team/Animesh Singh - Animesh Singh.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/animeshsingh9693/"
+      linkedin: "https://www.linkedin.com/in/animeshsingh9693/",
     },
     {
       id: 4,
       name: "Anmol",
       role: "Lead Organiser",
-     
       avatar: "/Team/Anmol Aggarwal.jpeg",
-     
-      linkedin: "https://www.linkedin.com/in/anmol-agrawal25/"
+      linkedin: "https://www.linkedin.com/in/anmol-agrawal25/",
     },
-   
-    
     {
       id: 5,
       name: "Ujjwal Sharma",
       role: "Technical Head",
-     
       avatar: "/Team/WhatsApp Image 2024-07-18 at 10.12.39_30e74f22.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/ujjwal-sharma-3a1395279/"
+      linkedin: "https://www.linkedin.com/in/ujjwal-sharma-3a1395279/",
     },
-   
     {
       id: 6,
       name: "Umesh Kataria",
-     
-     role: "Sponsership head",
-      avatar: "/Team/WhatsApp Image 2025-04-02 at 21.44.21_496cb671 - Umesh Kataria.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/umeshxkataria/"
+      role: "Sponsership head",
+      avatar:
+        "/Team/WhatsApp Image 2025-04-02 at 21.44.21_496cb671 - Umesh Kataria.jpg",
+      linkedin: "https://www.linkedin.com/in/umeshxkataria/",
     },
-     {
+    {
       id: 7,
       name: "Harsh Gupta",
       role: "Design Head",
-     
       avatar: "/Team/my picture - Harsh Gupta.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/harsh-gupta-7b3b472a2/"
+      linkedin: "https://www.linkedin.com/in/harsh-gupta-7b3b472a2/",
     },
-     {
+    {
       id: 8,
       name: "Nishchay Chaurasia",
       role: "Tech Team",
-     
-      avatar: "/Team/WhatsApp Image 2025-06-28 at 00.01.46_e8207855 - Nishchay Chaurasia.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/nishchaync-83b8152b0/"
+      avatar:
+        "/Team/WhatsApp Image 2025-06-28 at 00.01.46_e8207855 - Nishchay Chaurasia.jpg",
+      linkedin: "https://www.linkedin.com/in/nishchaync-83b8152b0/",
     },
-     {
+    {
       id: 9,
-      name: "Advay Anand",
-      role: "Tech Team",
-     
-      avatar: "/Team/P1 - Advay Anand.jpg ",
-     
-      linkedin: "https://www.linkedin.com/in/advay-anand-a89024277/"
-    },
-     {
-      id: 10,
       name: "Aman",
       role: "Tech Team",
-     
       avatar: "/Team/nay-khichwa-le-cropped - Aman Bobal.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/aman-bobal/"
+      linkedin: "https://www.linkedin.com/in/aman-bobal/",
     },
-    
-     {
-      id: 11,
+    {
+      id: 10,
       name: "Jigisha baliyan",
       role: "Pr & outreach team",
-     
       avatar: "/Team/Jigisha Baliyan.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/jigisha-baliyann/"
+      linkedin: "https://www.linkedin.com/in/jigisha-baliyann/",
     },
-    
-     {
+    {
       id: 11,
       name: "Keshav",
       role: "Pr & outreach team",
-     
-     
       avatar: "/Team/IMG_7302 - Keshav Mehta.JPG",
-     
-      linkedin: "https://www.linkedin.com/in/keshav-mehta-b9a838305/"
+      linkedin: "https://www.linkedin.com/in/keshav-mehta-b9a838305/",
     },
-    
-     {
+    {
       id: 12,
       name: "Rhythm",
-        role: "Social Media Team",
-     
-     
+      role: "Social Media Team",
       avatar: "/Team/IMG20250316161749 - Rhythm Arora.jpg ",
-     
-      linkedin: "https://www.linkedin.com/in/rhythmisloading/"
+      linkedin: "https://www.linkedin.com/in/rhythmisloading/",
     },
-    
-     {
+    {
       id: 13,
       name: "Nitya",
-        role: "Social Media Team",
-     
+      role: "Social Media Team",
       avatar: "/Team/IMG_20240626_113826 - Nitya Gosain.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/nitya-gosain-42037328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+      linkedin:
+        "https://www.linkedin.com/in/nitya-gosain-42037328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
-    
-     {
+    {
       id: 14,
       name: "Ankit",
       role: "Video Editor",
-     
       avatar: "/Team/IMG20250208153043~2 - Ankit Kumar.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/ankit-kumar5277/"
+      linkedin: "https://www.linkedin.com/in/ankit-kumar5277/",
     },
-     {
+    {
       id: 15,
       name: "Rohit Chauhan",
       role: "Video Editor",
-     
       avatar: "/Team/Snapchat-1910008162 - Rohit Chauhan.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/rohit-chauhan-096847340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+      linkedin: "https://www.linkedin.com/in/rohit-chauhan-096847340/",
     },
-     {
-      id: 15,
+    {
+      id: 16,
       name: "Akash",
       role: "Design Team",
-     
       avatar: "/Team/DevopsOffice - Akash Gupta.jpg",
-     
-      linkedin: "https://www.linkedin.com/in/akash-gupta-718363296/"
+      linkedin: "https://www.linkedin.com/in/akash-gupta-718363296/",
     },
-   
-    
+    {
+      id: 17,
+      name: "Himanshi Aggarwal",
+      role: "Sponsership Team",
+      avatar:
+        "/Team/WhatsApp Image 2025-04-05 at 22.38.54_67562664 - Himanshi Aggarwal.jpg",
+      linkedin: "https://www.linkedin.com/in/himanshi-aggarwal-5a5553321/",
+    },
+    {
+      id: 18,
+      name: "Saad Salim",
+      role: "Sponsership Team",
+      avatar: "/Team/saad.jpg", 
+      linkedin: "https://www.linkedin.com/in/saad-salim-24b251228/",
+    },
+    {
+      id: 19,
+      name: "Vanisha Raj",
+      role: "Design Team",
+      avatar: "/Team/Vanisha.jpg", 
+      linkedin: "https://www.linkedin.com/in/vanisha-raj-0366a7314/",
+    },
+    {
+      id: 20,
+      name: "Rahul",
+      role: "PR & Outreach Team",
+      avatar: "/Team/rahul.jpg", 
+      linkedin: "https://www.linkedin.com/in/rahulgoyal83789/",
+    },
   ];
 
   const mentors = [
