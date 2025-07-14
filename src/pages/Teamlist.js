@@ -30,7 +30,6 @@ import {
 
 import { Instagram } from "@mui/icons-material";
 
-
 const gameTheme = createTheme({
   palette: {
     mode: "dark",
@@ -45,8 +44,6 @@ const gameTheme = createTheme({
     h6: { fontWeight: 600, letterSpacing: "0.05em" },
   },
 });
-
-
 
 const pulse = keyframes`
   0%, 100% { transform: scale(1); opacity: 0.8; }
@@ -92,9 +89,8 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-
 const GlassCard = styled(Card)({
-  minWidth: '175px',
+  minWidth: "175px",
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
   border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -102,12 +98,13 @@ const GlassCard = styled(Card)({
   position: "relative",
   overflow: "hidden",
   "&::before": {
-  background: "linear-gradient(135deg, rgba(255,85,0,0.1) 0%, transparent 50%, rgba(255,255,255,0.1) 100%)",
-},
-"&:hover": {
-  boxShadow: "0 25px 50px rgba(255,85,0,0.2)",
-  border: "1px solid rgba(255,85,0,0.3)",
-},
+    background:
+      "linear-gradient(135deg, rgba(255,85,0,0.1) 0%, transparent 50%, rgba(255,255,255,0.1) 100%)",
+  },
+  "&:hover": {
+    boxShadow: "0 25px 50px rgba(255,85,0,0.2)",
+    border: "1px solid rgba(255,85,0,0.3)",
+  },
 
   transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
 });
@@ -121,7 +118,6 @@ const ClippedBox = styled(Box)({
   color: "#000",
   letterSpacing: "0.1em",
 });
-
 
 const HackathonSections = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -179,6 +175,13 @@ const HackathonSections = () => {
     },
     {
       id: 8,
+      name: "Rahul",
+      role: "PR & Outreach Head",
+      avatar: "/Team/rahul.jpg",
+      linkedin: "https://www.linkedin.com/in/rahulgoyal83789/",
+    },
+    {
+      id: 9,
       name: "Nishchay Chaurasia",
       role: "Tech Team",
       avatar:
@@ -186,18 +189,11 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/nishchaync-83b8152b0/",
     },
     {
-      id: 9,
+      id: 10,
       name: "Aman",
       role: "Tech Team",
       avatar: "/Team/nay-khichwa-le-cropped - Aman Bobal.jpg",
       linkedin: "https://www.linkedin.com/in/aman-bobal/",
-    },
-    {
-      id: 10,
-      name: "Jigisha baliyan",
-      role: "Pr & outreach team",
-      avatar: "/Team/Jigisha Baliyan.jpg",
-      linkedin: "https://www.linkedin.com/in/jigisha-baliyann/",
     },
     {
       id: 11,
@@ -208,13 +204,20 @@ const HackathonSections = () => {
     },
     {
       id: 12,
+      name: "Jigisha baliyan", // moved up
+      role: "Pr & outreach team",
+      avatar: "/Team/Jigisha Baliyan.jpg",
+      linkedin: "https://www.linkedin.com/in/jigisha-baliyann/",
+    },
+    {
+      id: 13,
       name: "Rhythm",
       role: "Social Media Team",
       avatar: "/Team/IMG20250316161749 - Rhythm Arora.jpg ",
       linkedin: "https://www.linkedin.com/in/rhythmisloading/",
     },
     {
-      id: 13,
+      id: 14,
       name: "Nitya",
       role: "Social Media Team",
       avatar: "/Team/IMG_20240626_113826 - Nitya Gosain.jpg",
@@ -222,28 +225,28 @@ const HackathonSections = () => {
         "https://www.linkedin.com/in/nitya-gosain-42037328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
     {
-      id: 14,
+      id: 15,
       name: "Ankit",
       role: "Video Editor",
       avatar: "/Team/IMG20250208153043~2 - Ankit Kumar.jpg",
       linkedin: "https://www.linkedin.com/in/ankit-kumar5277/",
     },
     {
-      id: 15,
+      id: 16,
       name: "Rohit Chauhan",
       role: "Video Editor",
       avatar: "/Team/Snapchat-1910008162 - Rohit Chauhan.jpg",
       linkedin: "https://www.linkedin.com/in/rohit-chauhan-096847340/",
     },
     {
-      id: 16,
+      id: 17,
       name: "Akash",
       role: "Design Team",
       avatar: "/Team/DevopsOffice - Akash Gupta.jpg",
       linkedin: "https://www.linkedin.com/in/akash-gupta-718363296/",
     },
     {
-      id: 17,
+      id: 18,
       name: "Himanshi Aggarwal",
       role: "Sponsership Team",
       avatar:
@@ -251,35 +254,24 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/himanshi-aggarwal-5a5553321/",
     },
     {
-      id: 18,
+      id: 19,
       name: "Saad Salim",
       role: "Sponsership Team",
-      avatar: "/Team/saad.jpg", 
+      avatar: "/Team/saad.jpg",
       linkedin: "https://www.linkedin.com/in/saad-salim-24b251228/",
     },
     {
-      id: 19,
+      id: 20,
       name: "Vanisha Raj",
       role: "Design Team",
-      avatar: "/Team/Vanisha.jpg", 
+      avatar: "/Team/Vanisha.jpg",
       linkedin: "https://www.linkedin.com/in/vanisha-raj-0366a7314/",
     },
-    {
-      id: 20,
-      name: "Rahul",
-      role: "PR & Outreach Team",
-      avatar: "/Team/rahul.jpg", 
-      linkedin: "https://www.linkedin.com/in/rahulgoyal83789/",
-    },
   ];
 
-  const mentors = [
-   
-  ];
+  const mentors = [];
 
-  const judges = [
-   
-  ];
+  const judges = [];
 
   const PersonCard = ({ person }) => (
     <Grow in={true} timeout={700}>
@@ -292,7 +284,7 @@ const HackathonSections = () => {
               width: 100,
               height: 100,
               border: "3px solid #ff5500",
-                boxShadow: "0 0 20px rgba(255,85,0,0.5)",
+              boxShadow: "0 0 20px rgba(255,85,0,0.5)",
             }}
           />
           <Box
@@ -302,14 +294,17 @@ const HackathonSections = () => {
               right: "calc(50% - 50px)",
               width: 12,
               height: 12,
-             bgcolor: "#ff5500",
+              bgcolor: "#ff5500",
               borderRadius: "50%",
               animation: `${pulse} 2s infinite`,
             }}
           />
         </Box>
 
-        <Typography variant="h6" sx={{ color: "#00ff88", mb: 1, animation: `${glitch} 3s infinite` }}>
+        <Typography
+          variant="h6"
+          sx={{ color: "#00ff88", mb: 1, animation: `${glitch} 3s infinite` }}
+        >
           {person.name}
         </Typography>
 
@@ -337,58 +332,58 @@ const HackathonSections = () => {
               </IconButton>
             </Tooltip>
           )}
-       {person.linkedin && (
-  <Tooltip title="LinkedIn">
-    <a
-      href={person.linkedin}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: "none" }}
-    >
-      <IconButton
-        sx={{
-          bgcolor: "rgba(0,255,136,0.1)",
-          border: "1px solid rgba(0,255,136,0.3)",
-          color: "#00ff88",
-          "&:hover": {
-            bgcolor: "#00ff88",
-            color: "#000",
-            transform: "scale(1.1)",
-          },
-          transition: "all 0.3s ease",
-        }}
-      >
-        <LinkedIn sx={{ fontSize: 18 }} />
-      </IconButton>
-    </a>
-  </Tooltip>
-)}
-{person.instagram && (
-  <Tooltip title="Instagram">
-    <a
-      href={person.instagram}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: "none", display: "inline-flex" }}
-    >
-      <IconButton
-        sx={{
-          bgcolor: "rgba(0,255,136,0.1)",
-          border: "1px solid rgba(0,255,136,0.3)",
-          color: "#00ff88",
-          "&:hover": {
-            bgcolor: "#00ff88",
-            color: "#000",
-            transform: "scale(1.1)",
-          },
-          transition: "all 0.3s ease",
-        }}
-      >
-        <Instagram sx={{ fontSize: 18 }} />
-      </IconButton>
-    </a>
-  </Tooltip>
-)}
+          {person.linkedin && (
+            <Tooltip title="LinkedIn">
+              <a
+                href={person.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <IconButton
+                  sx={{
+                    bgcolor: "rgba(0,255,136,0.1)",
+                    border: "1px solid rgba(0,255,136,0.3)",
+                    color: "#00ff88",
+                    "&:hover": {
+                      bgcolor: "#00ff88",
+                      color: "#000",
+                      transform: "scale(1.1)",
+                    },
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <LinkedIn sx={{ fontSize: 18 }} />
+                </IconButton>
+              </a>
+            </Tooltip>
+          )}
+          {person.instagram && (
+            <Tooltip title="Instagram">
+              <a
+                href={person.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", display: "inline-flex" }}
+              >
+                <IconButton
+                  sx={{
+                    bgcolor: "rgba(0,255,136,0.1)",
+                    border: "1px solid rgba(0,255,136,0.3)",
+                    color: "#00ff88",
+                    "&:hover": {
+                      bgcolor: "#00ff88",
+                      color: "#000",
+                      transform: "scale(1.1)",
+                    },
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <Instagram sx={{ fontSize: 18 }} />
+                </IconButton>
+              </a>
+            </Tooltip>
+          )}
 
           {person.email && (
             <Tooltip title="Email">
@@ -414,58 +409,58 @@ const HackathonSections = () => {
     </Grow>
   );
 
- const renderContent = () => {
-  const data = [teamMembers, mentors, judges][activeTab];
+  const renderContent = () => {
+    const data = [teamMembers, mentors, judges][activeTab];
 
-  const isComingSoon = (activeTab === 1 && (!mentors.length || mentors.every(m => !m.name))) ||
-                       (activeTab === 2 && (!judges.length || judges.every(j => !j.name)));
+    const isComingSoon =
+      (activeTab === 1 && (!mentors.length || mentors.every((m) => !m.name))) ||
+      (activeTab === 2 && (!judges.length || judges.every((j) => !j.name)));
 
-  if (isComingSoon) {
-    return (
-      <Box
-        sx={{
-          minHeight: "300px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          animation: `${pulse} 2s infinite`,
-          textAlign: "center",
-        }}
-      >
-        <Typography
-          variant="h4"
+    if (isComingSoon) {
+      return (
+        <Box
           sx={{
-            fontWeight: 700,
-            color: "#ff6200ff",
-            textShadow: "0 0 10px #ec880d55",
-            animation: `${glitch} 2s finite`,
+            minHeight: "300px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            animation: `${pulse} 2s infinite`,
+            textAlign: "center",
           }}
         >
-        Revealing Soon
-        </Typography>
-        <Typography sx={{ color: "#aaa", mt: 1 }}>
-          Stay tuned, we’re getting the best on board!
-        </Typography>
-      </Box>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 700,
+              color: "#ff6200ff",
+              textShadow: "0 0 10px #ec880d55",
+              animation: `${glitch} 2s finite`,
+            }}
+          >
+            Revealing Soon
+          </Typography>
+          <Typography sx={{ color: "#aaa", mt: 1 }}>
+            Stay tuned, we’re getting the best on board!
+          </Typography>
+        </Box>
+      );
+    }
+
+    return (
+      <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
+        {data.map((person, index) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={person.id}>
+            <Fade in={true} timeout={800 + index * 150}>
+              <div>
+                <PersonCard person={person} />
+              </div>
+            </Fade>
+          </Grid>
+        ))}
+      </Grid>
     );
-  }
-
-  return (
-    <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
-      {data.map((person, index) => (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={person.id}>
-          <Fade in={true} timeout={800 + index * 150}>
-            <div>
-              <PersonCard person={person} />
-            </div>
-          </Fade>
-        </Grid>
-      ))}
-    </Grid>
-  );
-};
-
+  };
 
   return (
     <ThemeProvider theme={gameTheme}>
@@ -477,7 +472,7 @@ const HackathonSections = () => {
                 variant="h1"
                 sx={{
                   fontSize: { xs: "2.5rem", md: "4rem" },
-                      color: "#f0e744df",
+                  color: "#f0e744df",
                   fontFamily: '"Oswald", sans-serif',
                   fontWeight: 700,
                   letterSpacing: "0.1em",
@@ -500,10 +495,22 @@ const HackathonSections = () => {
               >
                 HACKGROUND INDIA 2K25
               </Typography>
-              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 2 ,ml:"2" }}>
-                <Divider sx={{ width: 80, borderColor: "#ffa200ff", borderWidth: 2 }} />
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 2,
+                  ml: "2",
+                }}
+              >
+                <Divider
+                  sx={{ width: 80, borderColor: "#ffa200ff", borderWidth: 2 }}
+                />
                 <ClippedBox sx={{ fontSize: "0.8rem" }}>LIVE</ClippedBox>
-                <Divider sx={{ width: 80, borderColor: "#ffb300ff", borderWidth: 2 }} />
+                <Divider
+                  sx={{ width: 80, borderColor: "#ffb300ff", borderWidth: 2 }}
+                />
               </Box>
             </Box>
           </Fade>
@@ -548,7 +555,7 @@ const HackathonSections = () => {
             </Box>
           </Fade>
 
-          <Box sx={{ mt: 4 , ml:8 }}>{renderContent()}</Box>
+          <Box sx={{ mt: 4, ml: 8 }}>{renderContent()}</Box>
         </Container>
       </StyledContainer>
     </ThemeProvider>
