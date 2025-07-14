@@ -39,7 +39,7 @@ const FAQWrapper = styled(Box)({
 
 const SectionTitle = styled(Typography)({
   color: "#FFA500",
-  fontFamily: '"Orbitron", sans-serif',
+  fontFamily: '"Oswald", sans-serif', 
   fontSize: "3rem",
   fontWeight: 800,
   textTransform: "uppercase",
@@ -56,33 +56,60 @@ const SectionTitle = styled(Typography)({
 });
 
 const StyledAccordion = styled(Accordion)({
-  background: "rgba(30, 30, 30, 0.85)",
-  color: "#ffffff",
-  border: "2px solid #FFA500",
-  borderRadius: "14px",
-  marginBottom: "1.8rem",
+  background: "rgba(30, 30, 30, 0.92)",
+  color: "#fff",
+  border: "none",
+  borderRadius: 0,
+  marginBottom: 0,
   position: "relative",
   zIndex: 2,
-  boxShadow: "0 0 20px rgba(255,165,0,0.3)",
-  backdropFilter: "blur(4px)",
+  boxShadow: "0 2px 12px rgba(255,165,0,0.12)",
+  backdropFilter: "blur(2px)",
+  "&:not(:last-child)": {
+    borderBottom: "1px solid #FFA500",
+  },
+  "&:first-of-type": {
+    borderTopLeftRadius: "14px",
+    borderTopRightRadius: "14px",
+  },
+  "&:last-of-type": {
+    borderBottomLeftRadius: "14px",
+    borderBottomRightRadius: "14px",
+  },
 });
 
 const StyledSummary = styled(AccordionSummary)({
-  fontWeight: 700,
-  fontSize: "1.1rem",
-  fontFamily: '"Orbitron", sans-serif',
-  color: "#fff",
+  fontWeight: 800,
+  fontSize: "1.25rem",
+  fontFamily: '"Oswald", "Montserrat", sans-serif', 
+  color: "#FFA500",
+  letterSpacing: "1px",
+  background: "rgba(255,165,0,0.07)",
+  borderRadius: "0",
+  padding: "0.7rem 1.5rem",
   "& .MuiAccordionSummary-expandIcon": {
-    color: "#FFA500",
+    color: "#fff",
+    fontSize: "2rem",
+    transition: "transform 0.3s",
+  },
+  "&.Mui-expanded": {
+    background: "rgba(255,165,0,0.13)",
+    color: "#fff",
+    textShadow: "0 0 8px #FFA50088",
   },
 });
 
 const StyledDetails = styled(AccordionDetails)({
-  background: "rgba(255,165,0,0.08)",
-  color: "#ffffff",
-  fontSize: "1rem",
-  borderRadius: "8px",
-  padding: "1rem 1.5rem",
+  background: "rgba(255,165,0,0.04)",
+  color: "#fff",
+  fontSize: "1.08rem",
+  fontFamily: '"Oswald", "Montserrat", sans-serif', 
+  borderRadius: "0",
+  padding: "1.2rem 2rem 1.2rem 2rem",
+  lineHeight: 1.7,
+  letterSpacing: "0.5px",
+  boxShadow: "none",
+  borderTop: "1px solid #FFA50022",
 });
 
 const ImageWrapper = styled(Box)({
@@ -114,7 +141,7 @@ const BouncingImage = styled(motion.img)({
   borderRadius: "20px",
   position: "relative",
   zIndex: 2,
-  clipPath: "inset(0px 0px 70px 0px)", // ← increased cut from bottom
+  clipPath: "inset(0px 0px 70px 0px)", 
 });
 
 const WhatsAppButton = styled(Button)({
@@ -134,24 +161,29 @@ const WhatsAppButton = styled(Button)({
 // ─── FAQ Data ─────────────────────────────────────────────
 const faqs = [
   {
-    question: "Who can participate?",
-    answer: "Anyone passionate about gaming, coding, or design is welcome.",
-    bg: "https://wallpapers.com/images/hd/playerunknowns-battlegrounds-4k-199qn3rz37tm9ivs.jpg",
+    question: "What is HackGround India 2k25?",
+    answer: "HackGround India 2k25 is a 36 - Hours hybrid BGMI-themed hackathon that gives an opportunity to participants to showcase their creativity and problem-solving skills in different domains with the fun of BGMI ✨.",
+    bg: "https://images.hdqwalls.com/download/pubg-retro-poster-bg-1920x1080.jpg",
   },
   {
-    question: "How many in one team?",
-    answer: "Teams can have 2–5 members. Solo warriors are welcome too.",
+    question: "Who can Participate?",
+    answer: "Anyone passionate about gaming, coding, or design is welcome.",
+    bg: "https://images.hdqwalls.com/download/pubg-limited-bg-1920x1080.jpg",
+  },
+  {
+    question: "Can beginners participate in HackGround?",
+    answer: "Yes! Ofcourse HackGround India 2k25 encourages all the beginners to give their best in the hackathon, gaining some real good experience and leveraging their skills to a new level🔥",
     bg: "http://e0.pxfuel.com/wallpapers/792/518/desktop-wallpaper-pubg-epic-pubg-game.jpg",
   },
   {
-    question: "Can I use templates?",
-    answer: "Core logic must be original. UI assets or game kits are allowed.",
-    bg: "https://e1.pxfuel.com/desktop-wallpaper/339/470/desktop-wallpaper-pubg-2020-games-backgrounds-pubg-mobile-2020.jpg",
+    question: "What does the prize pool mean?",
+    answer: "The prize pool is the total value of rewards, like cash prizes, gadgets, or internships, that participants can win in the hackathon.",
+    bg: "https://images.hdqwalls.com/download/pubg-fly-me-to-the-vroom-5k-7w-1920x1080.jpg",
   },
   {
-    question: "How to contact the team?",
-    answer: "Reach out to us directly on WhatsApp for any quick help!",
-    bg: "https://wallpapers.com/images/hd/pubg-squad-halloweek-bonfire-pfgdtashviw7drua.jpg",
+    question: "How do I register for HackGround India 2k25?",
+    answer: "You can register for the HackGround India 2k25 by going directly at the official website or through the Unstop listing, also you can register through the registration links present on the Techverse Nexus handle on different social media platforms.",
+    bg: "https://wallpapers.com/images/hd/playerunknowns-battlegrounds-4k-199qn3rz37tm9ivs.jpg",
   },
 ];
 
@@ -172,37 +204,27 @@ function FAQs() {
       id="faqs"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 3, py: 12 }}>
-        <Grid container spacing={6} alignItems="center">
-          {/* Left Side PUBG Character */}
-          <Grid item xs={12} md={5} textAlign="center">
-            <ImageWrapper>
-              <GlowingCircle />
-              <BouncingImage
-                src="/images/Gemini_Generated_Image_dcblb5dcblb5dcbl.png"
-                initial={{ y: 0 }}
-                animate={{
-                  y: [0, -20, 0],
-                  transition: {
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  },
-                }}
-              />
-            </ImageWrapper>
-          </Grid>
-
-          {/* Right Side FAQs */}
-          <Grid item xs={12} md={7}>
-            <SectionTitle variant="h2">
-              Frequently Asked <span>Questions</span>
-            </SectionTitle>
+      <Container maxWidth="md" sx={{ position: "relative", zIndex: 3, py: 12 }}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          width="100%"
+          sx={{ gap: 0, maxWidth: 1080, mx: "auto" }}
+        >
+          <SectionTitle
+            variant="h2"
+            sx={{ fontFamily: '"Oswald", sans-serif' }}
+          >
+            Frequently Asked <span>Questions</span>
+          </SectionTitle>
+          <Box width={{ xs: "100%", sm: "90%", md: "85%" }} mx="auto">
             {faqs.map((faq, idx) => (
               <StyledAccordion
                 key={idx}
                 expanded={expandedIdx === idx}
                 onChange={(_, expanded) => handleAccordionChange(idx, faq.bg)}
+                sx={{ width: "100%" }}
               >
                 <StyledSummary expandIcon={<ExpandMoreIcon />}>
                   {faq.question}
@@ -210,23 +232,22 @@ function FAQs() {
                 <StyledDetails>{faq.answer}</StyledDetails>
               </StyledAccordion>
             ))}
-
-            <WhatsAppButton
-              variant="contained"
-              startIcon={<WhatsAppIcon />}
-              href="https://wa.me/919693856529?text=Hi%20team%2C%20I%20have%20a%20question%20about%20the%20hackathon!"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              More Questions,Ask Directly to Us on WhatsApp
-            </WhatsAppButton>
-          </Grid>
-        </Grid>
+          </Box>
+          <WhatsAppButton
+            variant="contained"
+            startIcon={<WhatsAppIcon />}
+            href="https://wa.me/919693856529?text=Hi%20team%2C%20I%20have%20a%20question%20about%20the%20hackathon!"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            More Questions,Ask Directly to Us on WhatsApp
+          </WhatsAppButton>
+        </Box>
       </Container>
     </FAQWrapper>
   );
