@@ -97,31 +97,19 @@ function Prizes() {
     tier: 'first',
     title: ["Lone Survivor", "of HACKGROUND 2K25"],
     prize: "₹25,000",
-    extras: [
-      "PUBG Mobile Crate Bundle (Legendary)",
-      "Feature in National Gaming Magazine",
-      "Gaming Chair & Pro Headset"
-    ]
+   
   },
   {
     tier: 'second',
     title: ["Top Fragger", "of HACKGROUND 2K25"],
     prize: "₹15,000",
-    extras: [
-      "PUBG Elite Outfit Pack",
-      "RGB Mechanical Keyboard",
-      "Team Interview Feature"
-    ]
+   
   },
   {
     tier: 'third',
     title: ["Airdrop Ace", "of HACKGROUND 2K25"],
     prize: "₹10,000",
-    extras: [
-      "PUBG UC Gift Card",
-      "Exclusive Gaming Mousepad",
-      "HACKGROUND 2K25 Merchandise"
-    ]
+    
   }
 ];
 
@@ -130,7 +118,7 @@ function Prizes() {
     {
       title: ["Girls in Tech", "Naari Shakti"],
       prize: "₹15,000",
-      extras: ["Gaming Monitor", "Special Recognition"]
+      
     }
   ];
 
@@ -176,21 +164,16 @@ function Prizes() {
                     color: '#fff',
                     fontFamily: '"Oswald", sans-serif',
                     fontSize: '2.3rem',
-                    textShadow: `0 0 8px ${BRIGHT_YELLOW}88`
+                    textShadow: `0 0 8px ${BRIGHT_YELLOW}88`,
+                    display: 'flex',
+alignItems: 'center',
+justifyContent: 'center',
+height: '100%',
+                  
                   }}>
                     {prize.prize}
                   </Typography>
-                  <Box sx={{ mt: 2 }}>
-                    {prize.extras.map((extra, i) => (
-                      <Typography key={i} align="center" sx={{
-                        color: '#fff',
-                        fontFamily: '"Oswald", sans-serif',
-                        fontSize: '0.95rem'
-                      }}>
-                        • {extra}
-                      </Typography>
-                    ))}
-                  </Box>
+                  
                 </PrizeCard>
               </Grid>
             ))}
@@ -220,6 +203,10 @@ function Prizes() {
                       {prize.title[0]}
                     </Typography>
                     <Typography variant="h6" align="center" sx={{
+                      display: 'flex',
+alignItems: 'center',
+justifyContent: 'center',
+height: '100%',
                       color: BRIGHT_YELLOW,
                       fontFamily: '"Oswald", sans-serif',
                       fontSize: '1.1rem',
@@ -232,21 +219,15 @@ function Prizes() {
                     color: '#fff',
                     fontFamily: '"Oswald", sans-serif',
                     fontSize: '2.2rem',
-                    textShadow: `0 0 8px ${BRIGHT_YELLOW}88`
+                    textShadow: `0 0 8px ${BRIGHT_YELLOW}88`,
+                    display: 'flex',
+alignItems: 'center',
+justifyContent: 'center',
+height: '100%',
                   }}>
                     {prize.prize}
                   </Typography>
-                  <Box sx={{ mt: 2 }}>
-                    {prize.extras.map((extra, i) => (
-                      <Typography key={i} align="center" sx={{
-                        color: '#fff',
-                        fontFamily: '"Oswald", sans-serif',
-                        fontSize: '0.9rem'
-                      }}>
-                        • {extra}
-                      </Typography>
-                    ))}
-                  </Box>
+                 
                 </PrizeCard>
               </Grid>
             ))}
