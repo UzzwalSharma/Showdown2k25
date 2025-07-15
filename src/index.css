@@ -13,11 +13,6 @@ code {
 }
 
 
-/* @keyframes borderanimation {
-  to {
-    transform: rotate(-360deg);
-  }
-} */
 
 @keyframes borderSpin {
   to {

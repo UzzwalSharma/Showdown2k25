@@ -39,9 +39,7 @@ function App() {
         <section id="timeline" style={{ padding: 0, margin: 0 }}>
           <Schedule />
         </section>
-        {/* <section  style={{ padding: 0, margin: 0 }}>
-         <TekkenProblemSection />
-        </section> */}
+     
     
          <section id="tracks" style={{ padding: 0, margin: 0 }}>
           <Tracks />

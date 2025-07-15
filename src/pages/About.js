@@ -20,13 +20,23 @@ const AboutSection = styled(Box)({
     opacity: 0.85,
     zIndex: -2,
   },
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    inset: 0,
-    background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9))',
-    zIndex: -1,
-  },
+'&::after': {
+  content: '""',
+  position: 'absolute',
+  inset: 0,
+  background: `
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    )
+  `,
+  zIndex: -1,
+},
+
 });
 
 const FlexContent = styled(Box)(({ theme }) => ({
@@ -99,22 +109,47 @@ const BottomText = styled(Box)({
   justifyContent: 'flex-start',
 });
 
-const Icon = styled('ion-icon')({
+const Icon = styled(m('ion-icon'))({
   color: '#ff6600',
   fontSize: '25px',
+  animation: 'pulse 1.5s infinite ease-in-out',
+  '@keyframes pulse': {
+    '0%': { transform: 'scale(1)' },
+    '50%': { transform: 'scale(1.15)' },
+    '100%': { transform: 'scale(1)' },
+  },
 });
+
 
 const SideImage = styled(m('img'))({
   width: '100%',
   maxWidth: '480px',
   height: 'auto',
   borderRadius: '0',
-  clipPath: 'polygon(6% 0, 100% 0, 100% 90%, 94% 100%, 0 100%, 0 10%)',
+ clipPath: 'polygon(0 0, 95% 0, 100% 8%, 100% 92%, 95% 100%, 0 100%, 0 92%, 5% 85%, 5% 15%, 0 8%)',
+
   boxShadow: '0 0 20px rgba(255, 102, 0, 0.4)',
   transition: '0.3s ease',
   '&:hover': {
     boxShadow: '0 0 40px rgba(255, 102, 0, 0.6)',
   },
+  '&::after': {
+  content: '""',
+  position: 'absolute',
+  inset: 0,
+  background: `
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    )
+  `,
+  zIndex: -1,
+},
+
 });
 
 export default function About() {
@@ -129,7 +164,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <Subtitle>HackGrounds India 2K25</Subtitle>
+            <Subtitle>WELCOME TO HackGrounds India 2K25</Subtitle>
             <Title>
               The Ultimate <strong>Code Clash</strong>
             </Title>
@@ -144,7 +179,7 @@ export default function About() {
 
           {/* Image Content */}
           <SideImage
-            src="/images/Gemini_Generated_Image_dsomg6dsomg6dsom.png"
+            src="/images/poster.png"
             alt="HackGround Warrior"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
