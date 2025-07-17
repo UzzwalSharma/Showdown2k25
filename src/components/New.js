@@ -232,7 +232,7 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => (window.location.href = 'https://lu.ma/7spa1ao7')}
+            // onClick={() => (window.location.href = 'https://lu.ma/7spa1ao7')}
           >
             Register Now
           </MotionButton>
