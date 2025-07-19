@@ -18,8 +18,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LoginIcon from '@mui/icons-material/Login';
 import CloseIcon from '@mui/icons-material/Close';
 
-const StyledAppBar = styled(AppBar)(() => ({
-  position: 'absolute',
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  position: 'fixed',
   top: 0,
   left: 0,
   right: 0,
@@ -29,7 +29,7 @@ const StyledAppBar = styled(AppBar)(() => ({
   clipPath:
     'polygon(0 0, 100% 0, 100% 85%, 97% 85%, 95% 100%, 5% 100%, 3% 85%, 0 85%)',
   borderBottom: '2px solid #ff7b00',
-  zIndex: 1300,
+  zIndex: theme.zIndex.drawer + 1,
 }));
 
 const NavLinks = styled(Box)(() => ({
@@ -93,6 +93,7 @@ const LoginBtn = styled(Button)({
     backgroundColor: '#3a3c45',
     color: '#ff7b00',
     boxShadow: '0 0 12px #ff7b00',
+    transform: 'scale(1.05)', // Added animation on hover
   },
 });
 
@@ -106,7 +107,7 @@ const GameXNavbar = () => {
 
   return (
     <>
-      <StyledAppBar position="static">
+      <StyledAppBar>
         <Toolbar
           disableGutters
           sx={{
@@ -179,7 +180,7 @@ const GameXNavbar = () => {
 
         </Toolbar>
       </StyledAppBar>
-
+      <Toolbar /> {/* Add this to prevent content from hiding behind the fixed navbar */}
       {/* Mobile Drawer */}
    <Drawer
   anchor="right"

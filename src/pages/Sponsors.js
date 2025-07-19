@@ -101,11 +101,11 @@ function Sponsors() {
      
      
     },
-    // {
-    //   name: "Github",
-    //   logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPk0CDiJ70gAStxkNBNzIRLJr6XI_zeiOAECxoPu67ObNCD0P5GwEQuP3kDJ7o8lp1rQc&usqp=CAU",
+    {
+      name: "Github",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPk0CDiJ70gAStxkNBNzIRLJr6XI_zeiOAECxoPu67ObNCD0P5GwEQuP3kDJ7o8lp1rQc&usqp=CAU",
      
-    // },
+    },
     {
       name: "Gen.xyz",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1g07-ryq2kHE2EknOFU-pfqYtvYOwC8qVNw&s",
