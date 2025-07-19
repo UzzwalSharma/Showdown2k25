@@ -132,21 +132,21 @@ const HackathonSections = () => {
     },
     {
       id: 2,
-      name: "Ujjwal Aggarwal",
+      name: "Ujjwal Agarwal",
       role: "Lead Organiser",
       avatar: "/Team/IMG-20250415-WA0050 - Ujjwal Agarwal (2).jpg",
       linkedin: "https://www.linkedin.com/in/ujjwal-agarwal-67b6a0323/",
     },
     {
       id: 3,
-      name: "Animesh",
+      name: "Animesh Singh",
       role: "Lead Organiser",
       avatar: "/Team/Animesh Singh - Animesh Singh.jpg",
       linkedin: "https://www.linkedin.com/in/animeshsingh9693/",
     },
     {
       id: 4,
-      name: "Anmol",
+      name: "Anmol Agarwal",
       role: "Lead Organiser",
       avatar: "/Team/Anmol Aggarwal.jpeg",
       linkedin: "https://www.linkedin.com/in/anmol-agrawal25/",
@@ -204,14 +204,14 @@ const HackathonSections = () => {
     },
     {
       id: 12,
-      name: "Jigisha baliyan", // moved up
+      name: "Jigisha Baliyann", // moved up
       role: "Pr & outreach team",
       avatar: "/Team/Jigisha Baliyan.jpg",
       linkedin: "https://www.linkedin.com/in/jigisha-baliyann/",
     },
     {
       id: 13,
-      name: "Rhythm",
+      name: "Rhythm Arora",
       role: "Social Media Team",
       avatar: "/Team/IMG20250316161749 - Rhythm Arora.jpg ",
       linkedin: "https://www.linkedin.com/in/rhythmisloading/",
@@ -233,10 +233,10 @@ const HackathonSections = () => {
     },
     {
       id: 16,
-      name: "Rohit Chauhan",
-      role: "Video Editor",
-      avatar: "/Team/Snapchat-1910008162 - Rohit Chauhan.jpg",
-      linkedin: "https://www.linkedin.com/in/rohit-chauhan-096847340/",
+      name: "Apoorv Mehrotra",
+      role: "Sponsorship Team",
+      avatar: "/Team/Apoorv Mehrotra.png",
+      linkedin: "https://www.linkedin.com/in/its-apoorv-/",
     },
     {
       id: 17,
@@ -259,13 +259,6 @@ const HackathonSections = () => {
       role: "Sponsership Team",
       avatar: "/Team/saad.jpg",
       linkedin: "https://www.linkedin.com/in/saad-salim-24b251228/",
-    },
-    {
-      id: 20,
-      name: "Vanisha Raj",
-      role: "Design Team",
-      avatar: "/Team/Vanisha.jpg",
-      linkedin: "https://www.linkedin.com/in/vanisha-raj-0366a7314/",
     },
   ];
 
