@@ -179,7 +179,7 @@ export default function About() {
 
           {/* Image Content */}
           <SideImage
-            src="/images/poster.png"
+            src="/images/posternew.png"
             alt="HackGround Warrior"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}

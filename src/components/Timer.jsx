@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Box,
   Typography,
@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const CountdownWrapper = styled(Box)({
+const RegistrationWrapper = styled(Box)({
   minHeight: "100vh",
   width: "100%",
   backgroundImage: 'url("/BGMI_images/hero-bg.png")',
@@ -36,187 +36,256 @@ const CountdownWrapper = styled(Box)({
 
 const GlowingBox = styled(Paper)(({ theme }) => ({
   position: "relative",
-  padding: theme.spacing(3),
+  padding: theme.spacing(4),
   borderRadius: "20px",
-  background: "rgba(20, 20, 20, 0.7)",
+  background: "rgba(20, 20, 20, 0.8)",
   border: "2px solid #ff5500",
-  backdropFilter: "blur(10px)",
+  backdropFilter: "blur(15px)",
   zIndex: 2,
   width: "80%",
-  maxWidth: 1100,
+  maxWidth: 900,
   margin: "0 auto",
-  boxShadow: "0 0 30px #ff550033",
+  boxShadow: "0 0 40px #ff550044",
   transition: "0.3s ease",
 }));
 
-const TimeUnit = styled(Box)({
-  border: "2px solid #ff5500",
-  padding: "1.1rem 0.8rem",
-  borderRadius: "14px",
-  textAlign: "center",
-  background: "rgba(0,0,0,0.4)",
-  boxShadow: "0 0 15px #ff550055",
-  transition: "0.4s ease",
-  "&:hover": {
-    transform: "scale(1.05)",
-    boxShadow: "0 0 25px #ff5500",
-  },
-});
-
-const UnitValue = styled(Typography)({
-  fontSize: "2.4rem",
+const PulsingBadge = styled(Box)({
+  display: "inline-block",
+  padding: "0.5rem 1.5rem",
+  background: "linear-gradient(45deg, #00ff00, #00cc00)",
+  borderRadius: "25px",
+  fontSize: "0.9rem",
   fontWeight: "bold",
-  color: "#fff",
-  fontFamily: '"Oswald", sans-serif',
-  textShadow: "0 0 12px #ff5500",
-  "@media (min-width:600px)": {
-    fontSize: "3.2rem",
-  },
-});
-
-const UnitLabel = styled(Typography)({
-  fontSize: "0.7rem",
-  fontWeight: 600,
+  color: "#000",
+  letterSpacing: "1px",
   textTransform: "uppercase",
-  letterSpacing: "1.5px",
-  color: "#ff6600",
-  "@media (min-width:600px)": {
-    fontSize: "0.85rem",
+  animation: "pulse 2s infinite",
+  boxShadow: "0 0 20px #00ff0055",
+  "@keyframes pulse": {
+    "0%": { boxShadow: "0 0 20px #00ff0055", transform: "scale(1)" },
+    "50%": { boxShadow: "0 0 30px #00ff0088", transform: "scale(1.02)" },
+    "100%": { boxShadow: "0 0 20px #00ff0055", transform: "scale(1)" },
   },
 });
 
-const HackgroundTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+const FeatureCard = styled(Box)({
+  border: "1px solid #ff5500",
+  padding: "1.5rem",
+  borderRadius: "12px",
+  textAlign: "center",
+  alignItems:"center",
+  background: "rgba(0,0,0,0.3)",
+  backdropFilter: "blur(5px)",
+  transition: "0.3s ease",
+  "&:hover": {
+    transform: "translateY(-5px)",
+    boxShadow: "0 10px 25px #ff550033",
+    border: "1px solid #ff7700",
+  },
+});
 
-  useEffect(() => {
-    const target = new Date("2025-08-03T22:50:36");
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = target.getTime() - now;
-
-      if (distance > 0) {
-        setTimeLeft({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((distance / (1000 * 60)) % 60),
-          seconds: Math.floor((distance / 1000) % 60),
-        });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
+const HackgroundRegistration = () => {
   return (
-    <CountdownWrapper>
+    <RegistrationWrapper>
       <Container sx={{ position: "relative", zIndex: 2 }}>
         <GlowingBox>
+          {/* Live Badge */}
+          <Box textAlign="center" mb={2}>
+            <PulsingBadge>🔴 LIVE NOW</PulsingBadge>
+          </Box>
+
+          {/* Main Title */}
           <Typography
             align="center"
-            variant="h3"
+            variant="h2"
             sx={{
               fontFamily: "Oswald, sans-serif",
               fontWeight: "bold",
               letterSpacing: "3px",
               color: "#fff",
-              textShadow: "0 0 18px #ff5500",
+              textShadow: "0 0 20px #ff5500",
               mb: 1,
-              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+              fontSize: { xs: "2.5rem", sm: "3rem", md: "3.5rem" },
             }}
           >
             HACKGROUND INDIA 2K25
           </Typography>
 
+          {/* Subtitle */}
           <Typography
             align="center"
             sx={{
-              fontSize: { xs: "0.95rem", sm: "1.1rem" },
+              fontSize: { xs: "1.1rem", sm: "1.3rem" },
               color: "#ff9955",
               fontWeight: "bold",
-              letterSpacing: "1.5px",
-              mb: { xs: 3, sm: 4 },
+              letterSpacing: "2px",
+              mb: 4,
             }}
           >
-            {/** Shorter for mobile */}
-            <Box component="span" display={{ xs: "inline", sm: "none" }}>
-              STARTS IN
-            </Box>
-            <Box component="span" display={{ xs: "none", sm: "inline" }}>
-              JOIN THE BATTLEFIELD IN
-            </Box>
+            REGISTRATIONS ARE OPEN
           </Typography>
 
-          <Grid container spacing={{ xs: 2, sm: 3 }} justifyContent="center">
-            <Grid item xs={6} sm={3}>
-              <TimeUnit>
-                <UnitValue>{String(timeLeft.days).padStart(2, "0")}</UnitValue>
-                <UnitLabel>Days</UnitLabel>
-              </TimeUnit>
+          {/* Features Grid */}
+          <Grid container spacing={3} justifyContent="center" mb={4}>
+            <Grid item xs={12} sm={4}>
+              <FeatureCard>
+                <Typography
+                  sx={{
+                    fontSize: "2rem",
+                    color: "#ff5500",
+                    mb: 1,
+                  }}
+                >
+                  🏆
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "1rem",
+                    fontWeight: "bold",
+                    color: "#fff",
+                    mb: 0.5,
+                  }}
+                >
+                  WINNER TAKES ALL
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "0.85rem",
+                    color: "#bbb",
+                  }}
+                >
+                  Massive prize pool awaits
+                </Typography>
+              </FeatureCard>
             </Grid>
-            <Grid item xs={6} sm={3}>
-              <TimeUnit>
-                <UnitValue>{String(timeLeft.hours).padStart(2, "0")}</UnitValue>
-                <UnitLabel>Hours</UnitLabel>
-              </TimeUnit>
+            <Grid item xs={12} sm={4}>
+              <FeatureCard>
+                <Typography
+                  sx={{
+                    fontSize: "2rem",
+                    color: "#ff5500",
+                    mb: 1,
+                  }}
+                >
+                  👥
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "1rem",
+                    fontWeight: "bold",
+                    color: "#fff",
+                    mb: 0.5,
+                  }}
+                >
+                  LIMITED SLOTS
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "0.85rem",
+                    color: "#bbb",
+                  }}
+                >
+                  Register before it's too late
+                </Typography>
+              </FeatureCard>
             </Grid>
-            <Grid item xs={6} sm={3}>
-              <TimeUnit>
-                <UnitValue>{String(timeLeft.minutes).padStart(2, "0")}</UnitValue>
-                <UnitLabel>Minutes</UnitLabel>
-              </TimeUnit>
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <TimeUnit>
-                <UnitValue>{String(timeLeft.seconds).padStart(2, "0")}</UnitValue>
-                <UnitLabel>Seconds</UnitLabel>
-              </TimeUnit>
+            <Grid item xs={12} sm={4}>
+              <FeatureCard>
+                <Typography
+                  sx={{
+                    fontSize: "2rem",
+                    color: "#ff5500",
+                    mb: 1,
+                  }}
+                >
+                  🎮
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "1rem",
+                    fontWeight: "bold",
+                    color: "#fff",
+                    mb: 0.5,
+                  }}
+                >
+                  SERVER ONLINE
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "0.85rem",
+                    color: "#bbb",
+                  }}
+                >
+                  Ready for battle
+                </Typography>
+              </FeatureCard>
             </Grid>
           </Grid>
 
-          <Box textAlign="center" mt={{ xs: 4, sm: 5 }}>
+          {/* CTA Section */}
+          <Box textAlign="center">
             <Button
               variant="contained"
               sx={{
-                fontSize: { xs: "0.95rem", sm: "1.1rem" },
+                fontSize: { xs: "1.1rem", sm: "1.3rem" },
                 fontWeight: "bold",
-                px: { xs: 3.5, sm: 6 },
-                py: { xs: 1, sm: 1.5 },
-                borderRadius: "12px",
-                background: "linear-gradient(to right, #ff5500, #ff9900)",
-                boxShadow: "0 0 18px #ff5500",
+                px: { xs: 4, sm: 8 },
+                py: { xs: 1.5, sm: 2 },
+                borderRadius: "15px",
+                background: "linear-gradient(45deg, #ff5500, #ff9900)",
+                boxShadow: "0 8px 25px #ff550066",
                 color: "#fff",
-                letterSpacing: "1px",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                transition: "0.3s ease",
+                animation: "shake 0.7s infinite",
                 "&:hover": {
-                  boxShadow: "0 0 24px #ff6600",
+                  boxShadow: "0 12px 35px #ff550088",
                   transform: "scale(1.05)",
+                  background: "linear-gradient(45deg, #ff6600, #ffaa00)",
+                },
+                "@keyframes shake": {
+                  "0%": { transform: "translateX(0)" },
+                  "20%": { transform: "translateX(-4px)" },
+                  "40%": { transform: "translateX(4px)" },
+                  "60%": { transform: "translateX(-4px)" },
+                  "80%": { transform: "translateX(4px)" },
+                  "100%": { transform: "translateX(0)" },
                 },
               }}
             >
-              REGISTRATION OPENING SOON
+              "THE SAFE ZONE IS NOW SHRINKING"
             </Button>
+
+            <Typography
+              sx={{
+                mt: 3,
+                color: "#ccc",
+                fontSize: { xs: "0.9rem", sm: "1rem" },
+                letterSpacing: "1px",
+                textAlign: "center",
+                fontStyle: "italic",
+              }}
+            >
+              "The battlefield awaits. Are you ready to dominate?"
+            </Typography>
+
             <Typography
               sx={{
                 mt: 2,
-                color: "#bbb",
+                color: "#888",
                 fontSize: { xs: "0.75rem", sm: "0.85rem" },
                 letterSpacing: "0.5px",
                 textAlign: "center",
               }}
             >
-              Winner takes all • Limited slots • Server Online
+              Event Date: August 30th, 2025 • 22:50 IST
             </Typography>
           </Box>
         </GlowingBox>
       </Container>
-    </CountdownWrapper>
+    </RegistrationWrapper>
   );
 };
 
-export default HackgroundTimer;
+export default HackgroundRegistration;
