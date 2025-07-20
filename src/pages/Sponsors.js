@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Box, Container, Typography, Paper, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Box, Container, Typography, Grid, Paper } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 
 const SponsorsSection = styled(Box)({
   backgroundImage: "url('BGMI_images/pubg-mobile-june-2021-revenue.jpg')",
@@ -10,6 +12,11 @@ const SponsorsSection = styled(Box)({
   minHeight: "100vh",
   width: "100%",
   position: "relative",
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '2rem 1rem',
+  boxSizing: 'border-box',
   "&::before": {
     content: '""',
     position: "absolute",
@@ -17,61 +24,10 @@ const SponsorsSection = styled(Box)({
     left: 0,
     right: 0,
     bottom: 0,
-    background:
-      "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%)",
-  },
-});
-
-const glowYellow = '0 0 12px #FFD700, 0 0 24px #FFD700';
-
-const SponsorCard = styled(Paper)(({ index, isVisible, position }) => ({
-  background: 'rgba(255, 255, 255, 0.05)',
-  padding: '2rem',
-  borderRadius: '12px',
-  border: '2px solid #FFD700',
-  position: 'relative',
-  overflow: 'hidden',
-  height: '100%',
-  transition: 'all 0.8s ease',
-  cursor: 'pointer',
-  opacity: isVisible ? 1 : 0,
-  transform: isVisible
-    ? `scale(1) translateX(${position * 120}%)`
-    : 'scale(0.8) translateX(-120%)',
-  '&:hover': {
-    transform: `scale(1.05) translateX(${position * 120}%) translateY(-10px)`,
-    borderColor: '#FFEA00',
-    boxShadow: glowYellow,
-  },
-  '&::before': {
-    content: `"${index === 0 ? 'Platinum' : index === 1 ? 'Diamond' : index === 2 ? 'Gold' : 'Sponsor'}"`,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    background: 'linear-gradient(135deg, #FFEA00, #FFD700)',
-    color: '#111',
-    fontWeight: 'bold',
-    padding: '0.4rem 0.8rem',
-    fontSize: '0.7rem',
-   fontFamily: '"Oswald", sans-serif',
-    clipPath: 'polygon(0 0, 100% 0, 80% 100%, 0% 100%)',
-    zIndex: 2,
-    textTransform: 'uppercase',
-    letterSpacing: '1px',
-    boxShadow: glowYellow,
-  },
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    width: '60px',
-    height: '60px',
-    backgroundColor: '#FFD700',
-    clipPath: 'polygon(100% 0, 100% 100%, 0 100%)',
+    background: "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%)",
     zIndex: 1,
   },
-}));
+});
 
 const SectionTitle = styled(Typography)({
   color: '#FFD700',
@@ -79,8 +35,9 @@ const SectionTitle = styled(Typography)({
   marginBottom: '2rem',
   textTransform: 'uppercase',
   letterSpacing: '2px',
-  fontSize: '3rem',
+  fontSize: '2.5rem',
   textAlign: 'center',
+  zIndex: 2,
 });
 
 const YellowText = styled('span')({
@@ -91,155 +48,180 @@ const YellowText = styled('span')({
   fontFamily: '"Oswald", sans-serif',
 });
 
+const SponsorCard = styled(Paper)({
+  background: 'rgba(255, 255, 255, 0.06)',
+  padding: '2rem',
+  borderRadius: '16px',
+  border: '1.5px solid #FFD700',
+  overflow: 'hidden',
+  width: '100%',
+  maxWidth: '340px',
+  textAlign: 'center',
+  boxShadow: '0 0 15px rgba(255, 215, 0, 0.3)',
+});
 
+const flipVariants = {
+  enter: (direction) => ({
+    rotateY: direction > 0 ? -90 : 90,
+    opacity: 0,
+  }),
+  center: {
+    zIndex: 1,
+    rotateY: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: 'easeInOut',
+    },
+  },
+  exit: (direction) => ({
+    zIndex: 0,
+    rotateY: direction > 0 ? 90 : -90,
+    opacity: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeInOut',
+    },
+  }),
+};
 
 function Sponsors() {
   const sponsors = [
     {
       name: "Unstop",
       logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg",
-     
-     
+      tier: "Platinum",
+      description: "Empowering Talent Discovery",
     },
     {
-      name: "Github",
+      name: "GitHub",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPk0CDiJ70gAStxkNBNzIRLJr6XI_zeiOAECxoPu67ObNCD0P5GwEQuP3kDJ7o8lp1rQc&usqp=CAU",
-     
+      tier: "Diamond",
+      description: "Home for All Developers",
     },
     {
       name: "Gen.xyz",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1g07-ryq2kHE2EknOFU-pfqYtvYOwC8qVNw&s",
-   
+      tier: "Gold",
+      description: "Domains of the Future",
     },
     {
       name: "Interview Buddy",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJrquzHwOxN0bUKnchqkQIy7QhkvzUftsDb70tbF-TbzdwohwOLaZukMkKY6CgJacQ45M&usqp=CAU",
-   
+      tier: "Silver",
+      description: "Ace Interviews with Confidence",
     },
     {
       name: "Physicswallah",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA1ijYJKiY82YdiwN_8p-Ok7VnokZ7hmw4A6czeO_QWMrEa_aAocj0cwe5ExbO0UsLtXk&usqp=CAU",
-    
+      tier: "Bronze",
+      description: "India’s Top Learning Platform",
     },
-    
   ];
 
-  const [visibleSponsors, setVisibleSponsors] = useState([0, 1, 2]);
-  const [direction, setDirection] = useState('right');
+  const [[current, direction], setCurrent] = useState([0, 0]);
+
+  const paginate = (newDirection) => {
+    setCurrent(([prev]) => [
+      (prev + newDirection + sponsors.length) % sponsors.length,
+      newDirection,
+    ]);
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setVisibleSponsors(prev => {
-        let next;
-        if (direction === 'right') {
-          next = prev.map(index => (index + 1) % sponsors.length);
-          if (next.includes(sponsors.length - 1)) {
-            setDirection('left');
-          }
-        } else {
-          next = prev.map(index => (index - 1 + sponsors.length) % sponsors.length);
-          if (next.includes(0)) {
-            setDirection('right');
-          }
-        }
-        return next;
-      });
-    }, 3500);
-
-    return () => clearInterval(interval);
-  }, [sponsors.length, direction]);
+    const timer = setInterval(() => paginate(1), 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <SponsorsSection>
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, py: 8 }}>
+      <Container sx={{ position: 'relative', zIndex: 2, py: 8 }}>
         <SectionTitle variant="h2">
           Our <YellowText>Sponsors</YellowText>
         </SectionTitle>
 
         <Box
           sx={{
-            position: 'relative',
-            overflow: 'hidden',
-            height: { xs: 'auto', md: '500px' },
-            display: { xs: 'flex', md: 'block' },
-            flexWrap: 'wrap',
+            display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: 4,
+            gap: 2,
+            mt: 2,
+            flexWrap: 'wrap',
           }}
         >
-          {sponsors.map((sponsor, index) => (
-            <Box
-              key={index}
-              sx={{
-                position: { xs: 'relative', md: 'absolute' },
-                width: { xs: '90%', sm: '45%', md: '28%' },
-                left: { xs: 'auto', md: '36%' },
-                transition: 'all 0.8s ease',
-                mb: { xs: 4, md: 0 },
-              }}
-            >
-              <SponsorCard
-                index={index}
-                isVisible={visibleSponsors.includes(index)}
-                position={visibleSponsors.indexOf(index) - 1}
+          <IconButton onClick={() => paginate(-1)} sx={{ color: '#FFD700' }}>
+            <ArrowBackIos />
+          </IconButton>
+
+          <Box sx={{ width: '100%', maxWidth: 360, perspective: 1000, minHeight: 360 , position: "relative",marginRight:"2",
+                      right:20,}}>
+            <AnimatePresence custom={direction} mode="wait">
+              <motion.div
+                key={current}
+                custom={direction}
+                variants={flipVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                style={{
+                  width: '100%',
+                  position: 'relative',
+                  transformStyle: 'preserve-3d',
+                }}
               >
-                <Box
-                  sx={{
-                    height: '200px',
-                    mb: 3,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    background: 'rgba(255, 255, 255, 0.07)',
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    p: 2,
-                  }}
-                >
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    style={{
-                      maxHeight: '100%',
-                      maxWidth: '100%',
-                      objectFit: 'contain',
+                <SponsorCard elevation={4}>
+                  <Box
+                    sx={{
+                      height: '180px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mb: 2,
+                      p: 2,
+                    
+                      background: 'rgba(255,255,255,0.07)',
+                      borderRadius: '8px',
                     }}
-                  />
-                </Box>
+                  >
+                    <img
+                      src={sponsors[current].logo}
+                      alt={sponsors[current].name}
+                      style={{ maxHeight: '100%', maxWidth: '100%' }}
+                    />
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: '#FFEA00',
+                      fontFamily: '"Oswald", sans-serif',
+                      mb: 1,
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {sponsors[current].tier}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: '#fffde7',
+                      fontSize: '1rem',
+                      fontWeight: 500,
+                      fontFamily: '"Oswald", sans-serif',
+                    }}
+                  >
+                    {sponsors[current].description}
+                  </Typography>
+                </SponsorCard>
+              </motion.div>
+            </AnimatePresence>
+          </Box>
 
-         
-
-<Typography
-  variant="h6"
-  sx={{
-    color: '#FFEA00',
-    textAlign: 'center',
-    mb: 2,
-    fontFamily: '"Oswald", sans-serif',
-    fontSize: '1.1rem',
-    letterSpacing: '1px',
-    textTransform: 'uppercase',
-  }}
->
-  {sponsor.tier}
-</Typography>
-
-<Typography
-  variant="body1"
-  sx={{
-    color: '#fffde7',
-    textAlign: 'center',
-    fontSize: '1.05rem',
-    fontWeight: 500,
-    fontFamily: '"Oswald", sans-serif',
-  }}
->
-  {sponsor.description}
-</Typography>
-              </SponsorCard>
-            </Box>
-          ))}
+          <IconButton onClick={() => paginate(1)} sx={{ color: '#FFD700' ,position:"relative",
+            left:"6px",
+          }}>
+            <ArrowForwardIos />
+          </IconButton>
         </Box>
       </Container>
     </SponsorsSection>
