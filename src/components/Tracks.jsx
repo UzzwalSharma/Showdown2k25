@@ -107,55 +107,62 @@ const HeaderLine = styled(Box)({
 });
 
 const gamingCards = [
-   {
+  {
     mode: "GameDev",
     rank: "🎮 Game On",
     title: "Play & Inspire",
     desc: "Design games that are fun and meaningful — from learning to problem-solving, build experiences that engage.",
-    image: "/Tracks/edtech.png", // your existing local image
+    image:
+      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753117058/rkhgsxbtv7fqlzq6vlom_iqveo6.webp", // your existing local image
   },
   {
     mode: "AI/ML",
     rank: "🤖 AI for Everything",
     title: "Smarter Solutions",
     desc: "Use AI to solve real-world problems in healthcare, education, and daily life. Let your code think and act smartly for society.",
-    image: "https://st1.techlusive.in/wp-content/uploads/2024/12/bgmi-10.jpg",
+    image:
+      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116795/bgmi-10.webp_yugnkf.webp",
   },
   {
     mode: "GreenTech",
     rank: "🌱 GreenTech & Climate Innovation",
     title: "Eco Tech Power",
     desc: "Build technology to protect the planet — from clean energy to smart farming. Help nature and people thrive together.",
-    image: "https://e1.pxfuel.com/desktop-wallpaper/191/565/desktop-wallpaper-1280x1024-game-pubg-girl-2020-1280x1024-resolution-backgrounds-and-gaming-girl-pc.jpg",
+    image:
+      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116911/vmsblszy2ws2pjpcwidx_g4ou5o.webp",
   },
   {
     mode: "Cybersecurity",
     rank: "🔐 Cybersecurity & Digital Trust",
     title: "Safer Internet",
     desc: "Create tools to protect privacy, prevent online threats, and build digital trust for communities and teams.",
-    image: "https://images.hdqwalls.com/wallpapers/pubg-2020-4k-ps.jpg",
+    image:
+      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116900/lytvzhesr1tyuasotcau_mc2hql.webp",
   },
   {
     mode: "Web3",
     rank: "🔗 Web3 & Blockchain",
     title: "Decentralized Future",
     desc: "Use blockchain to build secure systems — smart contracts, digital identities, and dApps that empower users.",
-    image: "/Tracks/tidal-wargod-set-playerunknown-s-battlegrounds-pubg-wallpaper-1280x768_13.jpg",
+    image:
+      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116998/btlvuvk7sobbtbc45dea_khwtkx.webp",
   },
- 
+
   {
     mode: "Wildcard",
     rank: "💡 Open Innovation",
     title: "Free Thinking Zone",
     desc: "Got a bold idea that doesn't fit in a box? This is your space to innovate — assistive tech, future tools, and more.",
-    image: "https://wallpapers.com/images/hd/pubg-girl-hiding-and-scouting-cxfpeumaa68nvh1h.jpg",
+    image:
+      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116822/xp7wefcra5op0njyd5ne_y7quwu.webp",
   },
   {
     mode: "Special",
     rank: "🎖 Women in Tech",
     title: "All-Girls Squad Challenge",
     desc: "A special prize for the best women-led team. Celebrate creativity, teamwork, and leadership in tech.",
-    image: "https://wallpapers.com/images/hd/pubg-squad-two-girls-silver-and-golden-dress-66iemqjqa0obo20d.jpg",
+    image:
+      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116815/hfwfb9qizcpcow615nmw_fm5smj.webp",
   },
 ];
 

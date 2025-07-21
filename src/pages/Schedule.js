@@ -13,28 +13,28 @@ const SplitTimeline = () => {
         "11:00 AM - Team formation",
         "12:00 PM - Hacking begins!",
       ],
-      img: "/BGMI_images/kv.jpg",
+      img: "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116012/kv_xksis4.webp",
     },
     {
-      day: "DAY 2", 
+      day: "DAY 2",
       title: "Midpoint Check-in",
       desc: [
         "10:00 AM - Progress presentations",
         "12:00 PM - Workshop: Advanced combat mechanics",
         "6:00 PM - BGMI exhibition match",
       ],
-      img: "/BGMI_images/Gemini_Generated_Image_finale.png",
+      img: "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116014/gemini_generated_finale_gc608c.webp",
     },
     {
       day: "DAY 3",
-      title: "Final Battles", 
+      title: "Final Battles",
       desc: [
         "10:00 AM - Submission deadline",
         "11:00 AM - Project presentations",
         "2:00 PM - Judging and awards",
         "4:00 PM - Closing ceremony",
       ],
-      img: "/BGMI_images/pubg-blindspot-io-1920x1080.jpg",
+      img: "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116012/pubg-blindspot-io-1920x1080_bobxnb.webp",
     },
   ];
 

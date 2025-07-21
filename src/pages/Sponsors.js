@@ -5,18 +5,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 
 const SponsorsSection = styled(Box)({
-  backgroundImage: "url('BGMI_images/pubg-mobile-june-2021-revenue.jpg')",
+  backgroundImage:
+    "url('https://res.cloudinary.com/djer7pmxt/image/upload/v1753116437/pubg_mobile_2021_revenue_utxrur.webp')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed",
   minHeight: "100vh",
   width: "100%",
   position: "relative",
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '2rem 1rem',
-  boxSizing: 'border-box',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "2rem 1rem",
+  boxSizing: "border-box",
   "&::before": {
     content: '""',
     position: "absolute",
@@ -24,7 +25,8 @@ const SponsorsSection = styled(Box)({
     left: 0,
     right: 0,
     bottom: 0,
-    background: "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%)",
+    background:
+      "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%)",
     zIndex: 1,
   },
 });

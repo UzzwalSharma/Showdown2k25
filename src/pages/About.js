@@ -13,7 +13,7 @@ const AboutSection = styled(Box)({
     content: '""',
     position: 'absolute',
     inset: 0,
-    backgroundImage: 'url("/heronewimg.jpg")',
+    backgroundImage: 'url("/heronewimage.webp")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -179,7 +179,7 @@ export default function About() {
 
           {/* Image Content */}
           <SideImage
-            src="/images/posternew.png"
+            src="/images/posternew.webp"
             alt="HackGround Warrior"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}

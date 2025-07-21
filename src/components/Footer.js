@@ -31,30 +31,31 @@ const LogoText = styled(Typography)({
 });
 
 const FooterWrapper = styled(Box)({
-  background: '#0e0e0e',
-  color: '#fff',
+  background: "#0e0e0e",
+  color: "#fff",
   fontFamily: '"Orbitron", sans-serif',
-  paddingTop: '6rem',
-  paddingBottom: '3rem',
-  position: 'relative',
-  boxShadow: 'inset 4px 4px 8px #0a0a0a, inset -4px -4px 8px #141414',
+  paddingTop: "6rem",
+  paddingBottom: "3rem",
+  position: "relative",
+  boxShadow: "inset 4px 4px 8px #0a0a0a, inset -4px -4px 8px #141414",
   // Parallax background image
-  backgroundImage: 'url("/BGMI_images/pubg-2025-cb-1920x1080.jpg")',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundAttachment: 'fixed', // Parallax effect
+  backgroundImage:
+    'url("https://res.cloudinary.com/djer7pmxt/image/upload/v1753117378/lqwhfretoqbntb9yo579_ozscjp.webp")',
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundAttachment: "fixed", // Parallax effect
   zIndex: 1,
-  '&::before': {
+  "&::before": {
     content: '""',
-    position: 'absolute',
+    position: "absolute",
     inset: 0,
-    background: 'rgba(14,14,14,0.88)', // dark overlay for readability
+    background: "rgba(14,14,14,0.88)", // dark overlay for readability
     zIndex: 2,
-    pointerEvents: 'none',
+    pointerEvents: "none",
   },
   // Ensure content is above overlay
-  '> *': {
-    position: 'relative',
+  "> *": {
+    position: "relative",
     zIndex: 3,
   },
 });
