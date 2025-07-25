@@ -276,6 +276,14 @@ const HackathonSections = () => {
         "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114617/saad_ihbome.webp",
       linkedin: "https://www.linkedin.com/in/saad-salim-24b251228/",
     },
+    {
+      id: 20,
+      name: "Veena S. Maharana",
+      role: "Design Team",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753437869/veenasreemaharana-cropped_sg2mgb.webp",
+      linkedin: "https://www.linkedin.com/in/veenasreemaharana/",
+    },
   ];
 
   const mentors = [];
