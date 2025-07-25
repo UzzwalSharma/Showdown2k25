@@ -10,7 +10,7 @@ const HeroSection = styled(Box)(({ theme }) => ({
   height: '100vh',
   width: '100%',
   overflow: 'hidden',
-  paddingTop: '120px',
+  paddingTop: '20px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
