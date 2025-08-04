@@ -1,70 +1,69 @@
-
-<h1 align="center">🥋 Tekken Showdown 2K25 - Official Website</h1>
+<h1 align="center">🚩 Hackgrounds India 2K25 - Official Website</h1>
 
 <p align="center">
-  Welcome to the battleground of code and creativity! <br />
-  <strong>Tekken Showdown 2K25</strong> is a <em>nationwide hackathon</em> inspired by the high-stakes intensity of the <strong>Tekken</strong> universe, where <strong>thousands of teams</strong> from across the country compete in a no-holds-barred coding showdown.<br />
-  <em>Only the sharpest minds and strongest code will emerge victorious.</em>
+  Welcome to the ultimate arena of innovation and intellect! <br />
+  <strong>Hackgrounds India 2K25</strong> is a <em>nationwide hackathon</em> where <strong>thousands of teams</strong> from every corner of the country clash in a high-voltage coding battleground.<br />
+  <em>Only the boldest ideas and sharpest minds will claim the spotlight.</em>
 </p>
 
 ---
 
 ## ⚔️ About the Event
 
-**Tekken Showdown 2K25** isn't your average hackathon. This is where **coding meets combat**. The theme, visuals, and spirit of the website and event channel the raw energy of fighting tournaments, reimagined in the world of development.
+**Hackgrounds India 2K25** is not your typical coding contest — it's an **intense innovation battlefield**. Inspired by the chaos and brilliance of legendary tech wars, this event channels pure adrenaline through its design, challenges, and community.
 
-> _"You don't just code — you battle."_
+> _"You don’t just participate — you conquer."_
 
-📍 **Nationwide**  
+📍 **Pan India**  
 🗓️ **Coming THIS JULY 2025**  
-💻 **Online & Offline Rounds**
+💻 **Hybrid Format: Online + Grand Offline Finale**
 
 ---
 
 ## 🔥 How It Works
 
-- 👥 **Form Your Clan (Team)** – Max 4 members  
-- 📝 **Register** – Secure your slot through the official form  
-- ⚔️ **Qualifier Round** – Code battle begins. Only the best advance  
-- 🧩 **Battle Zones (Final Rounds)** – Real-time challenges, boss fights (live problems), and surprise themes  
-- 🏆 **Final Showdown** – One team walks away with the title and the crown
+- 👥 **Build Your Guild** – Team up (max 4 members)  
+- 📝 **Register** – Secure your entry through the official portal  
+- ⚔️ **Elimination Round** – Solve coding puzzles & concept battles  
+- 🧠 **Theme Rumble (Finale)** – Real-time innovations, tech sprints, and surprise problem statements  
+- 🏆 **The Grand Finale** – One team emerges as the ultimate champion of Hackgrounds India 2K25
 
 ---
 
 ## 💰 Prizes & Recognition
 
-🥇 **Champion Team** – ₹10,000 + Trophy + Swag + Internship Offers  
-🥈 **Runner Up** – ₹7,000 + Swag + Special Mentions  
-🥉 **Best Innovation**, **Best UI/UX**, & more
+🥇 **Winning Team** – ₹10,000 + Trophy + Swag + Internship Opportunities  
+🥈 **1st Runner-Up** – ₹7,000 + Goodies + Special Recognition  
+🥉 **Special Categories** – Best Innovation • Best UI/UX • Best Pitch
 
-🎖️ **Everyone wins:**  
-All participants receive **digital certificates**, **swag**, and **experience points** — because even warriors who fall rise stronger.
+🎖️ **Every Participant Wins:**  
+All warriors of code get **digital certificates**, **cool swag**, and **XP badges** to honor their journey.
 
 ---
 
 ## 🚀 Launching Soon
 
-Stay tuned. The arena is being set.  
+The battlefield is loading...  
 Only one question remains...
 
-> **Are you ready to FIGHT your way to the top?**
+> **Will YOU rise as a Hackgrounds Champion?**
 
 ---
 
 ## 📲 Connect With Us
 
-- 🌐 Website: [https://showdown2k25.vercel.app/](https://showdown2k25.vercel.app/)
-- 📸 Instagram: [@tekkenshowdown2k25](https://www.instagram.com/tsd.2k25_hackathon?igsh=aXJ5bTBtZTRiZ2Vr&utm_source=qr)
-- 📬 Email: [uzzwal7505@gmail.com](mailto:uzzwal7505@gmail.com)
+- 🌐 Website: [https://hackgrounds2k25.vercel.app/](https://hackgrounds2k25.vercel.app/)
+- 📸 Instagram: [@hackgrounds2k25](https://www.instagram.com/hackgrounds2k25)
+- 📬 Email: [hackgrounds.india@gmail.com](mailto:hackgrounds.india@gmail.com)
 
 ---
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).  
-Feel free to fork, star, or contribute.
+Fork, star, share — but always give credit.
 
-**All rights reserved © 2025 Ujjwal Sharma and Tekken Showdown 2K25.**  
-Unauthorized copying, distribution, or use of any part of this project is strictly prohibited.
+**All rights reserved © 2025 Hackgrounds India 2K25 Team.**  
+Unauthorized use, copying, or redistribution is strictly prohibited.
 
 ---
