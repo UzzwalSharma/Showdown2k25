@@ -235,7 +235,7 @@ const HackathonSections = () => {
       id: 16,
       name: "Apoorv Mehrotra",
       role: "Sponsorship Team",
-      avatar: "/Team/Apoorv Mehrotra.png",
+      avatar: "/Team/Apoorv_Mehrotra.png",
       linkedin: "https://www.linkedin.com/in/its-apoorv-/",
     },
     {
@@ -268,7 +268,7 @@ const HackathonSections = () => {
 
   const PersonCard = ({ person }) => (
     <Grow in={true} timeout={700}>
-      <GlassCard sx={{ p: 3, textAlign: "center" }}>
+      <GlassCard sx={{ p: 3, textAlign: "center", willChange: "transform" }}>
         <Box position="relative" display="flex" justifyContent="center" mb={2}>
           <Avatar
             src={person.avatar}
