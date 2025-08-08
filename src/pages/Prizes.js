@@ -8,7 +8,8 @@ const BRIGHT_YELLOW_LIGHT = "#FFF9E3";
 
 // Section background
 const PrizesSection = styled(Box)({
-  backgroundImage: 'url("/BGMI_images/pubg-sniper-mode-0o-1920x1080.jpg")',
+  backgroundImage:
+    'url("https://images.hdqwalls.com/download/pubg-sniper-mode-0o-1920x1080.jpg")',
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed",
@@ -30,7 +31,7 @@ const PrizesSection = styled(Box)({
 const PrizeCard = styled(Paper)(({ tier }) => ({
   position: "relative",
   width: "320px",
-  maxWidth: "85vw",
+  maxWidth: "80vw",
   height: "340px",
   padding: "2rem",
   background: "rgba(255, 255, 255, 0.08)",

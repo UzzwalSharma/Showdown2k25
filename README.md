@@ -77,7 +77,7 @@ HackGrounds India 2K25 is **not your typical hackathon**. It’s a platform to *
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).  
-Feel free to fork, star, or contribute.
+Fork, star, share — but always give credit.
 
 **All rights reserved © 2025 Ujjwal Sharma and HackGrounds India 2K25.**  
 Unauthorized copying, distribution, or use of any part of this project is strictly prohibited.

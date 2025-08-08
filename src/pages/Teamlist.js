@@ -65,7 +65,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
       rgba(10,10,10,0.9),
       rgba(10,10,10,0.95)
     ),
-    url("https://c4.wallpaperflare.com/wallpaper/256/240/14/pubg-wallpaper-preview.jpg")
+    url("https://res.cloudinary.com/djer7pmxt/image/upload/v1753116547/erfltvvd89dzmbmysvcn_fuissc.webp")
   `,
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -127,35 +127,40 @@ const HackathonSections = () => {
       id: 1,
       name: "Maaz Anwar",
       role: "Lead Organiser",
-      avatar: "/Team/IMG-20250625-WA0285 - Maaz Anwar.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114618/maaz_anwar_k7q6jn.webp",
       linkedin: "https://www.linkedin.com/in/maazanwar414/",
     },
     {
       id: 2,
       name: "Ujjwal Agarwal",
       role: "Lead Organiser",
-      avatar: "/Team/IMG-20250415-WA0050 - Ujjwal Agarwal (2).jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114618/ujjwal_agarwal_qn7m6y.webp",
       linkedin: "https://www.linkedin.com/in/ujjwal-agarwal-67b6a0323/",
     },
     {
       id: 3,
       name: "Animesh Singh",
       role: "Lead Organiser",
-      avatar: "/Team/Animesh Singh - Animesh Singh.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114620/animesh_singh_e2vzaf.webp",
       linkedin: "https://www.linkedin.com/in/animeshsingh9693/",
     },
     {
       id: 4,
       name: "Anmol Agarwal",
       role: "Lead Organiser",
-      avatar: "/Team/Anmol Aggarwal.jpeg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114620/anmol_agarwal_fajtp5.webp",
       linkedin: "https://www.linkedin.com/in/anmol-agrawal25/",
     },
     {
       id: 5,
       name: "Ujjwal Sharma",
       role: "Technical Head",
-      avatar: "/Team/WhatsApp Image 2024-07-18 at 10.12.39_30e74f22.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114615/ujjwal_sharma_grjhwj.webp",
       linkedin: "https://www.linkedin.com/in/ujjwal-sharma-3a1395279/",
     },
     {
@@ -163,21 +168,23 @@ const HackathonSections = () => {
       name: "Umesh Kataria",
       role: "Sponsership head",
       avatar:
-        "/Team/WhatsApp Image 2025-04-02 at 21.44.21_496cb671 - Umesh Kataria.jpg",
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114617/umesh_kataria_u4gzjs.webp",
       linkedin: "https://www.linkedin.com/in/umeshxkataria/",
     },
     {
       id: 7,
       name: "Harsh Gupta",
       role: "Design Head",
-      avatar: "/Team/my picture - Harsh Gupta.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114616/harsh_gupta_teckfx.webp",
       linkedin: "https://www.linkedin.com/in/harsh-gupta-7b3b472a2/",
     },
     {
       id: 8,
       name: "Rahul",
       role: "PR & Outreach Head",
-      avatar: "/Team/rahul.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114616/rahul._dmfox4.webp",
       linkedin: "https://www.linkedin.com/in/rahulgoyal83789/",
     },
     {
@@ -185,42 +192,47 @@ const HackathonSections = () => {
       name: "Nishchay Chaurasia",
       role: "Tech Team",
       avatar:
-        "/Team/WhatsApp Image 2025-06-28 at 00.01.46_e8207855 - Nishchay Chaurasia.jpg",
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114616/nishchay_chaurasia_wzcwqs.webp",
       linkedin: "https://www.linkedin.com/in/nishchaync-83b8152b0/",
     },
     {
       id: 10,
       name: "Aman",
       role: "Tech Team",
-      avatar: "/Team/nay-khichwa-le-cropped - Aman Bobal.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114619/aman_bobal_gvnjd6.webp",
       linkedin: "https://www.linkedin.com/in/aman-bobal/",
     },
     {
       id: 11,
       name: "Keshav",
       role: "Pr & outreach team",
-      avatar: "/Team/IMG_7302 - Keshav Mehta.JPG",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114617/keshav_mehta_n2wuzh.webp",
       linkedin: "https://www.linkedin.com/in/keshav-mehta-b9a838305/",
     },
     {
       id: 12,
-      name: "Jigisha Baliyann", // moved up
+      name: "Jigisha Baliyann",
       role: "Pr & outreach team",
-      avatar: "/Team/Jigisha Baliyan.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114617/jigisha_baliyan_gzfipe.webp",
       linkedin: "https://www.linkedin.com/in/jigisha-baliyann/",
     },
     {
       id: 13,
       name: "Rhythm Arora",
       role: "Social Media Team",
-      avatar: "/Team/IMG20250316161749 - Rhythm Arora.jpg ",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114625/rhythm_arora_acqkyz.webp",
       linkedin: "https://www.linkedin.com/in/rhythmisloading/",
     },
     {
       id: 14,
       name: "Nitya",
       role: "Social Media Team",
-      avatar: "/Team/IMG_20240626_113826 - Nitya Gosain.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114618/nitya_goasain_hgjrvw.webp",
       linkedin:
         "https://www.linkedin.com/in/nitya-gosain-42037328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
@@ -228,21 +240,28 @@ const HackathonSections = () => {
       id: 15,
       name: "Ankit",
       role: "Video Editor",
-      avatar: "/Team/IMG20250208153043~2 - Ankit Kumar.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114619/ankit_kumar_lfbluu.webp",
       linkedin: "https://www.linkedin.com/in/ankit-kumar5277/",
     },
     {
       id: 16,
       name: "Apoorv Mehrotra",
       role: "Sponsorship Team",
+<<<<<<< HEAD
       avatar: "/Team/Apoorv_Mehrotra.png",
+=======
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114620/apoorv_mehrotra_rhnhkr.webp",
+>>>>>>> 1e130c577adf3b16d558c45a08f44157168e29f1
       linkedin: "https://www.linkedin.com/in/its-apoorv-/",
     },
     {
       id: 17,
       name: "Akash",
       role: "Design Team",
-      avatar: "/Team/DevopsOffice - Akash Gupta.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114616/akash_gupta_mcvzyg.webp",
       linkedin: "https://www.linkedin.com/in/akash-gupta-718363296/",
     },
     {
@@ -250,19 +269,110 @@ const HackathonSections = () => {
       name: "Himanshi Aggarwal",
       role: "Sponsership Team",
       avatar:
-        "/Team/WhatsApp Image 2025-04-05 at 22.38.54_67562664 - Himanshi Aggarwal.jpg",
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114614/himanshi_agarwal_yakila.webp",
       linkedin: "https://www.linkedin.com/in/himanshi-aggarwal-5a5553321/",
     },
     {
       id: 19,
       name: "Saad Salim",
       role: "Sponsership Team",
-      avatar: "/Team/saad.jpg",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114617/saad_ihbome.webp",
       linkedin: "https://www.linkedin.com/in/saad-salim-24b251228/",
+    },
+    {
+      id: 20,
+      name: "Veena S. Maharana",
+      role: "Design Team",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753437869/veenasreemaharana-cropped_sg2mgb.webp",
+      linkedin: "https://www.linkedin.com/in/veenasreemaharana/",
     },
   ];
 
-  const mentors = [];
+  const mentors = [
+    {
+      id: 1,
+      name: "Tushika Rawat",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318034/tushika_rawat_itbcuk.jpg",
+      linkedin: "https://www.linkedin.com/in/tushika-rawat/",
+    },
+    {
+      id: 2,
+      name: "Tanisha Bansal",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318032/Tanisha_Bansal_mzcyw3.jpg",
+      linkedin: "https://www.linkedin.com/in/tanishabansal110902?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    },
+    {
+      id: 3,
+      name: "Kashvi Arora",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318032/Kashvi_Arora_kl3lyg.jpg",
+      linkedin: "https://in.linkedin.com/in/kashvi15",
+    },
+    {
+      id: 4,
+      name: "Yash Chatrath",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318033/Yash_Chatrath_hkieoz.jpg",
+      linkedin: "http://linkedin.com/in/chatrath-yash",
+    },
+    {
+      id: 5,
+      name: "Kamal Kashyap",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Kamal_Kashyap_whjfnt.jpg",
+      linkedin: "https://in.linkedin.com/in/kamal-kashyap-393a6b1b7",
+    },
+    {
+      id: 6,
+      name: "Sachin Jha",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Sachin_Jha_mvuram.jpg",
+      linkedin: "https://www.linkedin.com/in/sachin-jha-",
+    },
+    {
+      id: 7,
+      name: "Krish Khattar",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Krish_Khattar_ip8um0.jpg",
+      linkedin: "https://www.linkedin.com/in/krishkhattar",
+    },
+    {
+      id: 8,
+      name: "Nandini Singh",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Nandini_Singh_qsdyz6.jpg",
+      linkedin: "https://www.linkedin.com/in/nandinisingh05",
+    },
+    {
+      id: 9,
+      name: "Avanish Kumar Singh",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Avanish_Kumar_Singh_ylclyx.jpg",
+      linkedin: "https://www.linkedin.com/in/avanishh/",
+    },
+    {
+      id: 10,
+      name: "Ekansh",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318757/Ekansh_ydqcvc.jpg",
+      linkedin: "https://www.linkedin.com/in/ekansh-mittal",
+    },
+
+  ];
 
   const judges = [];
 

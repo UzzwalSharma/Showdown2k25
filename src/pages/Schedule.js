@@ -6,35 +6,34 @@ const SplitTimeline = () => {
 
   const events = [
     {
-      day: "DAY 1",
-      title: "Opening Ceremony",
+      day: "ROUND 1",
+      title: "Idea Submission",
       desc: [
-        "10:00 AM - Welcome and rules explanation",
-        "11:00 AM - Team formation",
-        "12:00 PM - Hacking begins!",
+        "12:00 AM (01 Aug) – Mission Briefing Begins!",
+        "Submit PPT – Strategy, Loadout, and Impact",
+        "11:59 PM (17 Aug) – Final Zone closes!",
       ],
-      img: "/BGMI_images/kv.jpg",
+      img: "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116012/kv_xksis4.webp",
     },
     {
-      day: "DAY 2", 
-      title: "Midpoint Check-in",
+      day: "ROUND 2",
+      title: "Mentorship Round",
       desc: [
-        "10:00 AM - Progress presentations",
-        "12:00 PM - Workshop: Advanced combat mechanics",
-        "6:00 PM - BGMI exhibition match",
+        "09:30 AM (23 Aug) – Mentoring Begins!",
+        "Experts Guide Teams on MVP and Execution",
+        "11:59 PM (24 Aug) – Mentoring Ends!",
       ],
-      img: "/BGMI_images/Gemini_Generated_Image_finale.png",
+      img: "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116014/gemini_generated_finale_gc608c.webp",
     },
     {
-      day: "DAY 3",
-      title: "Final Battles", 
+      day: "ROUND 3",
+      title: "Grand Finale",
       desc: [
-        "10:00 AM - Submission deadline",
-        "11:00 AM - Project presentations",
-        "2:00 PM - Judging and awards",
-        "4:00 PM - Closing ceremony",
+        "9:30 AM (31 Aug) - Hackathon Starts!",
+        "5:00 PM - Judging and Awards",
+        "5:30 PM - Closing Ceremony!",
       ],
-      img: "/BGMI_images/pubg-blindspot-io-1920x1080.jpg",
+      img: "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116012/pubg-blindspot-io-1920x1080_bobxnb.webp",
     },
   ];
 
