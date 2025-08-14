@@ -248,12 +248,8 @@ const HackathonSections = () => {
       id: 16,
       name: "Apoorv Mehrotra",
       role: "Sponsorship Team",
-<<<<<<< HEAD
-      avatar: "/Team/Apoorv_Mehrotra.png",
-=======
       avatar:
         "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114620/apoorv_mehrotra_rhnhkr.webp",
->>>>>>> 1e130c577adf3b16d558c45a08f44157168e29f1
       linkedin: "https://www.linkedin.com/in/its-apoorv-/",
     },
     {
