@@ -92,13 +92,13 @@ function Sponsors() {
     {
       name: "Unstop",
       logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg",
-      tier: "Platinum",
+      tier: "Diamond",
       description: "Platform Partner",
     },
     {
       name: "GitHub",
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPk0CDiJ70gAStxkNBNzIRLJr6XI_zeiOAECxoPu67ObNCD0P5GwEQuP3kDJ7o8lp1rQc&usqp=CAU",
-      tier: "Diamond",
+      tier: "Platinum",
       description: "Home for All Developers",
     },
     {
