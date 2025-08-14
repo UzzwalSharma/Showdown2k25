@@ -93,7 +93,7 @@ function Sponsors() {
       name: "Unstop",
       logo: "https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/branding-guidelines/logos/blue/Unstop-Logo-Blue-Extra-Large.jpg",
       tier: "Platinum",
-      description: "Empowering Talent Discovery",
+      description: "Platform Partner",
     },
     {
       name: "GitHub",
