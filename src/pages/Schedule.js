@@ -29,7 +29,7 @@ const SplitTimeline = () => {
       day: "ROUND 3",
       title: "Grand Finale",
       desc: [
-        "9:30 AM (31 Aug) - Hackathon Starts!",
+        "9:30 AM (30 Aug) - Hackathon Starts!",
         "5:00 PM - Judging and Awards",
         "5:30 PM - Closing Ceremony!",
       ],
