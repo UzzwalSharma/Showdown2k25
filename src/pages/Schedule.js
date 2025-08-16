@@ -60,10 +60,10 @@ const PremiumTimeline = () => {
       document.head.appendChild(script);
 
       // Load fonts
-      const fontLink = document.createElement('link');
-      fontLink.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap';
-      fontLink.rel = 'stylesheet';
-      document.head.appendChild(fontLink);
+      // const fontLink = document.createElement('link');
+      // fontLink.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap';
+      // fontLink.rel = 'stylesheet';
+      // document.head.appendChild(fontLink);
 
       return new Promise((resolve) => {
         script.onload = resolve;
