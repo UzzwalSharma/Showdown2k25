@@ -307,7 +307,7 @@ import { styled } from "@mui/material/styles";
 const RegistrationWrapper = styled(Box)({
   minHeight: "100vh",
   width: "100%",
-  backgroundImage: 'url("/BGMI_images/danger-zone-bg.png")', // 🔴 Change to your danger zone image
+  backgroundImage: 'url("/BGMI_images/danger-zone-bg.png")', 
   backgroundSize: "cover",
   backgroundAttachment: "fixed",
   backgroundPosition: "center",
