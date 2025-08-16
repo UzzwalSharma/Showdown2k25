@@ -131,14 +131,14 @@ const HackathonSections = () => {
         "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114618/maaz_anwar_k7q6jn.webp",
       linkedin: "https://www.linkedin.com/in/maazanwar414/",
     },
-    {
-      id: 2,
-      name: "Ujjwal Agarwal",
-      role: "Lead Organiser",
-      avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114618/ujjwal_agarwal_qn7m6y.webp",
-      linkedin: "https://www.linkedin.com/in/ujjwal-agarwal-67b6a0323/",
-    },
+    // {
+    //   id: 2,
+    //   name: "Ujjwal Agarwal",
+    //   role: "Lead Organiser",
+    //   avatar:
+    //     "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114618/ujjwal_agarwal_qn7m6y.webp",
+    //   linkedin: "https://www.linkedin.com/in/ujjwal-agarwal-67b6a0323/",
+    // },
     {
       id: 3,
       name: "Animesh Singh",
