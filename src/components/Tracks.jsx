@@ -7,14 +7,6 @@ import {
   Chip,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import {
-  BookOpen,
-  Brain,
-  Wifi,
-  HeartPulse,
-  Lightbulb,
-  Leaf,
-} from "lucide-react";
 
 const DARK_BG = "#0a0a0a";
 const NEOMORPH_CARD = "#1a1a1a";
@@ -113,7 +105,7 @@ const gamingCards = [
     title: "Play & Inspire",
     desc: "Design games that are fun and meaningful — from learning to problem-solving, build experiences that engage.",
     image:
-      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753117058/rkhgsxbtv7fqlzq6vlom_iqveo6.webp", // your existing local image
+      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753117058/rkhgsxbtv7fqlzq6vlom_iqveo6.webp",
   },
   {
     mode: "AI/ML",
@@ -147,7 +139,6 @@ const gamingCards = [
     image:
       "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116998/btlvuvk7sobbtbc45dea_khwtkx.webp",
   },
-
   {
     mode: "Wildcard",
     rank: "💡 Open Innovation",
@@ -164,7 +155,18 @@ const gamingCards = [
     image:
       "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116815/hfwfb9qizcpcow615nmw_fm5smj.webp",
   },
+
+  // 🚀 New Track Alert
+  {
+    mode: "Special Track",
+    rank: "🚀 New Track Alert!",
+    title: "Hackground × Duality AI – Space Station Hackathon 🛰",
+    desc: "Train AI models using Falcon digital twin data to detect Toolbox, Oxygen Tank & Fire Extinguisher in a simulated space station! Optimize YOLOv8, document your workflow & grab exciting prizes. Prize Pool: $200",
+    image:
+      "https://blog.unipin.com/en/wp-content/uploads/sites/2/2024/07/bgmi-best-name-696x348.jpg", 
+  },
 ];
+
 
 
 export default function PUBGGamingCardsMUI() {
