@@ -540,7 +540,7 @@ const HackgroundRegistration = () => {
                 textAlign: "center",
               }}
             >
-              Submission Deadline: August 25th, 2025 • 23:59 IST
+              Submission Deadline: August 17th, 2025 • 23:59 IST
             </Typography>
           </Box>
         </GlowingBox>
