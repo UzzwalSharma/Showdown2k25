@@ -229,7 +229,7 @@ function Footer() {
           {/* Contact Info */}
           <Box>
             <FooterTitle>Contact</FooterTitle>
-            <FooterText><strong>Location:</strong> MS OFFICE, Delhi NCR</FooterText>
+            <FooterText><strong>Location:</strong> Thoughtworks, Gurugram</FooterText>
             <FooterText>
               <strong>Email:</strong>{' '}
               <a href="mailto:techversenexusofficial@gmail.com" style={{ color: '#FFA500' }}>
@@ -237,7 +237,7 @@ function Footer() {
               </a>
             </FooterText>
             <FooterText>
-              <strong>Phone:</strong> (+91) 9693856529 - Animesh<br />(+91) 6395207811 - Ujjwal
+              <strong>Phone:</strong> (+91) 9693856529 - Animesh<br />(+91) 8434509513 - Maaz
             </FooterText>
           </Box>
 
