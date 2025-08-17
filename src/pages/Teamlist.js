@@ -370,7 +370,32 @@ const HackathonSections = () => {
 
   ];
 
-  const judges = [];
+  const judges = [
+    {
+      id: 1,
+      name: "Aman Jinal",
+      role: "Assistant Manager (Deloitte)",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1755373735/aman-jindal_tzg7kq.webp",
+      linkedin: "https://www.linkedin.com/in/amann-jindal",
+    },
+    {
+      id: 2,
+      name: "Aman Rajput",
+      role: "Community Manager (Unstop)",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1755373735/aman-rajput_xucnz3.webp",
+      linkedin: "https://www.linkedin.com/in/aman-ash",
+    },
+    {
+      id: 3,
+      name: "Uday Sharma",
+      role: "Content Creator",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1755373735/Uday-Sharma_vozxlv.webp ",
+      linkedin: "https://www.linkedin.com/in/udaydotai/",
+    }, 
+  ];
 
   const PersonCard = ({ person }) => (
     <Grow in={true} timeout={700}>
