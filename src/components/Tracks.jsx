@@ -147,14 +147,7 @@ const gamingCards = [
     image:
       "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116822/xp7wefcra5op0njyd5ne_y7quwu.webp",
   },
-  {
-    mode: "Special",
-    rank: "🎖 Women in Tech",
-    title: "All-Girls Squad Challenge",
-    desc: "A special prize for the best women-led team. Celebrate creativity, teamwork, and leadership in tech.",
-    image:
-      "https://res.cloudinary.com/djer7pmxt/image/upload/v1753116815/hfwfb9qizcpcow615nmw_fm5smj.webp",
-  },
+  
 
   // 🚀 New Track Alert
   {

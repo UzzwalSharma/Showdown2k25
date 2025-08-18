@@ -293,7 +293,7 @@
 
 
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Typography,
@@ -307,7 +307,7 @@ import { styled } from "@mui/material/styles";
 const RegistrationWrapper = styled(Box)({
   minHeight: "100vh",
   width: "100%",
-  backgroundImage: 'url("/BGMI_images/danger-zone-bg.png")', 
+  backgroundImage: 'url("/BGMI_images/danger-zone-bg.png")',
   backgroundSize: "cover",
   backgroundAttachment: "fixed",
   backgroundPosition: "center",
@@ -324,7 +324,7 @@ const RegistrationWrapper = styled(Box)({
     left: 0,
     right: 0,
     bottom: 0,
-    background: "linear-gradient(to bottom, #000000ee, #1a0000f9)", // dark red overlay
+    background: "linear-gradient(to bottom, #000000ee, #1a0000f9)",
     zIndex: 1,
   },
 });
@@ -333,7 +333,7 @@ const GlowingBox = styled(Paper)(({ theme }) => ({
   position: "relative",
   padding: theme.spacing(4),
   borderRadius: "20px",
-  background: "rgba(20, 0, 0, 0.85)", // darker red tint
+  background: "rgba(20, 0, 0, 0.85)",
   border: "2px solid #ff0000",
   backdropFilter: "blur(15px)",
   zIndex: 2,
@@ -379,6 +379,30 @@ const FeatureCard = styled(Box)({
 });
 
 const HackgroundRegistration = () => {
+  // Countdown timer logic
+  const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    const deadline = new Date("2025-08-17T23:59:59"); // your deadline
+    const timer = setInterval(() => {
+      const now = new Date();
+      const diff = deadline - now;
+
+      if (diff <= 0) {
+        clearInterval(timer);
+        setTimeLeft("Time's up!");
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        setTimeLeft(`${days}D : ${hours}H : ${minutes}M : ${seconds}S`);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <RegistrationWrapper>
       <Container sx={{ position: "relative", zIndex: 2 }}>
@@ -405,18 +429,33 @@ const HackgroundRegistration = () => {
             HACKGROUND INDIA 2K25
           </Typography>
 
-          {/* Subtitle */}
+          {/* Countdown Title */}
           <Typography
             align="center"
             sx={{
-              fontSize: { xs: "1.1rem", sm: "1.3rem" },
+              fontSize: { xs: "1.2rem", sm: "1.4rem" },
               color: "#ff4444",
               fontWeight: "bold",
               letterSpacing: "2px",
+              mb: 2,
+              textTransform: "uppercase",
+            }}
+          >
+            ⏳ Only 2 Days Left ⏳
+          </Typography>
+
+          {/* Countdown Timer */}
+          <Typography
+            align="center"
+            sx={{
+              fontSize: { xs: "1.8rem", sm: "2.2rem" },
+              fontWeight: "bold",
+              color: "#fff",
+              textShadow: "0 0 15px #ff0000",
               mb: 4,
             }}
           >
-            SUBMISSIONS CLOSING SOON
+            {timeLeft}
           </Typography>
 
           {/* Features Grid */}
@@ -515,7 +554,7 @@ const HackgroundRegistration = () => {
                 },
               }}
             >
-              SUBMISSIONS CLOSING SOON
+              Submit your PPTs now
             </Button>
 
             <Typography
@@ -540,7 +579,7 @@ const HackgroundRegistration = () => {
                 textAlign: "center",
               }}
             >
-              Submission Deadline: August 17th, 2025 • 23:59 IST
+              Submission Deadline: August 19th, 2025 • 23:59 IST
             </Typography>
           </Box>
         </GlowingBox>
@@ -550,3 +589,4 @@ const HackgroundRegistration = () => {
 };
 
 export default HackgroundRegistration;
+

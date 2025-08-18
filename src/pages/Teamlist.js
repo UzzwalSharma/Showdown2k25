@@ -284,6 +284,14 @@ const HackathonSections = () => {
         "https://res.cloudinary.com/djer7pmxt/image/upload/v1753437869/veenasreemaharana-cropped_sg2mgb.webp",
       linkedin: "https://www.linkedin.com/in/veenasreemaharana/",
     },
+    {
+      id: 21,
+      name: "Advay Anand",
+      role: "Spomsership Team",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D5603AQENz73g8awlsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726334792528?e=2147483647&v=beta&t=2N6RZVM5NFM-bB3aJOepOUYyMERrBQAiCv-TshYfXoo",
+      linkedin: "https://www.linkedin.com/in/advay-anand-a89024277/",
+    },
   ];
 
   const mentors = [
