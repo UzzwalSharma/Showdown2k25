@@ -263,7 +263,7 @@ const HackathonSections = () => {
     {
       id: 18,
       name: "Himanshi Aggarwal",
-      role: "Sponsership Team",
+      role: "Sponsorship Team",
       avatar:
         "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114614/himanshi_agarwal_yakila.webp",
       linkedin: "https://www.linkedin.com/in/himanshi-aggarwal-5a5553321/",
@@ -271,7 +271,7 @@ const HackathonSections = () => {
     {
       id: 19,
       name: "Saad Salim",
-      role: "Sponsership Team",
+      role: "Sponsorship Team",
       avatar:
         "https://res.cloudinary.com/djer7pmxt/image/upload/v1753114617/saad_ihbome.webp",
       linkedin: "https://www.linkedin.com/in/saad-salim-24b251228/",
@@ -287,7 +287,7 @@ const HackathonSections = () => {
     {
       id: 21,
       name: "Advay Anand",
-      role: "Spomsership Team",
+      role: "Sponsorship Team",
       avatar:
         "https://media.licdn.com/dms/image/v2/D5603AQENz73g8awlsw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726334792528?e=2147483647&v=beta&t=2N6RZVM5NFM-bB3aJOepOUYyMERrBQAiCv-TshYfXoo",
       linkedin: "https://www.linkedin.com/in/advay-anand-a89024277/",
