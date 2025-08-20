@@ -127,6 +127,7 @@ const ThankYouScreen = () => {
             }}
           >
             <video
+            src="/Mario Kart item box.mp4"
               autoPlay
               loop
               muted
