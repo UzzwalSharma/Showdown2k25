@@ -102,10 +102,10 @@ function Sponsors() {
       description: "Home for All Developers",
     },
     {
-      name: "Gen.xyz",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1g07-ryq2kHE2EknOFU-pfqYtvYOwC8qVNw&s",
+      name: "Redbull",
+      logo: "https://media.istockphoto.com/id/537022544/photo/aluminium-can-of-red-bull-energy-drink-iced-background.jpg?s=612x612&w=0&k=20&c=3CZ7G16GJPeLmY29eCRKGKAyN2FVmuO9YzoMEVSKrVQ=",
       tier: "Gold",
-      description: "Domains of the Future",
+      description: "Drinks Partner",
     },
     {
       name: "Interview Buddy",
@@ -118,6 +118,12 @@ function Sponsors() {
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA1ijYJKiY82YdiwN_8p-Ok7VnokZ7hmw4A6czeO_QWMrEa_aAocj0cwe5ExbO0UsLtXk&usqp=CAU",
       tier: "Bronze",
       description: "India’s Top Learning Platform",
+    },
+    {
+      name: "Duality Ai",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg5ZGJh7rm_rP_hLdeclCYXVB6QLycWADsyw&s",
+      tier: "Ruby",
+      description: "One of the top emerging Ai platform",
     },
   ];
 

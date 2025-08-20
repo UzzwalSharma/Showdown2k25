@@ -117,26 +117,26 @@ function Prizes() {
     {
       tier: "first",
       title: ["Lone Survivor", "of HACKGROUND INDIA 2K25"],
-      prize: "₹15,000",
+      prize: "₹10,000",
     },
     {
       tier: "second",
       title: ["Top Fragger", "of HACKGROUND INDIA 2K25"],
-      prize: "₹10,000",
+      prize: "₹7,000",
     },
     {
       tier: "third",
       title: ["Free Thinking Zone", "of HACKGROUND INDIA 2K25"],
-      prize: "₹7,000",
+      prize: "₹3,000",
     },
   ];
 
-  const specialPrizes = [
-    {
-      title: ["All-Girls Squad Challenge"],
-      prize: "₹10,000",
-    },
-  ];
+  // const specialPrizes = [
+  //   {
+  //     title: ["All-Girls Squad Challenge"],
+  //     prize: "₹10,000",
+  //   },
+  // ];
 
   return (
     <PrizesSection>
@@ -210,7 +210,7 @@ function Prizes() {
           </Grid>
         </Box>
 
-        <Box>
+        {/* <Box>
           <Typography
             variant="h4"
             align="center"
@@ -277,7 +277,7 @@ function Prizes() {
               </Grid>
             ))}
           </Grid>
-        </Box>
+        </Box> */}
       </Container>
     </PrizesSection>
   );
