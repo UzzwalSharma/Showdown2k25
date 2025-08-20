@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Box,
   Typography,
-  Button,
-  Grid,
   Paper,
   Container,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+// BGMI-like background
 const RegistrationWrapper = styled(Box)({
-  minHeight: "100vh",
-  width: "100%",
+  minHeight: "50vh", // compact rectangle
+  width: "100vw",
   backgroundImage: 'url("/BGMI_images/danger-zone-bg.png")',
   backgroundSize: "cover",
   backgroundAttachment: "fixed",
@@ -29,321 +28,135 @@ const RegistrationWrapper = styled(Box)({
     left: 0,
     right: 0,
     bottom: 0,
-    background: "linear-gradient(to bottom, #330000ee, #1a0000f9)",
+    background: "linear-gradient(to bottom, #0d0d0dee, #000000f5)", // dark overlay
     zIndex: 1,
   },
 });
 
+// Glowing Neo-morphic Container
 const GlowingBox = styled(Paper)(({ theme }) => ({
   position: "relative",
-  padding: theme.spacing(4),
+  padding: theme.spacing(3),
   borderRadius: "20px",
-  background: "rgba(30, 0, 0, 0.9)",
-  border: "2px solid #ff0000",
-  backdropFilter: "blur(15px)",
+  background: "linear-gradient(145deg, #0d0d0d, #1a1a1a)", // soft dark
+  border: "2px solid #ff9100", // BGMI orange
+  backdropFilter: "blur(10px)",
   zIndex: 2,
-  width: "80%",
-  maxWidth: 900,
+  width: "95%",
+  maxWidth: "100vw",
   margin: "0 auto",
-  boxShadow: "0 0 50px #ff000066",
+  boxShadow:
+    "8px 8px 20px #050505, -8px -8px 20px #222222, 0 0 30px #ff910066", // neo effect
   transition: "0.3s ease",
-  animation: "borderPulse 2s infinite",
+  animation: "borderPulse 3s infinite",
   "@keyframes borderPulse": {
-    "0%": { borderColor: "#ff0000", boxShadow: "0 0 50px #ff000066" },
-    "50%": { borderColor: "#ff4444", boxShadow: "0 0 70px #ff000088" },
-    "100%": { borderColor: "#ff0000", boxShadow: "0 0 50px #ff000066" },
+    "0%": { borderColor: "#ff9100", boxShadow: "0 0 25px #ff910066" },
+    "50%": { borderColor: "#ffc400", boxShadow: "0 0 40px #ffea0066" },
+    "100%": { borderColor: "#ff9100", boxShadow: "0 0 25px #ff910066" },
   },
 }));
 
-const CriticalBadge = styled(Box)({
-  display: "inline-block",
-  padding: "0.5rem 1.5rem",
-  background: "linear-gradient(45deg, #ff0000, #990000)",
-  borderRadius: "25px",
-  fontSize: "0.9rem",
-  fontWeight: "bold",
-  color: "#fff",
-  letterSpacing: "1px",
-  textTransform: "uppercase",
-  animation: "criticalPulse 1s infinite",
-  boxShadow: "0 0 25px #ff000077",
-  "@keyframes criticalPulse": {
-    "0%": { 
-      boxShadow: "0 0 25px #ff000077", 
-      transform: "scale(1)",
-      background: "linear-gradient(45deg, #ff0000, #990000)"
-    },
-    "50%": { 
-      boxShadow: "0 0 40px #ff0000bb", 
-      transform: "scale(1.08)",
-      background: "linear-gradient(45deg, #ff3333, #cc0000)"
-    },
-    "100%": { 
-      boxShadow: "0 0 25px #ff000077", 
-      transform: "scale(1)",
-      background: "linear-gradient(45deg, #ff0000, #990000)"
-    },
-  },
-});
-
-const FeatureCard = styled(Box)({
-  border: "1px solid #ff3333",
-  padding: "1.5rem",
-  borderRadius: "12px",
-  textAlign: "center",
-  background: "rgba(80,0,0,0.4)",
-  backdropFilter: "blur(5px)",
-  transition: "0.3s ease",
-  "&:hover": {
-    transform: "translateY(-8px)",
-    boxShadow: "0 15px 35px #ff000044",
-    border: "1px solid #ff6666",
-    background: "rgba(100,0,0,0.5)",
-  },
-});
-
-const HackgroundRegistration = () => {
-  // Countdown timer logic for end of today
-  const [timeLeft, setTimeLeft] = useState("");
-
-  useEffect(() => {
-    const deadline = new Date();
-    deadline.setHours(23, 59, 59, 999); // End of today
-    
-    const timer = setInterval(() => {
-      const now = new Date();
-      const diff = deadline - now;
-
-      if (diff <= 0) {
-        clearInterval(timer);
-        setTimeLeft("ZONE CLOSED!");
-      } else {
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-        setTimeLeft(`${hours}H : ${minutes}M : ${seconds}S`);
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
+const ThankYouScreen = () => {
   return (
     <RegistrationWrapper>
       <Container sx={{ position: "relative", zIndex: 2 }}>
         <GlowingBox>
-          {/* Critical Badge */}
+          {/* Thank You Badge */}
           <Box textAlign="center" mb={2}>
-            <CriticalBadge>🚨 FINAL ZONE - CLOSING TODAY</CriticalBadge>
+            <Box
+              sx={{
+                display: "inline-block",
+                padding: "0.5rem 1.5rem",
+                background: "linear-gradient(45deg, #ff9100, #ff3d00)",
+                borderRadius: "20px",
+                fontSize: "0.95rem",
+                fontWeight: "bold",
+                color: "#fff",
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+                boxShadow: "0 0 15px #ff910088",
+              }}
+            >
+              🎉 THANK YOU SURVIVORS
+            </Box>
           </Box>
 
           {/* Main Title */}
           <Typography
             align="center"
-            variant="h2"
+            variant="h3"
             sx={{
               fontFamily: "Oswald, sans-serif",
               fontWeight: "bold",
-              letterSpacing: "3px",
+              letterSpacing: "2px",
               color: "#fff",
-              textShadow: "0 0 30px #ff0000",
-              mb: 1,
-              fontSize: { xs: "2.5rem", sm: "3rem", md: "3.5rem" },
+              textShadow: "0 0 25px #ff9100",
+              mb: 1.5,
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.6rem" },
             }}
           >
-            HACKGROUND INDIA 2K25
+            RESPONSES LOCKED & LOADED!
           </Typography>
 
-          {/* Critical Alert */}
+          {/* Subtitle */}
           <Typography
             align="center"
             sx={{
-              fontSize: { xs: "1.3rem", sm: "1.6rem" },
-              color: "#ff2222",
+              fontSize: { xs: "1rem", sm: "1.2rem" },
+              color: "#90ee90", // BGMI green accent
               fontWeight: "bold",
-              letterSpacing: "2px",
+              letterSpacing: "1.5px",
               mb: 2,
               textTransform: "uppercase",
-              textShadow: "0 0 15px #ff0000",
+              textShadow: "0 0 10px #90ee90",
             }}
           >
-            ⚡ LAST HOURS TO SURVIVE ⚡
+            Battle results will deploy soon...
           </Typography>
 
-          {/* Final Countdown */}
+          {/* Mystery Box Video */}
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              borderRadius: "14px",
+              border: "2px solid #ffc400",
+              boxShadow: "inset 4px 4px 10px #0a0a0a, inset -4px -4px 10px #1c1c1c, 0 0 25px #ffc40088",
+              overflow: "hidden",
+              mb: 2,
+            }}
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                width: "100%",
+                height: "560px", 
+                objectFit: "cover",
+                display: "block",
+              }}
+            />
+          </Box>
+
+          {/* Closing Message */}
           <Typography
             align="center"
             sx={{
-              fontSize: { xs: "2rem", sm: "2.8rem" },
-              fontWeight: "bold",
-              color: "#fff",
-              textShadow: "0 0 20px #ff0000",
-              mb: 1,
-              fontFamily: "monospace",
-            }}
-          >
-            {timeLeft}
-          </Typography>
-
-          <Typography
-            align="center"
-            sx={{
-              fontSize: { xs: "0.9rem", sm: "1.1rem" },
-              color: "#ff6666",
+              color: "#ffc400",
+              fontSize: { xs: "0.95rem", sm: "1.05rem" },
               fontWeight: "bold",
               letterSpacing: "1px",
-              mb: 4,
-              textTransform: "uppercase",
+              textShadow: "0 0 10px #ffc400",
             }}
           >
-            Until the playzone closes forever
+            📦 Mystery Box unlocks soon — Gear up, champions!
           </Typography>
-
-          {/* Features Grid */}
-          <Grid container spacing={3} justifyContent="center" mb={4}>
-            <Grid item xs={12} sm={4}>
-              <FeatureCard>
-                <Typography sx={{ fontSize: "2rem", color: "#ff2222", mb: 1 }}>
-                  💀
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "1rem",
-                    fontWeight: "bold",
-                    color: "#fff",
-                    mb: 0.5,
-                  }}
-                >
-                  FINAL CIRCLE
-                </Typography>
-                <Typography sx={{ fontSize: "0.85rem", color: "#bbb" }}>
-                  No second chances left
-                </Typography>
-              </FeatureCard>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <FeatureCard>
-                <Typography sx={{ fontSize: "2rem", color: "#ff2222", mb: 1 }}>
-                  ⚡
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "1rem",
-                    fontWeight: "bold",
-                    color: "#fff",
-                    mb: 0.5,
-                  }}
-                >
-                  BLUE ZONE INCOMING
-                </Typography>
-                <Typography sx={{ fontSize: "0.85rem", color: "#bbb" }}>
-                  Move now or get eliminated
-                </Typography>
-              </FeatureCard>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <FeatureCard>
-                <Typography sx={{ fontSize: "2rem", color: "#ff2222", mb: 1 }}>
-                  🎯
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "1rem",
-                    fontWeight: "bold",
-                    color: "#fff",
-                    mb: 0.5,
-                  }}
-                >
-                  LAST MAN STANDING
-                </Typography>
-                <Typography sx={{ fontSize: "0.85rem", color: "#bbb" }}>
-                  Submit before elimination
-                </Typography>
-              </FeatureCard>
-            </Grid>
-          </Grid>
-
-          {/* CTA Section */}
-          <Box textAlign="center">
-            <Button
-              variant="contained"
-              sx={{
-                fontSize: { xs: "1.2rem", sm: "1.5rem" },
-                fontWeight: "bold",
-                px: { xs: 4, sm: 8 },
-                py: { xs: 1.8, sm: 2.5 },
-                borderRadius: "15px",
-                background: "linear-gradient(45deg, #ff0000, #990000)",
-                boxShadow: "0 10px 30px #ff000088",
-                color: "#fff",
-                letterSpacing: "2px",
-                textTransform: "uppercase",
-                transition: "0.3s ease",
-                animation: "urgentShake 0.6s infinite",
-                "&:hover": {
-                  boxShadow: "0 15px 45px #ff0000aa",
-                  transform: "scale(1.08)",
-                  background: "linear-gradient(45deg, #ff3333, #cc0000)",
-                },
-                "@keyframes urgentShake": {
-                  "0%": { transform: "translateX(0)" },
-                  "15%": { transform: "translateX(-6px)" },
-                  "30%": { transform: "translateX(6px)" },
-                  "45%": { transform: "translateX(-6px)" },
-                  "60%": { transform: "translateX(6px)" },
-                  "75%": { transform: "translateX(-3px)" },
-                  "90%": { transform: "translateX(3px)" },
-                  "100%": { transform: "translateX(0)" },
-                },
-              }}
-            >
-              🚨 SUBMIT PPT NOW - FINAL CALL 🚨
-            </Button>
-
-            <Typography
-              sx={{
-                mt: 3,
-                color: "#ff4444",
-                fontSize: { xs: "1rem", sm: "1.2rem" },
-                letterSpacing: "1px",
-                textAlign: "center",
-                fontStyle: "italic",
-                fontWeight: "bold",
-                textShadow: "0 0 10px #ff0000",
-              }}
-            >
-              "Enemy Spotted! The zone is closing - MOVE TO SURVIVE!"
-            </Typography>
-
-            <Typography
-              sx={{
-                mt: 2,
-                color: "#ff6666",
-                fontSize: { xs: "0.85rem", sm: "1rem" },
-                letterSpacing: "1px",
-                textAlign: "center",
-                fontWeight: "bold",
-              }}
-            >
-              🔥 FINAL DEADLINE: TODAY • 23:59 IST 🔥
-            </Typography>
-
-            <Typography
-              sx={{
-                mt: 1,
-                color: "#999",
-                fontSize: { xs: "0.75rem", sm: "0.85rem" },
-                letterSpacing: "0.5px",
-                textAlign: "center",
-              }}
-            >
-              "Winner Winner Chicken Dinner awaits the last survivors"
-            </Typography>
-          </Box>
         </GlowingBox>
       </Container>
     </RegistrationWrapper>
   );
 };
 
-export default HackgroundRegistration;
+export default ThankYouScreen;
