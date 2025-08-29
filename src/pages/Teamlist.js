@@ -288,106 +288,124 @@ const HackathonSections = () => {
   ];
 
   const mentors = [
-    {
+   
+     {
       id: 1,
-      name: "Tushika Rawat",
+      name: "Arushi Garg",
       role: "Mentor",
       avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318034/tushika_rawat_itbcuk.jpg",
-      linkedin: "https://www.linkedin.com/in/tushika-rawat/",
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1755927420/072_Arushi_Garg_s9do40.jpg",
+      linkedin: "https://www.linkedin.com/in/arushi-garg105/",
     },
     {
       id: 2,
-      name: "Tanisha Bansal",
+      name: "Akash Tripathee",
       role: "Mentor",
       avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318032/Tanisha_Bansal_mzcyw3.jpg",
-      linkedin: "https://www.linkedin.com/in/tanishabansal110902?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480018/Akash_Tripathee_qfrj9w.png",
+      linkedin: "https://www.linkedin.com/in/akaash-t-bb9211212/",
     },
-    // {
-    //   id: 4,
-    //   name: "Yash Chatrath",
-    //   role: "Mentor",
-    //   avatar:
-    //     "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318033/Yash_Chatrath_hkieoz.jpg",
-    //   linkedin: "http://linkedin.com/in/chatrath-yash",
-    // },
+    {
+      id: 3,
+      name: "Sairam Kaushik",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1755927822/IMG_2548_ynfmef.jpg",
+      linkedin: "https://www.linkedin.com/in/sairamkaushik/",
+    },
+    {
+      id: 4,
+      name: "Harshvardhan",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480018/Harshvardhan_g9ydz7.png",
+      linkedin: "https://www.linkedin.com/in/ekansh-mittal",
+    },
     {
       id: 5,
-      name: "Kamal Kashyap",
+      name: "Dhruv Verma",
       role: "Mentor",
       avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Kamal_Kashyap_whjfnt.jpg",
-      linkedin: "https://in.linkedin.com/in/kamal-kashyap-393a6b1b7",
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480018/Dhruv_Verma_grlzz4.png",
+      linkedin: "https://www.linkedin.com/in/dhruvv/",
     },
     {
       id: 6,
-      name: "Sachin Jha",
+      name: "Ishan Kumar",
       role: "Mentor",
       avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Sachin_Jha_mvuram.jpg",
-      linkedin: "https://www.linkedin.com/in/sachin-jha-",
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480018/Ishan_Kumar_yfr37j.png",
+      linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
       id: 7,
-      name: "Krish Khattar",
+      name: "Kavya Goel",
       role: "Mentor",
       avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Krish_Khattar_ip8um0.jpg",
-      linkedin: "https://www.linkedin.com/in/krishkhattar",
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480018/Kavya_Goel_wzjwrc.png",
+      linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
       id: 8,
-      name: "Nandini Singh",
+      name: "Kumbhaj Shukla",
       role: "Mentor",
       avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Nandini_Singh_qsdyz6.jpg",
-      linkedin: "https://www.linkedin.com/in/nandinisingh05",
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480018/Kumbhaj_Shukla_burzfz.png",
+      linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
-      id: 9,
-      name: "Avanish Kumar Singh",
+      id:9,
+      name: "Sajal",
       role: "Mentor",
       avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Avanish_Kumar_Singh_ylclyx.jpg",
-      linkedin: "https://www.linkedin.com/in/avanishh/",
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480019/Sajal_irodop.png",
+      linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
       id: 10,
-      name: "Ekansh",
+      name: "Moksha Kohli",
       role: "Mentor",
       avatar:
-        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318757/Ekansh_ydqcvc.jpg",
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480019/Moksha_mx2ai0.png",
       linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
+    {
+      id:11,
+      name: "Sudhanshu Kumar Jha",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/dembediei/image/upload/v1756480019/Sudhanshu_sho1oi.png",
+      linkedin: "https://www.linkedin.com/in/ekansh-mittal",
+    },
+
 
   ];
 
   const judges = [
-    // {
-    //   id: 1,
-    //   name: "Aman Jinal",
-    //   role: "Assistant Manager (Deloitte)",
-    //   avatar:
-    //     "https://res.cloudinary.com/djer7pmxt/image/upload/v1755373735/aman-jindal_tzg7kq.webp",
-    //   linkedin: "https://www.linkedin.com/in/amann-jindal",
-    // },
-    // {
-    //   id: 2,
-    //   name: "Aman Rajput",
-    //   role: "Community Manager (Unstop)",
-    //   avatar:
-    //     "https://res.cloudinary.com/djer7pmxt/image/upload/v1755373735/aman-rajput_xucnz3.webp",
-    //   linkedin: "https://www.linkedin.com/in/aman-ash",
-    // },
-    // {
-    //   id: 3,
-    //   name: "Uday Sharma",
-    //   role: "Content Creator",
-    //   avatar:
-    //     "https://res.cloudinary.com/djer7pmxt/image/upload/v1755373735/Uday-Sharma_vozxlv.webp ",
-    //   linkedin: "https://www.linkedin.com/in/udaydotai/",
-    // }, 
+    {
+      id: 1,
+      name: "Rajeev Anand",
+      role: "Founder (Web3_Connects)",
+      avatar:
+        "https://res.cloudinary.com/dembediei/image/upload/v1756478235/Rajeev_Anand_hccgf7.jpg",
+      linkedin: "https://www.linkedin.com/in/rajeevanandofficial/",
+    },
+    {
+      id: 2,
+      name: "Aman Jindal",
+      role: "Assistant Manager (Deloitte)",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1755373735/aman-jindal_tzg7kq.webp",
+      linkedin: "https://www.linkedin.com/in/amann-jindal",
+    },
+    {
+      id: 3,
+      name: "Udit Gupta",
+      role: "Founder (Global Tech Talks)",
+      avatar:
+        "https://res.cloudinary.com/dembediei/image/upload/v1756478235/Udit_Gupta_e6fpzw.jpg",
+      linkedin: "https://www.linkedin.com/in/uditinfosec?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    }, 
   ];
 
   const PersonCard = ({ person }) => (
