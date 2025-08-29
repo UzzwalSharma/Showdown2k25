@@ -288,9 +288,80 @@ const HackathonSections = () => {
   ];
 
   const mentors = [
-   
-     {
+    {
       id: 1,
+      name: "Tushika Rawat",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318034/tushika_rawat_itbcuk.jpg",
+      linkedin: "https://www.linkedin.com/in/tushika-rawat/",
+    },
+    {
+      id: 2,
+      name: "Tanisha Bansal",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318032/Tanisha_Bansal_mzcyw3.jpg",
+      linkedin: "https://www.linkedin.com/in/tanishabansal110902?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    },
+    // {
+    //   id: 4,
+    //   name: "Yash Chatrath",
+    //   role: "Mentor",
+    //   avatar:
+    //     "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318033/Yash_Chatrath_hkieoz.jpg",
+    //   linkedin: "http://linkedin.com/in/chatrath-yash",
+    // },
+    {
+      id: 5,
+      name: "Kamal Kashyap",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Kamal_Kashyap_whjfnt.jpg",
+      linkedin: "https://in.linkedin.com/in/kamal-kashyap-393a6b1b7",
+    },
+    {
+      id: 6,
+      name: "Sachin Jha",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Sachin_Jha_mvuram.jpg",
+      linkedin: "https://www.linkedin.com/in/sachin-jha-",
+    },
+    {
+      id: 7,
+      name: "Krish Khattar",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Krish_Khattar_ip8um0.jpg",
+      linkedin: "https://www.linkedin.com/in/krishkhattar",
+    },
+    {
+      id: 8,
+      name: "Nandini Singh",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Nandini_Singh_qsdyz6.jpg",
+      linkedin: "https://www.linkedin.com/in/nandinisingh05",
+    },
+    {
+      id: 9,
+      name: "Avanish Kumar Singh",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318031/Avanish_Kumar_Singh_ylclyx.jpg",
+      linkedin: "https://www.linkedin.com/in/avanishh/",
+    },
+    {
+      id: 10,
+      name: "Ekansh",
+      role: "Mentor",
+      avatar:
+        "https://res.cloudinary.com/djer7pmxt/image/upload/v1754318757/Ekansh_ydqcvc.jpg",
+      linkedin: "https://www.linkedin.com/in/ekansh-mittal",
+    },
+    {
+      id: 11,
       name: "Arushi Garg",
       role: "Mentor",
       avatar:
@@ -298,7 +369,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/arushi-garg105/",
     },
     {
-      id: 2,
+      id: 12,
       name: "Akash Tripathee",
       role: "Mentor",
       avatar:
@@ -306,7 +377,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/akaash-t-bb9211212/",
     },
     {
-      id: 3,
+      id: 13,
       name: "Sairam Kaushik",
       role: "Mentor",
       avatar:
@@ -314,7 +385,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/sairamkaushik/",
     },
     {
-      id: 4,
+      id: 14,
       name: "Harshvardhan",
       role: "Mentor",
       avatar:
@@ -322,7 +393,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
-      id: 5,
+      id: 15,
       name: "Dhruv Verma",
       role: "Mentor",
       avatar:
@@ -330,7 +401,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/dhruvv/",
     },
     {
-      id: 6,
+      id: 16,
       name: "Ishan Kumar",
       role: "Mentor",
       avatar:
@@ -338,7 +409,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
-      id: 7,
+      id: 17,
       name: "Kavya Goel",
       role: "Mentor",
       avatar:
@@ -346,7 +417,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
-      id: 8,
+      id: 18,
       name: "Kumbhaj Shukla",
       role: "Mentor",
       avatar:
@@ -354,7 +425,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
-      id:9,
+      id: 19,
       name: "Sajal",
       role: "Mentor",
       avatar:
@@ -362,7 +433,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
-      id: 10,
+      id: 20,
       name: "Moksha Kohli",
       role: "Mentor",
       avatar:
@@ -370,7 +441,7 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
     {
-      id:11,
+      id: 21,
       name: "Sudhanshu Kumar Jha",
       role: "Mentor",
       avatar:
@@ -378,11 +449,9 @@ const HackathonSections = () => {
       linkedin: "https://www.linkedin.com/in/ekansh-mittal",
     },
 
-
   ];
-
   const judges = [
-    {
+      {
       id: 1,
       name: "Rajeev Anand",
       role: "Founder (Web3_Connects)",
@@ -398,6 +467,7 @@ const HackathonSections = () => {
         "https://res.cloudinary.com/djer7pmxt/image/upload/v1755373735/aman-jindal_tzg7kq.webp",
       linkedin: "https://www.linkedin.com/in/amann-jindal",
     },
+    
     {
       id: 3,
       name: "Udit Gupta",
